@@ -76,18 +76,6 @@ const Header = () => {
 						Contacts
 					</Link>
 				</nav>
-				<div
-					style={{
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-						columnGap: 10,
-					}}
-				>
-					<div className={styles["header__lng-btn-wrapper"]}>
-						{/* <LngBtn /> */}
-					</div>
-				</div>
 			</div>
 		</header>
 	);

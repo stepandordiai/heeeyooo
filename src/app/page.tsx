@@ -38,23 +38,23 @@ const Home = () => {
 			<main className={styles.home}>
 				<div className={styles["home__top"]}>
 					<div style={{ textAlign: "center", color: "var(--accent-clr)" }}>
-						<WordLine>"website_under_construction"</WordLine>
+						<WordLine text="Website under construction" />
 					</div>
 					<h1 className={styles["home__title"]}>
-						<WordLine>"home.title"</WordLine>
+						<WordLine text="Creative web design & development agency" />
 					</h1>
 					<div
 						className={styles["home__desc"]}
 						style={{ color: "hsl(0,0%,50%)" }}
 					>
-						<WordLine>"home.sec_title"</WordLine>
+						<WordLine text="We create modern websites, landing pages, and online stores that work fast, look great, and grow your business." />
 					</div>
 				</div>
 				<h2 style={{ marginTop: 100 }}>
-					<WordLine>"featured_work_title"</WordLine>
+					<WordLine text="Featured work" />
 				</h2>
 				<div style={{ marginTop: 20, marginBottom: 20 }}>
-					<WordLine>"featured_work_desc"</WordLine>
+					<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
 				</div>
 				<div className={styles["home__works"]}>
 					{workData
