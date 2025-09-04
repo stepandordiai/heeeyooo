@@ -1,0 +1,28 @@
+@use "./styles/reset";
+@use "./styles/fonts";
+@use "./styles/variables";
+
+html {
+	scrollbar-width: none;
+	overscroll-behavior: none;
+}
+
+::selection {
+	background: var(--accent-clr);
+	color: #000;
+}
+
+body {
+	font-family: "Chakra Petch", sans-serif;
+	background: #000;
+	color: #fff !important;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+a {
+	color: #fff;
+}

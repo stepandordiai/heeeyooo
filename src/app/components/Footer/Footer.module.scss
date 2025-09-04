@@ -1,0 +1,45 @@
+@use "./../../styles/mixins" as *;
+
+.footer {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+}
+
+.footer-top {
+	display: flex;
+	gap: 20px;
+}
+
+.footer-bottom {
+	@include flex-between-center;
+}
+
+.footer__nav {
+	@include flex-start;
+	flex-direction: column;
+}
+
+.footer__nav-link {
+	color: hsl(0, 0%, 50%);
+
+	&:hover {
+		color: var(--accent-clr);
+	}
+}
+
+.footer__nav-link--active {
+	color: var(--accent-clr);
+}
+
+@media screen and (width < 808px) {
+	.footer {
+		padding: 10px;
+	}
+
+	.footer-bottom {
+		flex-direction: column;
+	}
+}
