@@ -1,0 +1,159 @@
+@use "./styles/mixins" as *;
+
+.home {
+	padding: 20px;
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3rem) !important;
+	}
+}
+
+.home__top {
+	position: relative;
+	min-height: 100svh;
+}
+
+.home__title {
+	color: hsl(0, 0%, 50%);
+}
+
+.home__title {
+	margin-top: 20px;
+	font-size: clamp(3rem, 4vw, 4rem);
+	color: hsl(0, 0%, 50%);
+	max-width: 700px;
+}
+
+.home__desc {
+	font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
+	color: #fff !important;
+	max-width: 800px;
+}
+
+.construction {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.home__works {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.home__work {
+	position: relative;
+	overflow: hidden;
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	cursor: none;
+}
+
+.home__work-img {
+	border-radius: inherit;
+}
+
+.home__work-details {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.home__work-icon {
+	border-radius: 50%;
+}
+
+.home__work-date {
+	margin-left: auto;
+	color: hsl(0, 0%, 50%);
+}
+
+.bg-element {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-radius: 0;
+	z-index: -1;
+	transform: translate(-50%, -50%) scale(1);
+	background: rgba(255, 255, 255, 0.15);
+	transition: width 0.3s, height 0.3s, transform 0.3s;
+}
+
+.bg-element--active {
+	transform: translate(-50%, -50%) scale(2);
+	border-radius: inherit;
+	width: 100%;
+	height: 100%;
+}
+
+.scroll-line {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 5px;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.15);
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.3s;
+
+	&:hover {
+		width: 20px;
+	}
+
+	opacity: 0;
+	pointer-events: none;
+}
+
+.scroll-line--active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.scroll-line:hover::before {
+	opacity: 1;
+}
+
+.scroll-line-inner {
+	background: var(--accent-clr);
+	width: 100%;
+	height: 0%;
+	transition: all 0.1s ease-out;
+}
+
+.scroll-line::before {
+	content: "Scroll to top";
+	position: absolute;
+	bottom: 10px;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	color: black;
+	font-weight: 500;
+	width: 100%;
+	opacity: 0;
+}
+
+@media screen and (width <=1000px) {
+	.home__works {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (width < 808px) {
+	.home {
+		padding: 10px;
+	}
+}
+
+@media screen and (width <=600px) {
+	.home__works {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

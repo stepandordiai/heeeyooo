@@ -1,95 +1,130 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+// import { useTranslation } from "react-i18next";
+// import { Helmet } from "react-helmet";
+// import Technologies from "../../components/Technologies/Technologies";
+// import { NavLink } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+// import Services from "../../components/Services/Services";
+import WordLine from "./components/WordLine/WordLine";
+import works from "./data/work-data.json";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "./page.module.scss";
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+interface WorkData {
+	id: string;
+	name: string;
+	date: string;
+	img: string[];
+	siteUrl: string;
+	isFeatured?: boolean;
+	palette?: string[];
 }
+
+const workData: WorkData[] = works;
+
+const Home = () => {
+	// const { t } = useTranslation();
+
+	// const { lng } = useParams();
+
+	return (
+		<>
+			<Head>
+				<title>Creative web studio | heeeyooo studio</title>
+				<link rel="canonical" href="https://heeeyooo.studio/" />
+			</Head>
+			<main className={styles.home}>
+				<div className={styles["home__top"]}>
+					<div style={{ textAlign: "center", color: "var(--accent-clr)" }}>
+						<WordLine>"website_under_construction"</WordLine>
+					</div>
+					<h1 className={styles["home__title"]}>
+						<WordLine>"home.title"</WordLine>
+					</h1>
+					<div
+						className={styles["home__desc"]}
+						style={{ color: "hsl(0,0%,50%)" }}
+					>
+						<WordLine>"home.sec_title"</WordLine>
+					</div>
+				</div>
+				<h2 style={{ marginTop: 100 }}>
+					<WordLine>"featured_work_title"</WordLine>
+				</h2>
+				<div style={{ marginTop: 20, marginBottom: 20 }}>
+					<WordLine>"featured_work_desc"</WordLine>
+				</div>
+				<div className={styles["home__works"]}>
+					{workData
+						.filter((project) => project.isFeatured)
+						.map((project) => {
+							return (
+								<Link
+									data-cursor-text="See more"
+									key={project.id}
+									className={`${styles["home__work"]} ${styles["rect-animate"]}`}
+									href={`/project-page/${project.id}`}
+								>
+									<img
+										className={styles["home__work-img"]}
+										src={project.img[0]}
+										alt=""
+									/>
+									<div className={styles["home__work-details"]}>
+										<p className={styles["home__work-name"]}>{project.name}</p>
+										<p className={styles["home__work-date"]}>{project.date}</p>
+									</div>
+								</Link>
+							);
+						})}
+				</div>
+				{/* <Services /> */}
+				{/* <Technologies /> */}
+				{/* <h2>Our process</h2>
+				<p>Efficient, Transparent, and Custom-Tailored</p>
+				<p>
+					We follow a streamlined process to ensure your app is developed
+					efficiently and meets the highest standards.
+				</p>
+				<div>
+					<div>
+						<p>1</p>
+						<p>Consultation</p>
+						<p>
+							We begin by understanding your business needs and goals for your
+							app.
+						</p>
+					</div>
+					<div>
+						<p>2</p>
+						<p>Design</p>
+						<p>
+							Our team designs a user-friendly interface that offers an engaging
+							experience on all devices.
+						</p>
+					</div>
+					<div>
+						<p>3</p>
+						<p>Development</p>
+						<p>
+							We build your app using cutting-edge technologies for optimal
+							performance across all browsers and devices.
+						</p>
+					</div>
+					<div>
+						<p>4</p>
+						<p>Launch</p>
+						<p>
+							We successfully launch your app and provide ongoing support to
+							ensure long-term success.
+						</p>
+					</div>
+				</div> */}
+			</main>
+		</>
+	);
+};
+
+export default Home;
