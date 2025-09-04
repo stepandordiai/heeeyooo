@@ -1,0 +1,170 @@
+[
+	{
+		"id": "web-envelope",
+		"name": "Web Envelope",
+		"date": "August | 2025",
+		"img": ["/work-2560/web-envelope-ss-2560-v1-c.png"],
+		"siteUrl": "https://web-envelope.netlify.app/"
+	},
+	{
+		"id": "yolk",
+		"name": "Yolk",
+		"date": "July | 2025",
+		"img": [
+			"/yolk-ss-2560-1-c.png",
+			"/work-2560/yolk-ss-2560-v1-c.png",
+			"/yolk-ss-2560-2-c.png",
+			"/yolk-ss-2560-3-c.png",
+			"/yolk-ss-2560-4-c.png"
+		],
+		"siteUrl": "https://yolk-project.netlify.app/",
+		"isFeatured": true,
+		"palette": ["#111", "#f4bb29", "#fff"]
+	},
+	{
+		"id": "max-flow",
+		"name": "MaxFlow 360°",
+		"date": "June | 2025",
+		"img": ["/work-2560/max-flow-ss-2560-v1-c.png"],
+		"siteUrl": "https://maxflow.netlify.app/"
+	},
+	{
+		"id": "shelfy",
+		"name": "Shelfy",
+		"date": "June | 2025",
+		"img": ["/shelfy-ss-2560-2-c.png", "/shelfy-ss-2560-1-c.png"],
+		"siteUrl": "https://shelfy-project.netlify.app/",
+		"isFeatured": true,
+		"palette": ["#fff", "#000", "#ff3b30"]
+	},
+	{
+		"id": "kristian-yanko",
+		"name": "Kristian Yanko",
+		"date": "May | 2025",
+		"img": ["/work-2560/kristian-yanko-ss-2560-v1-c.png"],
+		"siteUrl": "https://kristianyanko.netlify.app/"
+	},
+	{
+		"id": "flovas",
+		"name": "flovas",
+		"date": "April | 2025",
+		"img": [
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-1-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-2-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-3-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-4-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-5-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-6-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-7-c.png",
+			"/work-2560/flovas-ss-2560/flovas-ss-2560-8-c.png"
+		],
+		"siteUrl": "https://flovas.cz/",
+		"isFeatured": true,
+		"palette": ["#f4f3ed", "#e2ffb6", "#e1e1e1", "#f0f0f0"]
+	},
+	{
+		"id": "fve-stavby",
+		"name": "FVE STAVBY",
+		"date": "March | 2025",
+		"img": [
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-1-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-2-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-3-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-4-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-5-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-6-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-7-c.png",
+			"/work-2560/fve-stavby-ss-2560/fve-stavby-ss-2560-8-c.png"
+		],
+		"siteUrl": "https://fvestavby.cz/",
+		"isFeatured": true,
+		"palette": ["#fff", "#c3f272"]
+	},
+	{
+		"id": "bourek",
+		"name": "Bourek",
+		"date": "January | 2025",
+		"img": ["/work-2560/bourek-ss-2560-v2-c.png"],
+		"siteUrl": "https://bourek.cz/"
+	},
+	{
+		"id": "neresen",
+		"name": "Neresen",
+		"date": "February | 2025",
+		"img": ["/work-2560/neresen-ss-2560-v1-c.png"],
+		"siteUrl": "https://neresen.cz/"
+	},
+	{
+		"id": "prozubik",
+		"name": "Prozubik",
+		"date": "January | 2025",
+		"img": ["/work-2560/prozubik-ss-2560-v1-c.png"],
+		"siteUrl": "https://prozubik.cz/"
+	},
+	{
+		"id": "heeeyooo-studio",
+		"name": "heeeyooo studio",
+		"date": "April | 2025",
+		"img": [
+			"/heeeyooo-studio-ss-2560-2-c.png",
+			"/heeeyooo-studio-ss-2560-1-c.png",
+			"/heeeyooo-studio-ss-2560-3-c.png"
+		],
+		"siteUrl": "https://heeeyooo.studio/",
+		"isFeatured": true,
+		"palette": ["#000", "#b3e741"]
+	},
+	{
+		"id": "yagoda-karpat",
+		"name": "Yagoda Karpat",
+		"date": "January | 2025",
+		"img": [
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-1-c.png",
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-2-c.png",
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-3-c.png",
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-4-c.png",
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-5-c.png"
+		],
+		"siteUrl": "https://yagodakarpat.com/",
+		"isFeatured": true,
+		"palette": ["#f5f5f5", "#fff", "#c8dd13", "#ff9e93"]
+	},
+	{
+		"id": "tasty-burger",
+		"name": "Tasty Burger",
+		"date": "October | 2024",
+		"img": ["/work-2560/tasty-burger-ss-2560-v1-c.png"],
+		"siteUrl": "https://stepandordiai.github.io/tasty-burger/"
+	},
+	{
+		"id": "stepan-dordiai",
+		"name": "STEPAN DORDIAI",
+		"date": "October | 2024",
+		"img": [
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-1-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-2-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-3-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-4-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-5-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-6-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-7-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-8-c.png",
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-9-c.png"
+		],
+		"siteUrl": "https://stepandordiai.netlify.app/"
+	},
+	{
+		"id": "cloud",
+		"name": "cloud.",
+		"date": "September | 2024",
+		"img": ["/work-2560/cloud-ss-2560-v1-c.png"],
+		"siteUrl": "https://cloud-project.netlify.app/"
+	},
+	{
+		"id": "penguin",
+		"name": "penguin",
+		"date": "September | 2024",
+		"img": ["/work-2560/penguin-ss-2560-v1-c.png"],
+		"siteUrl": "https://penguin-project.netlify.app/"
+	}
+]
