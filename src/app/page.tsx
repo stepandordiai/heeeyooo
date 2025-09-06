@@ -11,6 +11,7 @@ import works from "./data/work-data.json";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./page.module.scss";
+import Services from "./components/Services/Services";
 
 interface WorkData {
 	id: string;
@@ -80,6 +81,7 @@ const Home = () => {
 							);
 						})}
 				</div>
+				<Services />
 				{/* <Services /> */}
 				{/* <Technologies /> */}
 				{/* <h2>Our process</h2>
