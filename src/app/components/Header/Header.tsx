@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import workData from "./../../data/work-data.json";
