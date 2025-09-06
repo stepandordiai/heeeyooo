@@ -36,7 +36,7 @@ const Work = () => {
 
 	useEffect(() => {
 		const work = document.querySelectorAll(`.${styles.project}`);
-		let element: any = null;
+		let element: HTMLImageElement | null = null;
 
 		work.forEach((project, index) => {
 			project.addEventListener("mousemove", (e) => {
@@ -60,8 +60,8 @@ const Work = () => {
 
 				// Calculate mouse position relative to the project element
 				const event = e as MouseEvent;
-				let mouseX = event.clientX - projectRect.left;
-				let mouseY = event.clientY - projectRect.top;
+				const mouseX = event.clientX - projectRect.left;
+				const mouseY = event.clientY - projectRect.top;
 
 				// Move the element based on the mouse position
 				if (element) {
@@ -80,7 +80,7 @@ const Work = () => {
 
 		if (layout === "works__list") {
 			const works = document.querySelectorAll(`.${styles.work}`);
-			let time = 75;
+			const time = 75;
 			works.forEach((work, index) => {
 				document.addEventListener("scroll", () => {
 					const workRect = work.getBoundingClientRect();
@@ -101,7 +101,7 @@ const Work = () => {
 
 		if (layout === "works__grid") {
 			const works = document.querySelectorAll(`.${styles["work__grid"]}`);
-			let time = 75;
+			const time = 75;
 			works.forEach((work, index) => {
 				document.addEventListener("scroll", () => {
 					const workRect = work.getBoundingClientRect();

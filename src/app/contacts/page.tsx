@@ -1,70 +1,70 @@
 "use client";
 import Head from "next/head";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Link from "next/link";
 import styles from "./Contacts.module.scss";
 
 const Contacts = () => {
-	async function initMap() {
-		const centerPosition = { lat: 50.02718425360769, lng: 15.202752716064479 }; // Center of Czech Republic
+	// async function initMap() {
+	// 	const centerPosition = { lat: 50.02718425360769, lng: 15.202752716064479 }; // Center of Czech Republic
 
-		// Example dark theme style (Snazzy Maps)
-		const darkStyle = [
-			{ elementType: "geometry", stylers: [{ color: "#323232" }] },
-			{ elementType: "labels.text.fill", stylers: [{ color: "#7e7e7e" }] },
-			{ elementType: "labels.text.stroke", stylers: [{ color: "#000000" }] },
-			{
-				featureType: "road",
-				elementType: "geometry",
-				stylers: [{ color: "#000000" }],
-			},
-			{
-				featureType: "water",
-				elementType: "geometry",
-				stylers: [{ color: "#0e1626" }],
-			},
-			{
-				featureType: "water",
-				elementType: "labels.text.fill",
-				stylers: [{ color: "#4e6d70" }],
-			},
+	// 	// Example dark theme style (Snazzy Maps)
+	// 	const darkStyle = [
+	// 		{ elementType: "geometry", stylers: [{ color: "#323232" }] },
+	// 		{ elementType: "labels.text.fill", stylers: [{ color: "#7e7e7e" }] },
+	// 		{ elementType: "labels.text.stroke", stylers: [{ color: "#000000" }] },
+	// 		{
+	// 			featureType: "road",
+	// 			elementType: "geometry",
+	// 			stylers: [{ color: "#000000" }],
+	// 		},
+	// 		{
+	// 			featureType: "water",
+	// 			elementType: "geometry",
+	// 			stylers: [{ color: "#0e1626" }],
+	// 		},
+	// 		{
+	// 			featureType: "water",
+	// 			elementType: "labels.text.fill",
+	// 			stylers: [{ color: "#4e6d70" }],
+	// 		},
 
-			// Hides POI icons
-			{
-				featureType: "poi",
-				elementType: "labels.icon",
-				stylers: [{ visibility: "off" }],
-			},
-			// Optional: hide POI text labels too
-			{
-				featureType: "poi",
-				elementType: "labels.text",
-				stylers: [{ visibility: "off" }],
-			},
-			{
-				featureType: "poi.airport",
-				elementType: "labels.icon",
-				stylers: [{ visibility: "off" }],
-			},
-			// {
-			// 	featureType: "poi.airport",
-			// 	elementType: "labels.text",
-			// 	stylers: [{ visibility: "off" }],
-			// },
-		];
+	// 		// Hides POI icons
+	// 		{
+	// 			featureType: "poi",
+	// 			elementType: "labels.icon",
+	// 			stylers: [{ visibility: "off" }],
+	// 		},
+	// 		// Optional: hide POI text labels too
+	// 		{
+	// 			featureType: "poi",
+	// 			elementType: "labels.text",
+	// 			stylers: [{ visibility: "off" }],
+	// 		},
+	// 		{
+	// 			featureType: "poi.airport",
+	// 			elementType: "labels.icon",
+	// 			stylers: [{ visibility: "off" }],
+	// 		},
+	// 		// {
+	// 		// 	featureType: "poi.airport",
+	// 		// 	elementType: "labels.text",
+	// 		// 	stylers: [{ visibility: "off" }],
+	// 		// },
+	// 	];
 
-		// new google.maps.Map(document.getElementById("map"), {
-		// 	zoom: 14,
-		// 	center: centerPosition,
-		// 	disableDefaultUI: true,
-		// 	mapTypeId: google.maps.MapTypeId.ROADMAP,
-		// 	styles: darkStyle,
-		// });
-	}
+	// 	// new google.maps.Map(document.getElementById("map"), {
+	// 	// 	zoom: 14,
+	// 	// 	center: centerPosition,
+	// 	// 	disableDefaultUI: true,
+	// 	// 	mapTypeId: google.maps.MapTypeId.ROADMAP,
+	// 	// 	styles: darkStyle,
+	// 	// });
+	// }
 
-	useEffect(() => {
-		initMap();
-	}, []);
+	// useEffect(() => {
+	// 	initMap();
+	// }, []);
 
 	return (
 		<>
@@ -110,12 +110,12 @@ const Contacts = () => {
 					<div className={styles["contacts__map-form-container"]}>
 						<div className={styles["contacts__details-map"]}>
 							<p className={styles["contacts__details-title"]}>Kolin, Prague</p>
-							<i className="fa-solid fa-map"></i>
-							<div id="map"></div>
+							{/* <i className="fa-solid fa-map"></i> */}
+							{/* <div id="map"></div> */}
 						</div>
 						<div className={styles["contacts__form-details"]}>
 							<p className={styles["contacts__form-details-title"]}>
-								Tell us more about yourself and what you've got in mind.
+								Tell us more about yourself and what you&apos;ve got in mind.
 							</p>
 							<form
 								className={styles["contacts__form"]}
@@ -203,11 +203,11 @@ const Contacts = () => {
 									</div>
 								</div>
 								<button className={styles["contacts__form-btn"]} type="submit">
-									Let's get started!
+									Let&apos;s get started!
 								</button>
 							</form>
 							<div style={{ marginTop: 10 }}>
-								<p>Don't like forms? Write us a message instead!</p>
+								<p>Don&apos;t like forms? Write us a message instead!</p>
 								<a
 									href="mailto:stepandordiai@gmail.com"
 									style={{ color: "black" }}
