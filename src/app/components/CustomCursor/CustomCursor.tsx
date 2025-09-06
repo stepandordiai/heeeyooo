@@ -13,8 +13,10 @@ const CustomCursor = () => {
 	useEffect(() => {
 		if (isTouchDevice()) return;
 
-		const handleMouseMove = (e: any) => {
-			const inactiveTarget = e.target.closest("[data-cursor-inactive]");
+		const handleMouseMove = (e: MouseEvent) => {
+			const inactiveTarget = (e?.target as HTMLElement).closest(
+				"[data-cursor-inactive]"
+			);
 			if (!customCursor.current) return;
 			if (inactiveTarget) {
 				// Hide cursor completely for these elements
@@ -30,10 +32,10 @@ const CustomCursor = () => {
 			customCursor.current.style.top = y + "px";
 		};
 
-		const handleMouseLeave = (e: any) => {
+		const handleMouseLeave = (e: MouseEvent | null) => {
 			// TODO:
-			const inactiveTarget = e.currentTarget; // the element with data-cursor-inactive
-			const toElement = e.relatedTarget; // where the mouse goes after leaving
+			const inactiveTarget = e?.currentTarget as HTMLElement; // the element with data-cursor-inactive
+			const toElement = e?.relatedTarget as HTMLElement; // where the mouse goes after leaving
 
 			if (!customCursor.current) return;
 			if (!inactiveTarget.contains(toElement)) {
@@ -45,17 +47,17 @@ const CustomCursor = () => {
 			}
 		};
 
-		const activeCursor = (e: any) => {
-			const target = e.target.closest("[data-cursor-text]");
+		const activeCursor = (e: MouseEvent) => {
+			const target = (e.target as HTMLElement).closest("[data-cursor-text]");
 
 			if (target) {
 				setActive(true);
-				setText(target.getAttribute("data-cursor-text"));
+				setText(target.getAttribute("data-cursor-text") ?? "");
 			}
 		};
 
-		const inactiveCursor = (e: any) => {
-			const target = e.target.closest("[data-cursor-text]");
+		const inactiveCursor = (e: MouseEvent) => {
+			const target = (e.target as HTMLElement).closest("[data-cursor-text]");
 
 			if (target) {
 				setActive(false);
