@@ -94,7 +94,7 @@ const Contacts = () => {
 								target="_blank"
 								className={styles["contacts__details"]}
 							>
-								<p className="contacts__details-title">
+								<p className={styles["contacts__details-title"]}>
 									Follow us on Instagram
 								</p>
 								<i className="fa-brands fa-instagram"></i>

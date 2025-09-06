@@ -1,0 +1,10 @@
+.about {
+	min-height: 100dvh;
+	padding: 20px;
+}
+
+@media screen and (width < 808px) {
+	.about {
+		padding: 10px;
+	}
+}
