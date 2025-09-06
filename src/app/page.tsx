@@ -1,11 +1,5 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
-// import { Helmet } from "react-helmet";
-// import Technologies from "../../components/Technologies/Technologies";
-// import { NavLink } from "react-router-dom";
-// import { useParams } from "react-router-dom";
-// import Services from "../../components/Services/Services";
 import WordLine from "./components/WordLine/WordLine";
 import works from "./data/work-data.json";
 import Head from "next/head";
