@@ -137,7 +137,7 @@
 
 .img-element {
 	position: absolute; /* or fixed/relative depending on context */
-	z-index: 1000;
+	z-index: 999;
 	width: 400px;
 	transform: translate(-50%, -50%);
 	pointer-events: none;

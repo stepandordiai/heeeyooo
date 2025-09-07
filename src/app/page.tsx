@@ -4,8 +4,8 @@ import WordLine from "./components/WordLine/WordLine";
 import works from "./data/work-data.json";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "./page.module.scss";
 import Services from "./components/Services/Services";
+import styles from "./page.module.scss";
 
 interface WorkData {
 	id: string;
@@ -20,10 +20,6 @@ interface WorkData {
 const workData: WorkData[] = works;
 
 const Home = () => {
-	// const { t } = useTranslation();
-
-	// const { lng } = useParams();
-
 	return (
 		<>
 			<Head>
@@ -32,7 +28,7 @@ const Home = () => {
 			</Head>
 			<main className={styles.home}>
 				<div className={styles["home__top"]}>
-					<div style={{ textAlign: "center", color: "var(--accent-clr)" }}>
+					<div className={styles["construction"]}>
 						<WordLine text="Website under construction" />
 					</div>
 					<h1 className={styles["home__title"]}>
