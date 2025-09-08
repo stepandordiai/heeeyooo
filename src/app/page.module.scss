@@ -36,9 +36,10 @@
 	align-items: center;
 	color: var(--accent-clr);
 	background: rgba(178, 231, 65, 0.2);
-	border-radius: 5px;
-	padding: 2.5px;
-	justify-self: center;
+	border-radius: 10px;
+	padding: 5px;
+	width: max-content;
+	margin: 0 auto;
 }
 
 .home__works {

@@ -6,6 +6,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Services from "./components/Services/Services";
 import styles from "./page.module.scss";
+import Technologies from "./components/Technologies/Technologies";
 
 interface WorkData {
 	id: string;
@@ -72,6 +73,7 @@ const Home = () => {
 						})}
 				</div>
 				<Services />
+				<Technologies />
 				{/* <Services /> */}
 				{/* <Technologies /> */}
 				{/* <h2>Our process</h2>
