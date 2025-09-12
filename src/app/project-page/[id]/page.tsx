@@ -1,12 +1,13 @@
 "use client";
+
 import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import works from "./../../data/work-data.json";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import styles from "./ProjectPage.module.scss";
 import Image from "next/image";
+import styles from "./ProjectPage.module.scss";
 
 interface WorkData {
 	id: string;
@@ -74,7 +75,7 @@ const ProjectPage = () => {
 	return (
 		<>
 			<Head>
-				<title>{project?.name} &bull; heeeyooo studio</title>
+				<title>{project.name} &bull; heeeyooo studio</title>
 			</Head>
 			<main className={styles["project-page"]}>
 				<div style={{ marginBottom: 20 }}>
@@ -84,21 +85,15 @@ const ProjectPage = () => {
 					&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Project</span>
 				</div>
 				<h2 className={styles["project-page__title"]}>{project?.name}</h2>
-				<div className={styles["img-flex"]}>
+				<div className={styles["project-page__img-grid"]}>
 					{project.img.map((img, index) => {
 						return (
 							<div key={index} className={styles["project-page__img-wrapper"]}>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
 								<Image
 									className={styles["project-page__img"]}
 									src={img}
 									alt={project.name}
 									fill
-									// width={500}
-									// height={500}
 								/>
 							</div>
 						);
