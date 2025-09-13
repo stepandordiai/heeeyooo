@@ -9,7 +9,7 @@ const Services = () => {
 		);
 
 		dividers.forEach((divider) => {
-			document.addEventListener("scroll", () => {
+			window.addEventListener("scroll", () => {
 				if (!dividers) return;
 				const dividerRect = divider.getBoundingClientRect();
 
@@ -28,10 +28,7 @@ const Services = () => {
 				<WordLine text="Services" />
 			</h2>
 			<div className={styles["services__desc"]}>
-				<WordLine
-					text="We specialize in crafting websites from idea, through design to
-					development and post-deployment follow-up support."
-				/>
+				<WordLine text="We specialize in crafting websites from idea, through design to development and post-deployment follow-up support." />
 			</div>
 			<div className={styles["home__services-grid"]}>
 				<div className={styles["service__divider"]}></div>
@@ -40,14 +37,7 @@ const Services = () => {
 						<WordLine text="UX/UI Design" />
 					</div>
 					<div className={styles["service__desc"]}>
-						<WordLine
-							text="Looking for a website that not only looks amazing but drives
-							results? Our professional web design services combine creativity,
-							usability, and cutting-edge technology to create websites that
-							attract visitors and convert them into customers. We specialize in
-							responsive web design, e-commerce websites, landing pages, and
-							custom solutions tailored to your brand."
-						/>
+						<WordLine text="Looking for a website that not only looks amazing but drives results? Our professional web design services combine creativity, usability, and cutting-edge technology to create websites that attract visitors and convert them into customers. We specialize in responsive web design, e-commerce websites, landing pages, and custom solutions tailored to your brand." />
 					</div>
 				</div>
 				<div className={styles["service__divider"]}></div>
