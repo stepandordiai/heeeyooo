@@ -1,10 +1,15 @@
 [
 	{
-		"id": "web-envelope",
-		"name": "Web Envelope",
+		"id": "pixel-flower",
+		"name": "pixel flower",
 		"date": "August | 2025",
-		"img": ["/work-2560/web-envelope-ss-2560-v1-c.png"],
-		"siteUrl": "https://web-envelope.netlify.app/"
+		"img": [
+			"/work-2560/pixel-flower-ss-2560/pixel-flower-ss-2560-1-c.png",
+			"/work-2560/pixel-flower-ss-2560/pixel-flower-ss-2560-2-c.png",
+			"/work-2560/pixel-flower-ss-2560/pixel-flower-ss-2560-3-c.png",
+			"/work-2560/pixel-flower-ss-2560/pixel-flower-ss-2560-4-c.png"
+		],
+		"siteUrl": "https://pixelflower.netlify.app/"
 	},
 	{
 		"id": "yolk",
