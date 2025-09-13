@@ -34,7 +34,7 @@ const WordLine = ({ text }: WordLineProps) => {
 		});
 	}, []);
 	return (
-		<>
+		<div className={styles["word-line-container"]}>
 			{text.split(" ").map((word, index) => {
 				return (
 					<React.Fragment key={index}>
@@ -44,7 +44,7 @@ const WordLine = ({ text }: WordLineProps) => {
 					</React.Fragment>
 				);
 			})}
-		</>
+		</div>
 	);
 };
 

@@ -1,3 +1,8 @@
+.word-line-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .word-line-wrapper {
 	display: inline-block;
 	overflow: hidden;

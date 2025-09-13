@@ -3,10 +3,11 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 40px;
+	gap: 20px;
 	font-size: 1.5rem;
-	width: 75%;
-	margin: 50px auto;
+	width: 100%;
+	max-width: 1000px;
+	margin: 20px auto;
 
 	p {
 		border-radius: 10px;
@@ -16,17 +17,17 @@
 
 	p:nth-of-type(1) {
 		color: #fff;
-		background: rgba(255, 255, 255, 0.2);
+		background: #ffffff33;
 	}
 
 	p:nth-of-type(2) {
 		color: #563d7c;
-		background: rgba(86, 61, 124, 0.2);
+		background: #563d7c33;
 	}
 
 	p:nth-of-type(3) {
 		color: #61dbfb;
-		background: rgba(97, 220, 251, 0.2);
+		background: #61dcfb33;
 	}
 
 	p:nth-of-type(4) {
@@ -74,7 +75,6 @@
 		background: #4db33d33;
 	}
 
-	// OK
 	p:nth-of-type(13) {
 		color: #ff7262;
 		background: #ff726233;
@@ -88,11 +88,5 @@
 	p:nth-of-type(15) {
 		color: #f1502f;
 		background: #f1502f33;
-	}
-}
-
-@media screen and (width < 808px) {
-	.technologies {
-		width: 100%;
 	}
 }
