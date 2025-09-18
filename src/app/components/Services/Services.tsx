@@ -1,3 +1,5 @@
+"use client";
+
 import WordLine from "../WordLine/WordLine";
 import { useEffect } from "react";
 import styles from "./Services.module.scss";

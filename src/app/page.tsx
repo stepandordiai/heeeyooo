@@ -1,5 +1,3 @@
-"use client";
-
 import WordLine from "./components/WordLine/WordLine";
 import works from "./data/work-data.json";
 import Head from "next/head";
