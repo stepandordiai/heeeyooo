@@ -17,7 +17,10 @@ interface WorkData {
 	img: string[];
 	siteUrl: string;
 	isFeatured?: boolean;
-	palette?: string[];
+	palette?: {
+		value: string;
+		name: string;
+	}[];
 }
 
 const workData: WorkData[] = works;
@@ -107,8 +110,9 @@ const ProjectPage = () => {
 								<div
 									key={index}
 									className={styles["palette__color"]}
-									style={{ background: color, width: "100%", height: 200 }}
-									data-color={color}
+									style={{ background: color.value }}
+									data-color-value={color.value}
+									data-color-name={color.name}
 								></div>
 							);
 						})}
