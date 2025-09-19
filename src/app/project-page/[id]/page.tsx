@@ -12,6 +12,7 @@ import styles from "./ProjectPage.module.scss";
 interface WorkData {
 	id: string;
 	name: string;
+	desc?: string;
 	date: string;
 	img: string[];
 	siteUrl: string;
@@ -113,6 +114,10 @@ const ProjectPage = () => {
 						})}
 					</div>
 				)}
+				<div>
+					<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
+					{project.desc && <p>{project.desc}</p>}
+				</div>
 				<div style={{ display: "flex", justifyContent: "space-between" }}>
 					<a
 						className={styles["project-page__link"]}
