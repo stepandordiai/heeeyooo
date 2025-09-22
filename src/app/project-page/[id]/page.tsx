@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./ProjectPage.module.scss";
+import Container from "@/app/components/Container/Container";
 
 interface WorkData {
 	id: string;
@@ -82,61 +83,66 @@ const ProjectPage = () => {
 				<title>{project.name} &bull; heeeyooo studio</title>
 			</Head>
 			<main className={styles["project-page"]}>
-				<div style={{ marginBottom: 20 }}>
-					<Link className={styles["page-nav__link"]} href="/work">
-						All work
-					</Link>{" "}
-					&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Project</span>
-				</div>
-				<h2 className={styles["project-page__title"]}>{project?.name}</h2>
-				<div className={styles["project-page__img-grid"]}>
-					{project.img.map((img, index) => {
-						return (
-							<div key={index} className={styles["project-page__img-wrapper"]}>
-								<Image
-									className={styles["project-page__img"]}
-									src={img}
-									alt={project.name}
-									fill
-								/>
-							</div>
-						);
-					})}
-				</div>
-				{project.palette && (
-					<div className={styles.palette}>
-						{project.palette.map((color, index) => {
+				<Container>
+					<div style={{ marginBottom: 20 }}>
+						<Link className={styles["page-nav__link"]} href="/work">
+							All work
+						</Link>{" "}
+						&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Project</span>
+					</div>
+					<h2 className={styles["project-page__title"]}>{project?.name}</h2>
+					<div className={styles["project-page__img-grid"]}>
+						{project.img.map((img, index) => {
 							return (
 								<div
 									key={index}
-									className={styles["palette__color"]}
-									style={{ background: color.value }}
-									data-color-value={color.value}
-									data-color-name={color.name}
-								></div>
+									className={styles["project-page__img-wrapper"]}
+								>
+									<Image
+										className={styles["project-page__img"]}
+										src={img}
+										alt={project.name}
+										fill
+									/>
+								</div>
 							);
 						})}
 					</div>
-				)}
-				<div>
-					<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
-					{project.desc && <p>{project.desc}</p>}
-				</div>
-				<div style={{ display: "flex", justifyContent: "space-between" }}>
-					<a
-						className={styles["project-page__link"]}
-						href={project.siteUrl}
-						target="_blank"
-					>
-						Live site
-					</a>
-					<Link
-						className={styles["project-page__link"]}
-						href={`/project-page/${workData[nexProjectIndex].id}`}
-					>
-						Next Project
-					</Link>
-				</div>
+					{project.palette && (
+						<div className={styles.palette}>
+							{project.palette.map((color, index) => {
+								return (
+									<div
+										key={index}
+										className={styles["palette__color"]}
+										style={{ background: color.value }}
+										data-color-value={color.value}
+										data-color-name={color.name}
+									></div>
+								);
+							})}
+						</div>
+					)}
+					<div>
+						<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
+						{project.desc && <p>{project.desc}</p>}
+					</div>
+					<div style={{ display: "flex", justifyContent: "space-between" }}>
+						<a
+							className={styles["project-page__link"]}
+							href={project.siteUrl}
+							target="_blank"
+						>
+							Live site
+						</a>
+						<Link
+							className={styles["project-page__link"]}
+							href={`/project-page/${workData[nexProjectIndex].id}`}
+						>
+							Next Project
+						</Link>
+					</div>
+				</Container>
 			</main>
 		</>
 	);

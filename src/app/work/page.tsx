@@ -10,6 +10,7 @@ import styles from "./Work.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import works from "./../data/work-data.json";
+import Container from "../components/Container/Container";
 
 interface WorkData {
 	id: string;
@@ -129,95 +130,100 @@ const Work = () => {
 				<link rel="canonical" href="https://heeeyooo.studio/work" />
 			</Head>
 			<main className={styles.work}>
-				<div style={{ marginBottom: 20 }}>
-					<Link className={styles["page-nav__link"]} href={`/`}>
-						Home
-					</Link>{" "}
-					&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Work</span>
-				</div>
-				<div>
-					<p className={styles["work__sec-title"]}>
-						All works <span>{workData.length}</span>
-					</p>
-				</div>
-				<div
-					className={styles["portfolio__btn-container"]}
-					data-cursor-inactive
-				>
-					<button
-						className={
-							layout === "works__list"
-								? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-								: styles["portfolio__btn"]
-						}
-						onClick={() => handleLayout("works__list")}
-					>
-						<span>List</span>
-					</button>
-					<button
-						className={
-							layout === "works__grid"
-								? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-								: styles["portfolio__btn"]
-						}
-						onClick={() => handleLayout("works__grid")}
-					>
-						<span>Grid</span>
-					</button>
-				</div>
-				{layout === "works__list" && (
-					<div className={layout}>
-						{workData.map((project) => {
-							return (
-								<Link
-									key={project.id}
-									data-cursor-inactive
-									className={styles.project}
-									href={`/project-page/${project.id}`}
-									// href={project.siteUrl}
-									// target="_blank"
-								>
-									<p className={styles["work__name"]}>{project.name}</p>
-									<div className={styles["work__desc"]}>
-										<p
-											className={styles["work__date"]}
-											style={{ fontWeight: 300, color: "rgba(255,255,255,0.5" }}
-										>
-											{project.date}
-										</p>
-										<p>Design & Development</p>
-									</div>
-								</Link>
-							);
-						})}
+				<Container>
+					<div style={{ marginBottom: 20 }}>
+						<Link className={styles["page-nav__link"]} href={`/`}>
+							Home
+						</Link>{" "}
+						&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Work</span>
 					</div>
-				)}
-				{layout === "works__grid" && (
-					<div className={styles[layout]}>
-						{workData.map((project) => {
-							return (
-								<Link
-									key={project.id}
-									className={styles["work__grid"]}
-									href={`/project-page/${project.id}`}
-									// href={project.siteUrl}
-									// target="_blank"
-								>
-									<img
-										className={styles["portfolio__img"]}
-										src={project.img[0]}
-										alt={project.name}
-										loading="lazy"
-									/>
-									<div className={styles["work__details-grid"]}>
+					<div>
+						<p className={styles["work__sec-title"]}>
+							All works <span>{workData.length}</span>
+						</p>
+					</div>
+					<div
+						className={styles["portfolio__btn-container"]}
+						data-cursor-inactive
+					>
+						<button
+							className={
+								layout === "works__list"
+									? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
+									: styles["portfolio__btn"]
+							}
+							onClick={() => handleLayout("works__list")}
+						>
+							<span>List</span>
+						</button>
+						<button
+							className={
+								layout === "works__grid"
+									? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
+									: styles["portfolio__btn"]
+							}
+							onClick={() => handleLayout("works__grid")}
+						>
+							<span>Grid</span>
+						</button>
+					</div>
+					{layout === "works__list" && (
+						<div className={layout}>
+							{workData.map((project) => {
+								return (
+									<Link
+										key={project.id}
+										data-cursor-inactive
+										className={styles.project}
+										href={`/project-page/${project.id}`}
+										// href={project.siteUrl}
+										// target="_blank"
+									>
 										<p className={styles["work__name"]}>{project.name}</p>
-										<img width={20} height={20} src={arrowIcon.src} alt="" />
-									</div>
-								</Link>
-							);
-						})}
-					</div>
-				)}
+										<div className={styles["work__desc"]}>
+											<p
+												className={styles["work__date"]}
+												style={{
+													fontWeight: 300,
+													color: "rgba(255,255,255,0.5",
+												}}
+											>
+												{project.date}
+											</p>
+											<p>Design & Development</p>
+										</div>
+									</Link>
+								);
+							})}
+						</div>
+					)}
+					{layout === "works__grid" && (
+						<div className={styles[layout]}>
+							{workData.map((project) => {
+								return (
+									<Link
+										key={project.id}
+										className={styles["work__grid"]}
+										href={`/project-page/${project.id}`}
+										// href={project.siteUrl}
+										// target="_blank"
+									>
+										<img
+											className={styles["portfolio__img"]}
+											src={project.img[0]}
+											alt={project.name}
+											loading="lazy"
+										/>
+										<div className={styles["work__details-grid"]}>
+											<p className={styles["work__name"]}>{project.name}</p>
+											<img width={20} height={20} src={arrowIcon.src} alt="" />
+										</div>
+									</Link>
+								);
+							})}
+						</div>
+					)}
+				</Container>
 			</main>
 		</>
 	);
