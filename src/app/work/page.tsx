@@ -18,7 +18,10 @@ interface WorkData {
 	img: string[];
 	siteUrl: string;
 	isFeatured?: boolean;
-	palette?: string[];
+	palette?: {
+		value: string;
+		name: string;
+	}[];
 }
 
 const workData: WorkData[] = works;
