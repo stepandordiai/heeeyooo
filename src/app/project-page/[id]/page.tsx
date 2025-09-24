@@ -123,10 +123,12 @@ const ProjectPage = () => {
 							})}
 						</div>
 					)}
-					<div>
-						<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
-						{project.desc && <p>{project.desc}</p>}
-					</div>
+					{project.desc && (
+						<div>
+							<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
+							<p>{project.desc}</p>
+						</div>
+					)}
 					<div style={{ display: "flex", justifyContent: "space-between" }}>
 						<a
 							className={styles["project-page__link"]}

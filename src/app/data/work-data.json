@@ -131,8 +131,22 @@
 		"id": "prozubik",
 		"name": "Prozubik",
 		"date": "January | 2025",
-		"img": ["/work-2560/prozubik-ss-2560-v1-c.png"],
-		"siteUrl": "https://prozubik.cz/"
+		"img": [
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-1-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-2-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-3-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-4-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-5-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-6-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-7-c.png",
+			"/work-2560/prozubik-ss-2560/prozubik-ss-2560-8-c.png"
+		],
+		"siteUrl": "https://prozubik.cz/",
+		"palette": [
+			{ "value": "#7FD2C8", "name": "Mint Blue" },
+			{ "value": "#FFFFFF", "name": "White" },
+			{ "value": "#ebfbf4", "name": "Aqua Blue" }
+		]
 	},
 	{
 		"id": "heeeyooo-studio",
