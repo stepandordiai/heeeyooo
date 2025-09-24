@@ -22,6 +22,7 @@ interface WorkData {
 		value: string;
 		name: string;
 	}[];
+	typo?: string;
 }
 
 const workData: WorkData[] = works;
@@ -108,23 +109,47 @@ const ProjectPage = () => {
 							);
 						})}
 					</div>
-					{project.palette && (
-						<div className={styles.palette}>
-							{project.palette.map((color, index) => {
-								return (
-									<div
-										key={index}
-										className={styles["palette__color"]}
-										style={{ background: color.value }}
-										data-color-value={color.value}
-										data-color-name={color.name}
-									></div>
-								);
-							})}
-						</div>
-					)}
+					<div className={styles["project-page__palette-typo-container"]}>
+						{project.palette && (
+							<div
+								style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
+							>
+								<span style={{ color: "hsl(0, 0%, 50%)" }}>Colors</span>
+								<div className={styles.palette}>
+									{project.palette.map((color, index) => {
+										return (
+											<div
+												key={index}
+												className={styles["palette__color"]}
+												style={{ background: color.value }}
+												data-color-value={color.value}
+												data-color-name={color.name}
+											></div>
+										);
+									})}
+								</div>
+							</div>
+						)}
+						{project.typo && (
+							<div
+								style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
+							>
+								<span style={{ color: "hsl(0, 0%, 50%)" }}>Typography</span>
+								<div className={styles["project-page__typo-container"]}>
+									<img src={project.typo} alt="" />
+								</div>
+							</div>
+						)}
+					</div>
 					{project.desc && (
-						<div>
+						<div
+							style={{
+								marginBottom: 10,
+								display: "flex",
+								flexDirection: "column",
+								rowGap: 10,
+							}}
+						>
 							<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
 							<p>{project.desc}</p>
 						</div>

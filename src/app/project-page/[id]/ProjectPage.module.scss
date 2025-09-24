@@ -31,16 +31,23 @@
 	transition: all 2s cubic-bezier(0.75, 0.5, 0.25, 1);
 }
 
+.project-page__palette-typo-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	margin: 10px 0;
+}
+
 .palette {
 	display: flex;
 	gap: 10px;
-	margin: 10px 0;
+	height: 100%;
+	width: auto;
 }
 
 .palette__color {
 	position: relative;
 	flex-grow: 1;
-	min-height: 400px;
 	border-radius: 15px;
 	transition: all 0.3s;
 
@@ -78,6 +85,11 @@
 	}
 }
 
+.project-page__typo-container {
+	border-radius: 15px;
+	overflow: hidden;
+}
+
 .project-page__link {
 	background: var(--accent-clr);
 	padding: 5px;
@@ -103,5 +115,13 @@
 	.project-page__img-grid {
 		grid-template-columns: repeat(1, 1fr);
 		gap: 10px;
+	}
+
+	.project-page__palette-typo-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.palette {
+		height: 300px;
 	}
 }

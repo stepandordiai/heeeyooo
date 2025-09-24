@@ -18,7 +18,8 @@
 			{ "value": "#619D29", "name": "Dark Green" },
 			{ "value": "#FEB8D2", "name": "Sakura Pink" },
 			{ "value": "#FF7AAB", "name": "Dark Pink" }
-		]
+		],
+		"typo": "/pixel-flower-typography-2560-1440-v1.png"
 	},
 	{
 		"id": "yolk",
