@@ -19,7 +19,7 @@
 			{ "value": "#FEB8D2", "name": "Sakura Pink" },
 			{ "value": "#FF7AAB", "name": "Dark Pink" }
 		],
-		"typo": "/pixel-flower-typography-2560-1440-v1.png"
+		"typo": "/typo/pixel-flower-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "yolk",
@@ -90,7 +90,8 @@
 			{ "value": "#e1e1e1", "name": "Concrete White" },
 			{ "value": "#f4f3ed", "name": "Smoke White" },
 			{ "value": "#f4f3ed", "name": "Bone White" }
-		]
+		],
+		"typo": "/typo/flovas-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "fve-stavby",
@@ -112,7 +113,8 @@
 		"palette": [
 			{ "value": "#c3f272", "name": "Eco Green" },
 			{ "value": "#ffffff", "name": "White" }
-		]
+		],
+		"typo": "/typo/fve-stavby-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "bourek",
@@ -147,7 +149,8 @@
 			{ "value": "#7FD2C8", "name": "Mint Blue" },
 			{ "value": "#FFFFFF", "name": "White" },
 			{ "value": "#ebfbf4", "name": "Aqua Blue" }
-		]
+		],
+		"typo": "/typo/prozubik-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "heeeyooo-studio",
@@ -179,7 +182,8 @@
 			{ "value": "#ffffff", "name": "White" },
 			{ "value": "#c8dd13", "name": "Nature Green" },
 			{ "value": "#ff9e93", "name": "Berry Red" }
-		]
+		],
+		"typo": "/typo/yagoda-karpat-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "tasty-burger",
@@ -203,7 +207,8 @@
 			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-8-c.png",
 			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-9-c.png"
 		],
-		"siteUrl": "https://stepandordiai.netlify.app/"
+		"siteUrl": "https://stepandordiai.netlify.app/",
+		"typo": "/typo/stepan-dordiai-typography-2560-1440-v1-c.png"
 	},
 	{
 		"id": "cloud",
