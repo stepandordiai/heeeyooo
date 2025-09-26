@@ -3,9 +3,9 @@ import works from "./data/work-data.json";
 import Head from "next/head";
 import Link from "next/link";
 import Services from "./components/Services/Services";
-import styles from "./page.module.scss";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
+import styles from "./page.module.scss";
 
 interface WorkData {
 	id: string;
@@ -31,59 +31,60 @@ const Home = () => {
 			</Head>
 			<main className={styles.home}>
 				<Container>
-					<div className={styles["home-top"]}>
-						<div className={styles["construction"]}>
-							<WordLine text="Website under construction" />
+					<div className={styles["home-inner"]}>
+						<div className={styles["home-top"]}>
+							<div className={styles["construction"]}>
+								<WordLine text="Website under construction" />
+							</div>
+							<h1 className={styles["home__title"]}>
+								<WordLine text="Creative web design & development agency" />
+							</h1>
+							<div
+								className={styles["home__desc"]}
+								style={{ color: "hsl(0,0%,50%)" }}
+							>
+								<WordLine text="We create modern websites, landing pages, and online stores that work fast, look great, and grow your business." />
+							</div>
 						</div>
-						<h1 className={styles["home__title"]}>
-							<WordLine text="Creative web design & development agency" />
-						</h1>
-						<div
-							className={styles["home__desc"]}
-							style={{ color: "hsl(0,0%,50%)" }}
-						>
-							<WordLine text="We create modern websites, landing pages, and online stores that work fast, look great, and grow your business." />
+						<div>
+							<h2 className={styles["featured-work__title"]}>
+								<WordLine text="Featured work" />
+							</h2>
+							<div style={{ marginTop: 20, marginBottom: 20 }}>
+								<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
+							</div>
+							<div className={styles["home__works"]}>
+								{workData
+									.filter((project) => project.isFeatured)
+									.map((project) => {
+										return (
+											<Link
+												data-cursor-text="See more"
+												key={project.id}
+												className={`${styles["home__work"]} ${styles["rect-animate"]}`}
+												href={`/project-page/${project.id}`}
+											>
+												<img
+													className={styles["home__work-img"]}
+													src={project.img[0]}
+													alt=""
+												/>
+												<div className={styles["home__work-details"]}>
+													<p className={styles["home__work-name"]}>
+														{project.name}
+													</p>
+													<p className={styles["home__work-date"]}>
+														{project.date}
+													</p>
+												</div>
+											</Link>
+										);
+									})}
+							</div>
 						</div>
-					</div>
-					<div>
-						<h2 className={styles["featured-work__title"]}>
-							<WordLine text="Featured work" />
-						</h2>
-						<div style={{ marginTop: 20, marginBottom: 20 }}>
-							<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
-						</div>
-						<div className={styles["home__works"]}>
-							{workData
-								.filter((project) => project.isFeatured)
-								.map((project) => {
-									return (
-										<Link
-											data-cursor-text="See more"
-											key={project.id}
-											className={`${styles["home__work"]} ${styles["rect-animate"]}`}
-											href={`/project-page/${project.id}`}
-										>
-											<img
-												className={styles["home__work-img"]}
-												src={project.img[0]}
-												alt=""
-											/>
-											<div className={styles["home__work-details"]}>
-												<p className={styles["home__work-name"]}>
-													{project.name}
-												</p>
-												<p className={styles["home__work-date"]}>
-													{project.date}
-												</p>
-											</div>
-										</Link>
-									);
-								})}
-						</div>
-					</div>
-					<Services />
-					<Technologies />
-					{/* <h2>Our process</h2>
+						<Services />
+						<Technologies />
+						{/* <h2>Our process</h2>
 				<p>Efficient, Transparent, and Custom-Tailored</p>
 				<p>
 					We follow a streamlined process to ensure your app is developed
@@ -123,6 +124,7 @@ const Home = () => {
 						</p>
 					</div>
 				</div> */}
+					</div>
 				</Container>
 			</main>
 		</>

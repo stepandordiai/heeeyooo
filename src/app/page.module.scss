@@ -1,14 +1,17 @@
 @use "./styles/mixins" as *;
 
 .home {
-	display: flex;
-	flex-direction: column;
-	row-gap: 90px;
 	padding: 0 20px;
 
 	h2 {
 		font-size: clamp(2rem, 4vw, 3rem) !important;
 	}
+}
+
+.home-inner {
+	display: flex;
+	flex-direction: column;
+	row-gap: 90px;
 }
 
 .home-top {
