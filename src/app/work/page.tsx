@@ -1,16 +1,13 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
-import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
 import { useEffect, useState } from "react";
 import isTouchDevice from "./../utils/isTouchDevice";
-// import { useParams } from "react-router-dom";
-// import { NavLink } from "react-router-dom";
-import styles from "./Work.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import works from "./../data/work-data.json";
 import Container from "../components/Container/Container";
+import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
+import styles from "./Work.module.scss";
 
 interface WorkData {
 	id: string;
@@ -28,10 +25,6 @@ interface WorkData {
 const workData: WorkData[] = works;
 
 const Work = () => {
-	// const { t } = useTranslation();
-
-	// const { lng } = useParams();
-
 	const [layout, setLayout] = useState("works__list");
 
 	function handleLayout(props: string) {
@@ -89,9 +82,7 @@ const Work = () => {
 				document.addEventListener("scroll", () => {
 					const workRect = work.getBoundingClientRect();
 					if (workRect.top < window.innerHeight) {
-						// setTimeout(() => {
 						work.classList.add(styles[`work--active`]);
-						// }, time + 75 * index);
 					}
 				});
 				const workRect = work.getBoundingClientRect();
@@ -176,8 +167,6 @@ const Work = () => {
 										data-cursor-inactive
 										className={styles.project}
 										href={`/project-page/${project.id}`}
-										// href={project.siteUrl}
-										// target="_blank"
 									>
 										<p className={styles["work__name"]}>{project.name}</p>
 										<div className={styles["work__desc"]}>
@@ -205,8 +194,6 @@ const Work = () => {
 										key={project.id}
 										className={styles["work__grid"]}
 										href={`/project-page/${project.id}`}
-										// href={project.siteUrl}
-										// target="_blank"
 									>
 										<img
 											className={styles["portfolio__img"]}
