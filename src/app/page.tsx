@@ -48,7 +48,7 @@ const Home = () => {
 						</div>
 						<div>
 							<h2 className={styles["featured-work__title"]}>
-								<WordLine text="Featured work" />
+								<WordLine text="Selected work" />
 							</h2>
 							<div style={{ marginTop: 20, marginBottom: 20 }}>
 								<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
