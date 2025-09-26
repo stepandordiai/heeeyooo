@@ -22,6 +22,17 @@
 	gap: 20px;
 }
 
+.project-page__img-wrapper {
+	width: 100%;
+	aspect-ratio: 1/1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
 .project-page__img {
 	clip-path: inset(50% 50% 50% 50%);
 }
@@ -96,15 +107,6 @@
 	border-radius: 10px;
 	min-width: 50px;
 	color: #000;
-}
-
-.project-page__img-wrapper {
-	width: 100%;
-	aspect-ratio: 1/1;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 @media screen and (width < 808px) {
