@@ -45,8 +45,19 @@
 		"id": "max-flow",
 		"name": "MaxFlow 360°",
 		"date": "June | 2025",
-		"img": ["/work-2560/max-flow-ss-2560-v1-c.png"],
-		"siteUrl": "https://maxflow.netlify.app/"
+		"img": [
+			"/work-2560/max-flow-ss-2560/max-flow-ss-2560-1-c.png",
+			"/work-2560/max-flow-ss-2560/max-flow-ss-2560-2-c.png",
+			"/work-2560/max-flow-ss-2560/max-flow-ss-2560-3-c.png",
+			"/work-2560/max-flow-ss-2560/max-flow-ss-2560-4-c.png"
+		],
+		"typo": "/typo/max-flow-typography-2560-1440-v1-c.png",
+		"siteUrl": "https://maxflow.netlify.app/",
+		"palette": [
+			{ "value": "#619FD6", "name": "Dark Blue" },
+			{ "value": "#000000", "name": "Black" },
+			{ "value": "#FFFFFF", "name": "White" }
+		]
 	},
 	{
 		"id": "shelfy",
@@ -65,8 +76,18 @@
 		"id": "kristian-yanko",
 		"name": "Kristian Yanko",
 		"date": "May | 2025",
-		"img": ["/work-2560/kristian-yanko-ss-2560-v1-c.png"],
-		"siteUrl": "https://kristianyanko.netlify.app/"
+		"img": [
+			"/work-2560/kristian-yanko-ss-2560/kristian-yanko-ss-2560-1-c.png",
+			"/work-2560/kristian-yanko-ss-2560/kristian-yanko-ss-2560-2-c.png",
+			"/work-2560/kristian-yanko-ss-2560/kristian-yanko-ss-2560-3-c.png",
+			"/work-2560/kristian-yanko-ss-2560/kristian-yanko-ss-2560-4-c.png"
+		],
+		"typo": "/typo/kristian-yanko-typography-2560-1440-v1-c.png",
+		"siteUrl": "https://kristianyanko.netlify.app/",
+		"palette": [
+			{ "value": "#FFFFFF", "name": "White" },
+			{ "value": "#000000", "name": "Black" }
+		]
 	},
 	{
 		"id": "flovas",
@@ -120,8 +141,22 @@
 		"id": "bourek",
 		"name": "Bourek",
 		"date": "January | 2025",
-		"img": ["/work-2560/bourek-ss-2560-v2-c.png"],
-		"siteUrl": "https://bourek.cz/"
+		"img": [
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-1-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-2-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-3-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-4-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-5-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-6-c.png",
+			"/work-2560/bourek-ss-2560/bourek-ss-2560-7-c.png"
+		],
+		"typo": "/typo/bourek-typography-2560-1440-v1-c.png",
+		"siteUrl": "https://bourek.cz/",
+		"palette": [
+			{ "value": "#28A1FF", "name": "Sky Blue" },
+			{ "value": "#0FEFCE", "name": "Neon Blue" },
+			{ "value": "#FFFFFF", "name": "White" }
+		]
 	},
 	{
 		"id": "neresen",
@@ -183,7 +218,8 @@
 			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-2-c.png",
 			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-3-c.png",
 			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-4-c.png",
-			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-5-c.png"
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-5-c.png",
+			"/work-2560/yagoda-karpat-ss-2560/yagoda-karpat-ss-2560-6-c.png"
 		],
 		"siteUrl": "https://yagodakarpat.com/",
 		"isFeatured": true,
@@ -214,11 +250,14 @@
 			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-5-c.png",
 			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-6-c.png",
 			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-7-c.png",
-			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-8-c.png",
-			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-9-c.png"
+			"/work-2560/stepan-dordiai-ss-2560/stepan-dordiai-ss-2560-8-c.png"
 		],
 		"siteUrl": "https://stepandordiai.netlify.app/",
-		"typo": "/typo/stepan-dordiai-typography-2560-1440-v1-c.png"
+		"typo": "/typo/stepan-dordiai-typography-2560-1440-v1-c.png",
+		"palette": [
+			{ "value": "#000000", "name": "Black" },
+			{ "value": "#FFFFFF", "name": "White" }
+		]
 	},
 	{
 		"id": "cloud",
