@@ -37,8 +37,15 @@ const ProjectPage = () => {
 
 	const currentProjectIndex = workData.indexOf(project as WorkData);
 
+	const prevProjectIndex =
+		currentProjectIndex > 0 ? currentProjectIndex - 1 : workData.length - 1;
+
 	const nexProjectIndex =
 		currentProjectIndex < workData.length - 1 ? currentProjectIndex + 1 : 0;
+
+	const nextProject = workData[nexProjectIndex];
+
+	const prevProject = workData[prevProjectIndex];
 
 	useEffect(() => {
 		const wrappersImg = document.querySelectorAll(
@@ -154,7 +161,7 @@ const ProjectPage = () => {
 							<p>{project.desc}</p>
 						</div>
 					)}
-					<div style={{ display: "flex", justifyContent: "space-between" }}>
+					<div>
 						<a
 							className={styles["project-page__link"]}
 							href={project.siteUrl}
@@ -162,12 +169,49 @@ const ProjectPage = () => {
 						>
 							Live site
 						</a>
-						<Link
-							className={styles["project-page__link"]}
-							href={`/project-page/${workData[nexProjectIndex].id}`}
-						>
-							Next Project
-						</Link>
+						<nav className={styles["project-page__nav"]}>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									rowGap: 10,
+									maxWidth: "256px",
+								}}
+							>
+								<Link
+									className={styles["project-page__link"]}
+									href={`/project-page/${workData[prevProjectIndex].id}`}
+								>
+									Previous Project
+								</Link>
+								<img
+									style={{ borderRadius: 10 }}
+									src={prevProject.img[0]}
+									alt=""
+								/>
+							</div>
+
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									rowGap: 10,
+									maxWidth: "256px",
+								}}
+							>
+								<Link
+									className={styles["project-page__link"]}
+									href={`/project-page/${workData[nexProjectIndex].id}`}
+								>
+									Next Project
+								</Link>
+								<img
+									style={{ borderRadius: 10 }}
+									src={nextProject.img[0]}
+									alt=""
+								/>
+							</div>
+						</nav>
 					</div>
 				</Container>
 			</main>
