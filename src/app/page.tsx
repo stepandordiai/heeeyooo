@@ -6,6 +6,7 @@ import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
 import styles from "./page.module.scss";
+import Image from "next/image";
 
 interface WorkData {
 	id: string;
@@ -48,7 +49,7 @@ const Home = () => {
 						</div>
 						<div>
 							<h2 className={styles["featured-work__title"]}>
-								<WordLine text="Selected work" />
+								<WordLine text="Featured work" />
 							</h2>
 							<div style={{ marginTop: 20, marginBottom: 20 }}>
 								<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
@@ -61,14 +62,18 @@ const Home = () => {
 											<Link
 												data-cursor-text="See more"
 												key={project.id}
-												className={`${styles["home__work"]} ${styles["rect-animate"]}`}
+												className={styles["home__work"]}
 												href={`/project-page/${project.id}`}
 											>
-												<img
-													className={styles["home__work-img"]}
-													src={project.img[0]}
-													alt=""
-												/>
+												<div className={styles["home__work-img-wrapper"]}>
+													<Image
+														className={styles["home__work-img"]}
+														src={project.img[0]}
+														width={2560}
+														height={2560}
+														alt={project.name}
+													/>
+												</div>
 												<div className={styles["home__work-details"]}>
 													<p className={styles["home__work-name"]}>
 														{project.name}
