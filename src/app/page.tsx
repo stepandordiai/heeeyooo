@@ -5,8 +5,8 @@ import Link from "next/link";
 import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
-import styles from "./page.module.scss";
 import Image from "next/image";
+import styles from "./page.module.scss";
 
 interface WorkData {
 	id: string;

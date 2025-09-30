@@ -7,8 +7,10 @@ import Head from "next/head";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./ProjectPage.module.scss";
 import Container from "@/app/components/Container/Container";
+import WordLine from "@/app/components/WordLine/WordLine";
+import PageNav from "@/app/components/PageNav/PageNav";
+import styles from "./ProjectPage.module.scss";
 
 interface WorkData {
 	id: string;
@@ -54,17 +56,16 @@ const ProjectPage = () => {
 
 		// remove all classes initially
 		wrappersImg.forEach((img) =>
-			img.classList.remove(styles["project-page__img-wrapper--active"])
+			img.classList.remove(styles["project-page__img--active"])
 		);
 
 		// TODO:
-
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						const img = entry.target;
-						img.classList.add(styles["project-page__img-wrapper--active"]);
+						img.classList.add(styles["project-page__img--active"]);
 					}
 				});
 			},
@@ -92,13 +93,10 @@ const ProjectPage = () => {
 			</Head>
 			<main className={styles["project-page"]}>
 				<Container>
-					<div style={{ marginBottom: 20 }}>
-						<Link className={styles["page-nav__link"]} href="/work">
-							All work
-						</Link>{" "}
-						&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Project</span>
+					<PageNav projectName={project.name} />
+					<div className={styles["project-page__title"]}>
+						<WordLine text={project.name} />
 					</div>
-					<h2 className={styles["project-page__title"]}>{project?.name}</h2>
 					<div className={styles["project-page__img-grid"]}>
 						{project.img.map((img, index) => {
 							return (

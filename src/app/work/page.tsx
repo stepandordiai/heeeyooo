@@ -7,6 +7,7 @@ import Link from "next/link";
 import works from "./../data/work-data.json";
 import Container from "../components/Container/Container";
 import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
+import PageNav from "../components/PageNav/PageNav";
 import styles from "./Work.module.scss";
 
 interface WorkData {
@@ -122,12 +123,7 @@ const Work = () => {
 			</Head>
 			<main className={styles.work}>
 				<Container>
-					<div style={{ marginBottom: 20 }}>
-						<Link className={styles["page-nav__link"]} href={`/`}>
-							Home
-						</Link>{" "}
-						&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Work</span>
-					</div>
+					<PageNav />
 					<div>
 						<p className={styles["work__sec-title"]}>
 							All works <span>{workData.length}</span>
