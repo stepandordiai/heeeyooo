@@ -27,11 +27,11 @@
 		"desc": "Yolk is a modern, user-friendly restaurant website designed to showcase the brand’s unique dining experience while providing customers with convenient online features. The platform highlights the restaurant’s menu, promotes daily specials, and allows customers to purchase meals and gift cards directly from the website.",
 		"date": "July | 2025",
 		"img": [
-			"/yolk-ss-2560-1-c.png",
-			"/work-2560/yolk-ss-2560-v1-c.png",
-			"/yolk-ss-2560-2-c.png",
-			"/yolk-ss-2560-3-c.png",
-			"/yolk-ss-2560-4-c.png"
+			"/work-2560/yolk-ss-2560/yolk-ss-2560-1-c.png",
+			"/work-2560/yolk-ss-2560/yolk-ss-2560-2-c.png",
+			"/work-2560/yolk-ss-2560/yolk-ss-2560-3-c.png",
+			"/work-2560/yolk-ss-2560/yolk-ss-2560-4-c.png",
+			"/work-2560/yolk-ss-2560/yolk-ss-2560-5-c.png"
 		],
 		"siteUrl": "https://yolk-project.netlify.app/",
 		"isFeatured": true,
@@ -64,7 +64,11 @@
 		"name": "Shelfy",
 		"desc": "Shelfy is a modern e-commerce platform designed to provide customers with affordable clothing options from multiple well-known and emerging fashion brands. The platform focuses on accessibility, affordability, and convenience, ensuring users can discover and purchase high-quality clothing at discounted prices.",
 		"date": "June | 2025",
-		"img": ["/shelfy-ss-2560-2-c.png", "/shelfy-ss-2560-1-c.png"],
+		"img": [
+			"/work-2560/shelfy-ss-2560/shelfy-ss-2560-1-c.png",
+			"/work-2560/shelfy-ss-2560/shelfy-ss-2560-2-c.png",
+			"/work-2560/shelfy-ss-2560/shelfy-ss-2560-3-c.png"
+		],
 		"siteUrl": "https://shelfy-project.netlify.app/",
 		"isFeatured": true,
 		"palette": [
@@ -202,9 +206,10 @@
 		"name": "heeeyooo studio",
 		"date": "April | 2025",
 		"img": [
-			"/heeeyooo-studio-ss-2560-2-c.png",
-			"/heeeyooo-studio-ss-2560-1-c.png",
-			"/heeeyooo-studio-ss-2560-3-c.png"
+			"/work-2560/heeeyooo-studio-ss-2560/heeeyooo-studio-ss-2560-1-c.png",
+			"/work-2560/heeeyooo-studio-ss-2560/heeeyooo-studio-ss-2560-2-c.png",
+			"/work-2560/heeeyooo-studio-ss-2560/heeeyooo-studio-ss-2560-3-c.png",
+			"/work-2560/heeeyooo-studio-ss-2560/heeeyooo-studio-ss-2560-4-c.png"
 		],
 		"siteUrl": "https://heeeyooo.studio/"
 	},
@@ -235,7 +240,7 @@
 		"id": "tasty-burger",
 		"name": "Tasty Burger",
 		"date": "October | 2024",
-		"img": ["/work-2560/tasty-burger-ss-2560-v1-c.png"],
+		"img": ["/work-2560/tasty-burger-ss-2560/tasty-burger-ss-2560-1-c.png"],
 		"siteUrl": "https://stepandordiai.github.io/tasty-burger/"
 	},
 	{
@@ -263,14 +268,17 @@
 		"id": "cloud",
 		"name": "cloud.",
 		"date": "September | 2024",
-		"img": ["/work-2560/cloud-ss-2560-v1-c.png"],
+		"img": [
+			"/work-2560/cloud-ss-2560/cloud-ss-2560-1-c.png",
+			"/work-2560/cloud-ss-2560/cloud-ss-2560-2-c.png"
+		],
 		"siteUrl": "https://cloud-project.netlify.app/"
 	},
 	{
 		"id": "penguin",
 		"name": "penguin",
 		"date": "September | 2024",
-		"img": ["/work-2560/penguin-ss-2560-v1-c.png"],
+		"img": ["/work-2560/penguin-ss-2560/penguin-ss-2560-1-c.png"],
 		"siteUrl": "https://penguin-project.netlify.app/"
 	}
 ]
