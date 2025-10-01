@@ -2,7 +2,7 @@
 // I also have to specify postbuild: next-sitemap in package.json
 // next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
-const siteUrl = "https://heeeyooo.studio"; // замініть на ваш домен
+const siteUrl = "https://www.heeeyooo.studio"; // замініть на ваш домен
 
 const config = {
 	siteUrl,

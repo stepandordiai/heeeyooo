@@ -119,7 +119,7 @@ const Work = () => {
 		<>
 			<Head>
 				<title>Work &bull; heeeyooo studio</title>
-				<link rel="canonical" href="https://heeeyooo.studio/work" />
+				<link rel="canonical" href="https://www.heeeyooo.studio/work" />
 			</Head>
 			<main className={styles.work}>
 				<Container>

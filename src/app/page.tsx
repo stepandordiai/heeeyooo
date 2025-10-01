@@ -28,7 +28,7 @@ const Home = () => {
 		<>
 			<Head>
 				<title>Creative web studio | heeeyooo studio</title>
-				<link rel="canonical" href="https://heeeyooo.studio/" />
+				<link rel="canonical" href="https://www.heeeyooo.studio/" />
 			</Head>
 			<main className={styles.home}>
 				<Container>

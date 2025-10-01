@@ -71,7 +71,7 @@ const Contacts = () => {
 		<>
 			<Head>
 				<title>Contacts &bull; heeeyooo studio</title>
-				<link rel="canonical" href="https://heeeyooo.studio/contacts" />
+				<link rel="canonical" href="https://www.heeeyooo.studio/contacts" />
 			</Head>
 			<main className={styles.contacts}>
 				<Container>

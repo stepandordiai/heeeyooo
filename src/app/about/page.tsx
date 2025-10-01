@@ -8,7 +8,7 @@ const About = () => {
 		<>
 			<Head>
 				<title>About | heeeyooo studio</title>
-				<link rel="canonical" href="https://heeeyooo.studio/about" />
+				<link rel="canonical" href="https://www.heeeyooo.studio/about" />
 			</Head>
 			<main className={styles.about}>
 				<Container>
