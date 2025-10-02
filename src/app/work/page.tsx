@@ -162,7 +162,7 @@ const Work = () => {
 										key={project.id}
 										data-cursor-inactive
 										className={styles.project}
-										href={`/project-page/${project.id}`}
+										href={`/work/${project.id}`}
 									>
 										<p className={styles["work__name"]}>{project.name}</p>
 										<div className={styles["work__desc"]}>
@@ -189,7 +189,7 @@ const Work = () => {
 									<Link
 										key={project.id}
 										className={styles["work__grid"]}
-										href={`/project-page/${project.id}`}
+										href={`/work/${project.id}`}
 									>
 										<img
 											className={styles["portfolio__img"]}

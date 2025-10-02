@@ -30,10 +30,8 @@ interface WorkData {
 const workData: WorkData[] = works;
 
 const ProjectPage = () => {
-	const params = useParams();
+	const { id } = useParams();
 	const pathname = usePathname();
-
-	const id = params.id;
 
 	const project = workData.find((project) => project.id === id);
 
@@ -178,7 +176,7 @@ const ProjectPage = () => {
 							>
 								<Link
 									className={styles["project-page__link"]}
-									href={`/project-page/${workData[prevProjectIndex].id}`}
+									href={`/work/${workData[prevProjectIndex].id}`}
 								>
 									Previous Project
 								</Link>
@@ -199,7 +197,7 @@ const ProjectPage = () => {
 							>
 								<Link
 									className={styles["project-page__link"]}
-									href={`/project-page/${workData[nexProjectIndex].id}`}
+									href={`/work/${workData[nexProjectIndex].id}`}
 								>
 									Next Project
 								</Link>

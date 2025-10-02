@@ -63,7 +63,7 @@ const Home = () => {
 												data-cursor-text="See more"
 												key={project.id}
 												className={styles["home__work"]}
-												href={`/project-page/${project.id}`}
+												href={`/work/${project.id}`}
 											>
 												<div className={styles["home__work-img-wrapper"]}>
 													<Image
