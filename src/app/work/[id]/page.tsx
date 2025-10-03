@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 	};
 }
 
-const ProjectPage = ({ params }: { params: { id: string } }) => {
+const ProjectPage = ({ params }: Params) => {
 	const project: WorkData | undefined = workData.find(
 		(project) => project.id === params.id
 	);
