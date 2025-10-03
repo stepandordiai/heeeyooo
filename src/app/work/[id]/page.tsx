@@ -3,6 +3,7 @@ import workData from "./../../data/work-data.json";
 import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
 import styles from "./ProjectPage.module.scss";
+import { notFound } from "next/navigation";
 
 interface WorkData {
 	id: string;
@@ -41,7 +42,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 		(project) => project.id === params.id
 	);
 
-	if (!project) return <p>Project not found</p>;
+	if (!project) return notFound();
 
 	// TODO: better to use here findIndex instead of indexOf
 	const currentProjectIndex = workData.findIndex(
