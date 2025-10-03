@@ -14,8 +14,7 @@ const chakraPetch = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-	title: "Creative web design & development agency | heeeyooo studio",
-	description: "...",
+	title: "Creative web design & development agency • heeeyooo studio",
 };
 
 export default function RootLayout({
