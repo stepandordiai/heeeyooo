@@ -1,5 +1,5 @@
 // TODO: word "type" specifies that i only import type not an object
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
@@ -13,9 +13,9 @@ const chakraPetch = Chakra_Petch({
 	variable: "--font-chakra-petch",
 });
 
-// export const metadata: Metadata = {
-// 	title: "Creative web design & development agency • heeeyooo studio",
-// };
+export const metadata: Metadata = {
+	title: "Creative web design & development agency • heeeyooo studio",
+};
 
 export default function RootLayout({
 	children,
