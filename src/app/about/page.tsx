@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "../components/Container/Container";
+import PageNav from "../components/PageNav/PageNav";
 import styles from "./About.module.scss";
 
 export const metadata: Metadata = {
@@ -14,12 +14,7 @@ const About = () => {
 	return (
 		<main className={styles.about}>
 			<Container>
-				<div style={{ marginBottom: 20 }}>
-					<Link className={styles["page-nav__link"]} href="/">
-						Home
-					</Link>{" "}
-					&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>About</span>
-				</div>
+				<PageNav pageName="About" />
 				<p>Page under construction</p>
 			</Container>
 		</main>

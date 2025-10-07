@@ -15,7 +15,7 @@ const Work = () => {
 	return (
 		<main className={styles.work}>
 			<Container>
-				<PageNav />
+				<PageNav pageName="Work" />
 				<WorkClient />
 			</Container>
 		</main>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 // import { useEffect } from "react";
-import Link from "next/link";
 import Container from "../components/Container/Container";
+import PageNav from "../components/PageNav/PageNav";
 import styles from "./Contacts.module.scss";
 
 export const metadata: Metadata = {
@@ -76,12 +76,7 @@ const Contacts = () => {
 	return (
 		<main className={styles.contacts}>
 			<Container>
-				<div style={{ marginBottom: 20 }}>
-					<Link className={styles["page-nav__link"]} href="/">
-						Home
-					</Link>{" "}
-					&bull; <span style={{ color: "hsl(0, 0%, 50%)" }}>Contacts</span>
-				</div>
+				<PageNav pageName="Contacts" />
 				<div className={styles["contacts__inner"]}>
 					<div className={styles["contacts__container"]}>
 						<a

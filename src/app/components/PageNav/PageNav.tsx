@@ -2,10 +2,11 @@ import styles from "./PageNav.module.scss";
 import Link from "next/link";
 
 interface PageNavProps {
+	pageName: string;
 	projectName?: string;
 }
 
-const PageNav = ({ projectName }: PageNavProps) => {
+const PageNav = ({ pageName, projectName }: PageNavProps) => {
 	return (
 		<>
 			<div style={{ marginBottom: 20 }}>
@@ -13,9 +14,13 @@ const PageNav = ({ projectName }: PageNavProps) => {
 					Home
 				</Link>{" "}
 				&bull;{" "}
-				<Link className={styles["page-nav__link"]} href="/work">
-					Work
-				</Link>
+				{projectName ? (
+					<Link className={styles["page-nav__link"]} href="/work">
+						{pageName}
+					</Link>
+				) : (
+					<span style={{ color: "hsl(0, 0%, 50%)" }}>{pageName}</span>
+				)}
 				{projectName && (
 					<>
 						{" "}

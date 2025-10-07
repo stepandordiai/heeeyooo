@@ -30,3 +30,15 @@ body {
 a {
 	color: #fff;
 }
+
+.not-found {
+	position: relative;
+	height: 100svh;
+	padding: 20px;
+}
+
+@media screen and (width < 808px) {
+	.not-found {
+		padding: 10px;
+	}
+}

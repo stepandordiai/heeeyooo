@@ -68,8 +68,7 @@ const ProjectPageClient = ({ project, prevProject, nextProject }: Props) => {
 
 	return (
 		<>
-			<PageNav projectName={project.name} />
-
+			<PageNav pageName="Work" projectName={project.name} />
 			<div className={styles["project-page__title"]}>
 				<WordLine text={project.name} />
 			</div>
