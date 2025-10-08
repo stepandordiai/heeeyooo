@@ -176,13 +176,16 @@ const WorkClient = () => {
 								key={project.id}
 								className={styles["work__grid"]}
 								href={`/work/${project.id}`}
+								data-cursor-text="See more"
 							>
-								<img
-									className={styles["portfolio__img"]}
-									src={project.img[0]}
-									alt={project.name}
-									loading="lazy"
-								/>
+								<div className={styles["work__img-container"]}>
+									<img
+										className={styles["portfolio__img"]}
+										src={project.img[0]}
+										alt={project.name}
+										loading="lazy"
+									/>
+								</div>
 								<div className={styles["work__details-grid"]}>
 									<p className={styles["work__name"]}>{project.name}</p>
 									<img width={20} height={20} src={arrowIcon.src} alt="" />
