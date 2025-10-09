@@ -5,6 +5,7 @@ import isTouchDevice from "../utils/isTouchDevice";
 import Link from "next/link";
 import workData from "../data/work-data.json";
 import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
+import Image from "next/image";
 import styles from "./Work.module.scss";
 
 interface WorkData {
@@ -179,11 +180,12 @@ const WorkClient = () => {
 								data-cursor-text="See more"
 							>
 								<div className={styles["work__img-container"]}>
-									<img
+									<Image
 										className={styles["portfolio__img"]}
 										src={project.img[0]}
+										width={2560}
+										height={2560}
 										alt={project.name}
-										loading="lazy"
 									/>
 								</div>
 								<div className={styles["work__details-grid"]}>
