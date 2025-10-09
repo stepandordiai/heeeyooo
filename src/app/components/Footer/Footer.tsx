@@ -22,7 +22,7 @@ const Footer = () => {
 							className={
 								pathname === "/" ? activeFooterLink : inactiveFooterLink
 							}
-							href={`/`}
+							href="/"
 						>
 							Home
 						</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
 							className={
 								pathname === "/about" ? activeFooterLink : inactiveFooterLink
 							}
-							href={`/about`}
+							href="/about"
 						>
 							About
 						</Link>
@@ -38,7 +38,7 @@ const Footer = () => {
 							className={
 								pathname === "/work" ? activeFooterLink : inactiveFooterLink
 							}
-							href={`/work`}
+							href="/work"
 						>
 							Work
 						</Link>
@@ -46,7 +46,7 @@ const Footer = () => {
 							className={
 								pathname === "/contacts" ? activeFooterLink : inactiveFooterLink
 							}
-							href={`/contacts`}
+							href="/contacts"
 						>
 							Contacts
 						</Link>
