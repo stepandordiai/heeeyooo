@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import workData from "./../../data/work-data.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import styles from "./Header.module.scss";
 
-const Header = () => {
+type HeaderProps = {
+	workDataLength: number;
+};
+
+const Header = ({ workDataLength }: HeaderProps) => {
 	// TODO:
 	const pathname = usePathname();
 
@@ -103,9 +106,7 @@ const Header = () => {
 						href="/work"
 					>
 						<span>Work</span>
-						<span className={styles["header__work-qty"]}>
-							{workData.length}
-						</span>
+						<span className={styles["header__work-qty"]}>{workDataLength}</span>
 					</Link>
 					<Link
 						className={pathname === "/contacts" ? activeLink : inactiveLink}
@@ -164,7 +165,7 @@ const Header = () => {
 							href="/work"
 						>
 							<span>Work</span>
-							<span className="work-qty">{workData.length}</span>
+							<span className={styles["work-qty"]}>{workDataLength}</span>
 						</Link>
 					</div>
 					<div className={styles["menu__nav-item"]}>

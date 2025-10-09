@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import WordLine from "./components/WordLine/WordLine";
-import works from "./data/work-data.json";
 import Link from "next/link";
 import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
@@ -28,9 +27,18 @@ interface WorkData {
 	}[];
 }
 
-const workData: WorkData[] = works;
+// TODO:
+const Home = async () => {
+	const url = "https://api.jsonsilo.com/7e780e1a-7722-49d8-8a68-c1c31e75cf74";
+	const headers = {
+		"X-SILO-KEY": "crj7ApdJAqcBXnnuSVNoBIBi8VrjBIRImNwtyJPtdk",
+		"Content-Type": "application/json",
+	};
 
-const Home = () => {
+	// TODO:
+	const response = await fetch(url, { headers });
+	const workData: WorkData[] = await response.json();
+
 	return (
 		<main className={styles.home}>
 			<Container>

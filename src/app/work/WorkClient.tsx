@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import isTouchDevice from "../utils/isTouchDevice";
 import Link from "next/link";
-import workData from "../data/work-data.json";
 import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
 import Image from "next/image";
 import styles from "./Work.module.scss";
@@ -21,9 +20,12 @@ interface WorkData {
 	}[];
 }
 
-const work: WorkData[] = workData;
+// TODO:
+type WorkClientProps = {
+	workData: WorkData[];
+};
 
-const WorkClient = () => {
+const WorkClient = ({ workData }: WorkClientProps) => {
 	const [layout, setLayout] = useState("works__list");
 
 	function handleLayout(props: string) {
@@ -116,7 +118,7 @@ const WorkClient = () => {
 		<>
 			<div>
 				<p className={styles["work__sec-title"]}>
-					All works <span>{work.length}</span>
+					All works <span>{workData.length}</span>
 				</p>
 			</div>
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
@@ -143,7 +145,7 @@ const WorkClient = () => {
 			</div>
 			{layout === "works__list" && (
 				<div className={layout}>
-					{work.map((project) => {
+					{workData.map((project) => {
 						return (
 							<Link
 								key={project.id}
@@ -171,7 +173,7 @@ const WorkClient = () => {
 			)}
 			{layout === "works__grid" && (
 				<div className={styles[layout]}>
-					{work.map((project) => {
+					{workData.map((project) => {
 						return (
 							<Link
 								key={project.id}
