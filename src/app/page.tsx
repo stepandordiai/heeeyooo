@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 
 // TODO:
 const Home = async () => {
-	const url = "https://api.jsonsilo.com/7e780e1a-7722-49d8-8a68-c1c31e75cf74";
+	const url = process.env.API_URL!;
 	const headers = {
-		"X-SILO-KEY": "crj7ApdJAqcBXnnuSVNoBIBi8VrjBIRImNwtyJPtdk",
+		"X-SILO-KEY": process.env.API_KEY!,
 		"Content-Type": "application/json",
 	};
 
