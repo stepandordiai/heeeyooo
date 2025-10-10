@@ -5,6 +5,7 @@ import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
 import Image from "next/image";
+import { Project } from "./interfaces/Project";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
@@ -13,19 +14,6 @@ export const metadata: Metadata = {
 		canonical: "https://www.heeeyooo.studio/",
 	},
 };
-
-interface WorkData {
-	id: string;
-	name: string;
-	date: string;
-	img: string[];
-	siteUrl: string;
-	isFeatured?: boolean;
-	palette?: {
-		value: string;
-		name: string;
-	}[];
-}
 
 // TODO:
 const Home = async () => {
@@ -37,7 +25,7 @@ const Home = async () => {
 
 	// TODO:
 	const response = await fetch(url, { headers });
-	const workData: WorkData[] = await response.json();
+	const workData: Project[] = await response.json();
 
 	return (
 		<main className={styles.home}>

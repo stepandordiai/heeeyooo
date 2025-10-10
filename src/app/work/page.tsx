@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "../components/Container/Container";
 import PageNav from "../components/PageNav/PageNav";
 import WorkClient from "./WorkClient";
+import { Project } from "../interfaces/Project";
 import styles from "./Work.module.scss";
 
 export const metadata: Metadata = {
@@ -10,19 +11,6 @@ export const metadata: Metadata = {
 		canonical: "https://www.heeeyooo.studio/work",
 	},
 };
-
-interface WorkData {
-	id: string;
-	name: string;
-	date: string;
-	img: string[];
-	siteUrl: string;
-	isFeatured?: boolean;
-	palette?: {
-		value: string;
-		name: string;
-	}[];
-}
 
 // TODO:
 const Work = async () => {
@@ -34,7 +22,7 @@ const Work = async () => {
 
 	// TODO:
 	const response = await fetch(url, { headers });
-	const workData: WorkData[] = await response.json();
+	const workData: Project[] = await response.json();
 
 	return (
 		<main className={styles.work}>

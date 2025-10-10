@@ -5,19 +5,8 @@ import Link from "next/link";
 import WordLine from "@/app/components/WordLine/WordLine";
 import PageNav from "@/app/components/PageNav/PageNav";
 import { notFound } from "next/navigation";
+import { Project } from "@/app/interfaces/Project";
 import styles from "./ProjectPage.module.scss";
-
-interface WorkData {
-	id: string;
-	name: string;
-	desc?: string;
-	date: string;
-	img: string[];
-	siteUrl: string;
-	isFeatured?: boolean;
-	palette?: { value: string; name: string }[];
-	typo?: string;
-}
 
 // TODO:
 const url = "https://api.jsonsilo.com/7e780e1a-7722-49d8-8a68-c1c31e75cf74";
@@ -27,7 +16,7 @@ const headers = {
 };
 
 // TODO:
-const getWorkData = async (): Promise<WorkData[]> => {
+const getWorkData = async (): Promise<Project[]> => {
 	const response = await fetch(url, { headers });
 	return response.json();
 };
