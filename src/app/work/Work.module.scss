@@ -79,48 +79,6 @@
 	}
 }
 
-.work__grid {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	cursor: none;
-}
-
-.work__img-container {
-	overflow: hidden;
-	border-radius: 10px;
-}
-
-.portfolio__img {
-	transition: transform 0.5s ease;
-
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
-.work__details {
-	@include flex-start-center;
-	gap: 5px;
-}
-
-.work__details-grid {
-	@include flex-between-center;
-}
-
-.work__icon {
-	border-radius: 50%;
-}
-
-.project__link {
-	margin-left: auto;
-	transition: color 0.3s;
-
-	&:hover {
-		color: hsl(0, 0%, 50%);
-	}
-}
-
 .work__desc {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

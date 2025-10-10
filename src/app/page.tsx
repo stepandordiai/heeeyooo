@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import WordLine from "./components/WordLine/WordLine";
-import Link from "next/link";
 import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
-import Image from "next/image";
 import { Project } from "./interfaces/Project";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
@@ -55,34 +54,9 @@ const Home = async () => {
 						<div className={styles["home__works"]}>
 							{workData
 								.filter((project) => project.isFeatured)
-								.map((project) => {
-									return (
-										<Link
-											data-cursor-text="See more"
-											key={project.id}
-											className={styles["home__work"]}
-											href={`/work/${project.id}`}
-										>
-											<div className={styles["home__work-img-wrapper"]}>
-												<Image
-													className={styles["home__work-img"]}
-													src={project.img[0]}
-													width={2560}
-													height={2560}
-													alt={project.name}
-												/>
-											</div>
-											<div className={styles["home__work-details"]}>
-												<p className={styles["home__work-name"]}>
-													{project.name}
-												</p>
-												<p className={styles["home__work-date"]}>
-													{project.date}
-												</p>
-											</div>
-										</Link>
-									);
-								})}
+								.map((project) => (
+									<ProjectCard key={project.id} project={project} />
+								))}
 						</div>
 					</div>
 					<Services />

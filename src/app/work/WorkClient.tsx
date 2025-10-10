@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import isTouchDevice from "../utils/isTouchDevice";
 import Link from "next/link";
-import arrowIcon from "./../../../public/icons/arrow-upper-right.png";
-import Image from "next/image";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 import styles from "./Work.module.scss";
 
 interface WorkData {
@@ -173,30 +172,9 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 			)}
 			{layout === "works__grid" && (
 				<div className={styles[layout]}>
-					{workData.map((project) => {
-						return (
-							<Link
-								key={project.id}
-								className={styles["work__grid"]}
-								href={`/work/${project.id}`}
-								data-cursor-text="See more"
-							>
-								<div className={styles["work__img-container"]}>
-									<Image
-										className={styles["portfolio__img"]}
-										src={project.img[0]}
-										width={2560}
-										height={2560}
-										alt={project.name}
-									/>
-								</div>
-								<div className={styles["work__details-grid"]}>
-									<p className={styles["work__name"]}>{project.name}</p>
-									<img width={20} height={20} src={arrowIcon.src} alt="" />
-								</div>
-							</Link>
-						);
-					})}
+					{workData.map((project) => (
+						<ProjectCard key={project.id} project={project} />
+					))}
 				</div>
 			)}
 		</>

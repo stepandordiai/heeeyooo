@@ -55,42 +55,6 @@
 	gap: 20px;
 }
 
-.home__work {
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	cursor: none;
-}
-
-.home__work-img-wrapper {
-	overflow: hidden;
-	border-radius: 10px;
-}
-
-.home__work-img {
-	transition: transform 0.5s ease;
-
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
-.home__work-details {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-}
-
-.home__work-icon {
-	border-radius: 50%;
-}
-
-.home__work-date {
-	margin-left: auto;
-	color: hsl(0, 0%, 50%);
-}
-
 .bg-element {
 	position: absolute;
 	width: 0;
