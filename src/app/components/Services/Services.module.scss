@@ -33,6 +33,105 @@
 	max-width: 50%;
 }
 
+.portfolio__btn-container {
+	// @include flex-start-center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+	background: rgba(255, 255, 255, 0.15);
+	width: max-content;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 20px 0;
+}
+
+.portfolio__btn {
+	padding: 5px;
+	min-width: 50px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.portfolio__btn--active {
+	background: var(--accent-clr) !important;
+	color: black !important;
+}
+
+// TODO:
+// @property --percentage {
+// 	syntax: "<percentage>";
+// 	inherits: false;
+// 	initial-value: 0%;
+// }
+
+.circles-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 10px;
+	margin-top: 10px;
+	justify-content: space-between;
+
+	span {
+		font-size: 0.8rem;
+		text-align: center;
+		margin-top: 10px;
+	}
+}
+
+.circle {
+	position: relative;
+	width: 100%;
+	max-width: 100px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: conic-gradient(
+		var(--accent-clr) var(--value),
+		var(--accent-clr-semi-tp) 0
+	);
+
+	&::before {
+		content: attr(data-value);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #000;
+		width: calc(100% - 10px);
+		aspect-ratio: 1/1;
+		border-radius: inherit;
+	}
+}
+
+// .circle {
+// 	animation: animateCircle 2s forwards;
+// }
+
+// @keyframes animateCircle {
+// 	0% {
+// 		--percentage: 0%;
+// 	}
+
+// 	100% {
+// 		--percentage: 92%;
+// 	}
+// }
+
 @media screen and (width < 808px) {
 	.service {
 		flex-direction: column;

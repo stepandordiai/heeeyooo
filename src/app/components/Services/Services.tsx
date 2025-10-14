@@ -1,10 +1,12 @@
 "use client";
 
 import WordLine from "../WordLine/WordLine";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Services.module.scss";
 
 const Services = () => {
+	const [device, setDevice] = useState("mobile");
+
 	useEffect(() => {
 		const dividers = document.querySelectorAll(
 			`.${styles["service__divider"]}`
@@ -59,6 +61,163 @@ const Services = () => {
 					</div>
 					<div className={styles["service__desc"]}>
 						<WordLine text="Ensure your website is always fast, secure, and accessible with our professional web hosting services. We provide high-performance hosting, secure servers, and 99.9% uptime, giving your website the stability it needs to grow your business online." />
+					</div>
+				</div>
+				<div className={styles["service__divider"]}></div>
+				<div className={styles["service"]}>
+					<div className={styles["service__title"]}>
+						<WordLine text="Website Optimization" />
+					</div>
+					<div className={styles["service__desc"]}>
+						<WordLine text="A fast website means better user experience, higher rankings, and more conversions. We specialize in making websites load instantly and run smoothly — across all devices." />
+						<div style={{ marginTop: 10 }}>
+							<p>Performance based on current website</p>
+							<div
+								className={styles["portfolio__btn-container"]}
+								data-cursor-inactive
+							>
+								<button
+									className={
+										device === "mobile"
+											? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
+											: styles["portfolio__btn"]
+									}
+									onClick={() => setDevice("mobile")}
+								>
+									<span>Mobile</span>
+								</button>
+								<button
+									className={
+										device === "desktop"
+											? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
+											: styles["portfolio__btn"]
+									}
+									onClick={() => setDevice("desktop")}
+								>
+									<span>Desktop</span>
+								</button>
+							</div>
+							{device === "mobile" && (
+								<div className={styles["circles-container"]}>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "77%" } as React.CSSProperties}
+											data-value={77}
+										></div>
+										<span>Performance</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "90%" } as React.CSSProperties}
+											data-value={90}
+										></div>
+										<span>Accessibility</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "100%" } as React.CSSProperties}
+											data-value={100}
+										></div>
+										<span>Best Practices</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "92%" } as React.CSSProperties}
+											data-value={92}
+										></div>
+										<span>SEO</span>
+									</div>
+								</div>
+							)}
+							{device === "desktop" && (
+								<div className={styles["circles-container"]}>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "81%" } as React.CSSProperties}
+											data-value={81}
+										></div>
+										<span>Performance</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "90%" } as React.CSSProperties}
+											data-value={90}
+										></div>
+										<span>Accessibility</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "100%" } as React.CSSProperties}
+											data-value={100}
+										></div>
+										<span>Best Practices</span>
+									</div>
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+										}}
+									>
+										<div
+											className={styles["circle"]}
+											style={{ "--value": "92%" } as React.CSSProperties}
+											data-value={92}
+										></div>
+										<span>SEO</span>
+									</div>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 				<div className={styles["service__divider"]}></div>
