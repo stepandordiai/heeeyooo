@@ -17,7 +17,7 @@ const headers = {
 
 // TODO:
 const getWorkData = async (): Promise<Project[]> => {
-	const response = await fetch(url, { headers });
+	const response = await fetch(url, { headers, next: { revalidate: 60 } });
 	return response.json();
 };
 

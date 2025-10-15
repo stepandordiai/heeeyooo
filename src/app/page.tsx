@@ -23,7 +23,7 @@ const Home = async () => {
 	};
 
 	// TODO:
-	const response = await fetch(url, { headers });
+	const response = await fetch(url, { headers, next: { revalidate: 60 } });
 	const workData: Project[] = await response.json();
 
 	return (
