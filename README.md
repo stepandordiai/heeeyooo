@@ -1,3 +1,5 @@
 # heeeyooo studio
 
-<img src="./public/ss/heeeyooo-studio-ss-v4-c.png" alt=""/>
+April 2025
+
+![heeeyooo studio hero screenshot](./public/ss/heeeyooo-studio-ss-v4-c.png)
