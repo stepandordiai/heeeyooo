@@ -18,6 +18,22 @@
 	margin: 20px 0;
 }
 
+.float-image-container {
+	position: fixed;
+	z-index: 1000;
+	border-radius: 10px;
+	width: 400px;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+	pointer-events: none;
+
+	div {
+		// display: flex;
+		// flex-direction: column;
+		height: 100%;
+	}
+}
+
 .portfolio__btn {
 	padding: 5px;
 	min-width: 50px;

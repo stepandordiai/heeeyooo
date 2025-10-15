@@ -1,120 +1,83 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import isTouchDevice from "../utils/isTouchDevice";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import styles from "./Work.module.scss";
-
-interface WorkData {
-	id: string;
-	name: string;
-	date: string;
-	img: string[];
-	siteUrl: string;
-	isFeatured?: boolean;
-	palette?: {
-		value: string;
-		name: string;
-	}[];
-}
+import { Project } from "../interfaces/Project";
+import { useRef } from "react";
 
 // TODO:
 type WorkClientProps = {
-	workData: WorkData[];
+	workData: Project[];
 };
 
 const WorkClient = ({ workData }: WorkClientProps) => {
 	const [layout, setLayout] = useState("works__list");
 
+	const floatImages = useRef<HTMLDivElement[]>([]);
+	const imageContainer = useRef<HTMLDivElement>(null);
+	const floatImageContainer = useRef<HTMLDivElement>(null);
+
+	const [image, setImage] = useState(0);
+	const [active, setActive] = useState(false);
+
+	const handleFloatImage = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		bool: boolean,
+		image: number
+	) => {
+		if (floatImageContainer.current) {
+			floatImageContainer.current.style.top = e.clientY + "px";
+			floatImageContainer.current.style.left = e.clientX + "px";
+		}
+
+		setImage(image);
+		setActive(bool);
+	};
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			floatImages.current[image]?.scrollIntoView({
+				behavior: "smooth",
+				block: "center",
+			});
+		}, 10);
+
+		return () => clearTimeout(timeout);
+	}, [image]);
+
 	function handleLayout(props: string) {
 		setLayout(props);
 	}
 
-	useEffect(() => {
-		const work = document.querySelectorAll(`.${styles.project}`);
-		let element: HTMLImageElement | null = null;
-
-		work.forEach((project, index) => {
-			project.addEventListener("mousemove", (e) => {
-				// Check for touch device
-				if (isTouchDevice()) return;
-				const projectRect = project.getBoundingClientRect();
-
-				// Check if the element already exists
-				if (!element) {
-					// Create the img element on the first mousemove event
-					element = document.createElement("img");
-					element.classList.add(styles["img-element"]);
-					project.appendChild(element);
-					element.src = workData[index].img[0];
-				}
-
-				// Update the image src only if the index changes or it's a new element
-				if (element && element.src !== workData[index].img[0]) {
-					element.src = workData[index].img[0];
-				}
-
-				// Calculate mouse position relative to the project element
-				const event = e as MouseEvent;
-				const mouseX = event.clientX - projectRect.left;
-				const mouseY = event.clientY - projectRect.top;
-
-				// Move the element based on the mouse position
-				if (element) {
-					element.style.top = mouseY + "px";
-					element.style.left = mouseX + "px";
-				}
-			});
-
-			project.addEventListener("mouseleave", () => {
-				if (element) {
-					element.remove();
-					element = null; // Reset element
-				}
-			});
-		});
-
-		if (layout === "works__list") {
-			const works = document.querySelectorAll(`.${styles.work}`);
-			const time = 75;
-			works.forEach((work, index) => {
-				document.addEventListener("scroll", () => {
-					const workRect = work.getBoundingClientRect();
-					if (workRect.top < window.innerHeight) {
-						work.classList.add(styles[`work--active`]);
-					}
-				});
-				const workRect = work.getBoundingClientRect();
-				if (workRect.top < window.innerHeight) {
-					setTimeout(() => {
-						work.classList.add(styles[`work--active`]);
-					}, time + 75 * index);
-				}
-			});
-		}
-
-		if (layout === "works__grid") {
-			const works = document.querySelectorAll(`.${styles["work__grid"]}`);
-			const time = 75;
-			works.forEach((work, index) => {
-				document.addEventListener("scroll", () => {
-					const workRect = work.getBoundingClientRect();
-					if (workRect.top < window.innerHeight) {
-						work.classList.add(styles["work--active"]);
-					}
-				});
-				const workRect = work.getBoundingClientRect();
-				if (workRect.top < window.innerHeight) {
-					setTimeout(() => {
-						work.classList.add(styles["work--active"]);
-					}, time + 75 * index);
-				}
-			});
-		}
-	}, [layout]);
 	return (
 		<>
+			<div
+				ref={floatImageContainer}
+				className={styles["float-image-container"]}
+				style={{
+					opacity: `${active ? 1 : 0}`,
+					transform: `translate(-50%, -50%) scale(${active ? 1 : 0})`,
+					transition: "all 0.2s ease-out",
+				}}
+			>
+				<div ref={imageContainer}>
+					{workData.map((project, index) => {
+						return (
+							<img
+								ref={(el) => {
+									if (el) floatImages.current[index] = el;
+								}}
+								className={styles["float-image"]}
+								key={project.id}
+								src={project.img[0]}
+							></img>
+						);
+					})}
+				</div>
+			</div>
+
 			<div>
 				<p className={styles["work__sec-title"]}>
 					All works <span>{workData.length}</span>
@@ -144,9 +107,12 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 			</div>
 			{layout === "works__list" && (
 				<div className={layout}>
-					{workData.map((project) => {
+					{workData.map((project, index) => {
 						return (
 							<Link
+								onMouseEnter={(e) => handleFloatImage(e, true, index)}
+								onMouseMove={(e) => handleFloatImage(e, true, index)}
+								onMouseLeave={(e) => handleFloatImage(e, false, index)}
 								key={project.id}
 								data-cursor-inactive
 								className={styles.project}
