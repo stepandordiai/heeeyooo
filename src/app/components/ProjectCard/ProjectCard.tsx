@@ -24,8 +24,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 				/>
 			</div>
 			<div className={styles["project-card__details"]}>
-				<p className={styles["project-card__name"]}>{project.name}</p>
-				<p className={styles["project-card__date"]}>{project.date}</p>
+				<p>{project.name}</p>
+				<p style={{ color: "hsl(0, 0%, 50%)" }}>{project.date}</p>
 			</div>
 		</Link>
 	);

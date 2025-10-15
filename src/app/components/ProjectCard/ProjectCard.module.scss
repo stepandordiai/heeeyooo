@@ -9,6 +9,7 @@
 .project-card__img-wrapper {
 	overflow: hidden;
 	border-radius: 10px;
+	border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .project-card__img {
@@ -23,8 +24,4 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.project-card__date {
-	color: hsl(0, 0%, 50%);
 }
