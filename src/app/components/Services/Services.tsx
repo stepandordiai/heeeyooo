@@ -1,11 +1,14 @@
 "use client";
 
 import WordLine from "../WordLine/WordLine";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Services.module.scss";
 
 const Services = () => {
 	const [device, setDevice] = useState("mobile");
+	const [indicatorStyle, setIndicatorStyle] = useState({});
+
+	const btnIndicator = useRef(null);
 
 	useEffect(() => {
 		const dividers = document.querySelectorAll(
@@ -25,6 +28,26 @@ const Services = () => {
 			});
 		});
 	}, []);
+
+	useEffect(() => {
+		const btn = document.querySelector(
+			`.${styles["portfolio-btn--active"]}`
+		) as HTMLButtonElement;
+
+		if (btnIndicator.current && btn) {
+			setIndicatorStyle({
+				width: btn.offsetWidth,
+				left: btn.offsetLeft,
+				transition: "all 0.3s",
+				position: "absolute",
+				height: "calc(100% - 10px)",
+				pointerEvents: "none",
+				background: "var(--accent-clr)",
+				borderRadius: 10,
+				zIndex: -1,
+			});
+		}
+	}, [device]);
 
 	return (
 		<div className={styles.services}>
@@ -76,6 +99,7 @@ const Services = () => {
 								className={styles["portfolio__btn-container"]}
 								data-cursor-inactive
 							>
+								<div ref={btnIndicator} style={indicatorStyle}></div>
 								<button
 									className={
 										device === "mobile"
@@ -84,7 +108,15 @@ const Services = () => {
 									}
 									onClick={() => setDevice("mobile")}
 								>
-									<span>Mobile</span>
+									<span
+										style={
+											device === "mobile"
+												? { color: "#000" }
+												: { color: "#fff" }
+										}
+									>
+										Mobile
+									</span>
 								</button>
 								<button
 									className={
@@ -94,46 +126,36 @@ const Services = () => {
 									}
 									onClick={() => setDevice("desktop")}
 								>
-									<span>Desktop</span>
+									<span
+										style={
+											device === "desktop"
+												? { color: "#000" }
+												: { color: "#fff" }
+										}
+									>
+										Desktop
+									</span>
 								</button>
 							</div>
 							{device === "mobile" && (
 								<div className={styles["circles-container"]}>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "77%" } as React.CSSProperties}
-											data-value={77}
+											style={{ "--value": "82%" } as React.CSSProperties}
+											data-value={82}
 										></div>
 										<span>Performance</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "90%" } as React.CSSProperties}
-											data-value={90}
+											style={{ "--value": "91%" } as React.CSSProperties}
+											data-value={91}
 										></div>
 										<span>Accessibility</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
 											style={{ "--value": "100%" } as React.CSSProperties}
@@ -141,17 +163,11 @@ const Services = () => {
 										></div>
 										<span>Best Practices</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "92%" } as React.CSSProperties}
-											data-value={92}
+											style={{ "--value": "100%" } as React.CSSProperties}
+											data-value={100}
 										></div>
 										<span>SEO</span>
 									</div>
@@ -159,41 +175,23 @@ const Services = () => {
 							)}
 							{device === "desktop" && (
 								<div className={styles["circles-container"]}>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "81%" } as React.CSSProperties}
-											data-value={81}
+											style={{ "--value": "82%" } as React.CSSProperties}
+											data-value={82}
 										></div>
 										<span>Performance</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "90%" } as React.CSSProperties}
-											data-value={90}
+											style={{ "--value": "91%" } as React.CSSProperties}
+											data-value={91}
 										></div>
 										<span>Accessibility</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
 											style={{ "--value": "100%" } as React.CSSProperties}
@@ -201,17 +199,11 @@ const Services = () => {
 										></div>
 										<span>Best Practices</span>
 									</div>
-									<div
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center",
-										}}
-									>
+									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "92%" } as React.CSSProperties}
-											data-value={92}
+											style={{ "--value": "100%" } as React.CSSProperties}
+											data-value={100}
 										></div>
 										<span>SEO</span>
 									</div>
