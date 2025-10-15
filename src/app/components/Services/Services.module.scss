@@ -27,6 +27,7 @@
 .service__title {
 	font-size: 2rem;
 	min-width: max-content;
+	font-weight: 500;
 }
 
 .service__desc {
@@ -35,7 +36,6 @@
 
 .portfolio__btn-container {
 	position: relative;
-	// @include flex-start-center;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -47,20 +47,29 @@
 	margin: 20px 0;
 }
 
-.portfolio__btn {
-	padding: 5px;
+.btn {
 	min-width: 50px;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
+	padding: 5px;
+
+	span {
+		transition: color 0.3s;
+	}
 }
 
-// .portfolio__btn--active {
-// 	background: var(--accent-clr) !important;
-// 	color: black !important;
-// }
+.btn-indicator {
+	position: absolute;
+	height: calc(100% - 10px);
+	pointer-events: none;
+	background: var(--accent-clr);
+	border-radius: 10px;
+	z-index: -1;
+	transition: width 0.3s, left 0.3s;
+}
 
 // TODO:
 @property --percentage {
@@ -84,6 +93,7 @@
 
 	span {
 		font-size: 0.8rem;
+		text-align: center;
 	}
 }
 
@@ -108,6 +118,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 1;
+		font-weight: 500;
 	}
 
 	&::after {

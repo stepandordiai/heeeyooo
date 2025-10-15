@@ -36,15 +36,8 @@ const Services = () => {
 
 		if (btnIndicator.current && btn) {
 			setIndicatorStyle({
-				width: btn.offsetWidth,
-				left: btn.offsetLeft,
-				transition: "all 0.3s",
-				position: "absolute",
-				height: "calc(100% - 10px)",
-				pointerEvents: "none",
-				background: "var(--accent-clr)",
-				borderRadius: 10,
-				zIndex: -1,
+				width: btn.offsetWidth + "px",
+				left: btn.offsetLeft + "px",
 			});
 		}
 	}, [device]);
@@ -93,18 +86,29 @@ const Services = () => {
 					</div>
 					<div className={styles["service__desc"]}>
 						<WordLine text="A fast website means better user experience, higher rankings, and more conversions. We specialize in making websites load instantly and run smoothly — across all devices." />
-						<div style={{ marginTop: 10 }}>
-							<p>Performance based on current website</p>
+						<div
+							style={{
+								marginTop: 20,
+								border: "2px solid rgba(255, 255, 255, 0.15)",
+								padding: 10,
+								borderRadius: 15,
+							}}
+						>
+							<p style={{ fontWeight: 500 }}>Current website performance</p>
 							<div
 								className={styles["portfolio__btn-container"]}
 								data-cursor-inactive
 							>
-								<div ref={btnIndicator} style={indicatorStyle}></div>
+								<div
+									className={styles["btn-indicator"]}
+									ref={btnIndicator}
+									style={indicatorStyle}
+								></div>
 								<button
 									className={
 										device === "mobile"
-											? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-											: styles["portfolio__btn"]
+											? `${styles["btn"]} ${styles["portfolio__btn--active"]}`
+											: styles["btn"]
 									}
 									onClick={() => setDevice("mobile")}
 								>
@@ -121,8 +125,8 @@ const Services = () => {
 								<button
 									className={
 										device === "desktop"
-											? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-											: styles["portfolio__btn"]
+											? `${styles["btn"]} ${styles["portfolio__btn--active"]}`
+											: styles["btn"]
 									}
 									onClick={() => setDevice("desktop")}
 								>
@@ -142,8 +146,8 @@ const Services = () => {
 									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "82%" } as React.CSSProperties}
-											data-value={82}
+											style={{ "--value": "81%" } as React.CSSProperties}
+											data-value={81}
 										></div>
 										<span>Performance</span>
 									</div>
@@ -178,8 +182,8 @@ const Services = () => {
 									<div className={styles["circle-container"]}>
 										<div
 											className={styles["circle"]}
-											style={{ "--value": "82%" } as React.CSSProperties}
-											data-value={82}
+											style={{ "--value": "80%" } as React.CSSProperties}
+											data-value={80}
 										></div>
 										<span>Performance</span>
 									</div>
