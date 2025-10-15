@@ -62,11 +62,11 @@
 }
 
 // TODO:
-// @property --percentage {
-// 	syntax: "<percentage>";
-// 	inherits: false;
-// 	initial-value: 0%;
-// }
+@property --percentage {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
+}
 
 .circles-container {
 	display: grid;
@@ -92,7 +92,7 @@
 	justify-content: center;
 	align-items: center;
 	background: conic-gradient(
-		var(--accent-clr) var(--value),
+		var(--accent-clr) var(--percentage),
 		var(--accent-clr-semi-tp) 0
 	);
 
@@ -118,19 +118,19 @@
 	}
 }
 
-// .circle {
-// 	animation: animateCircle 2s forwards;
-// }
+.circle {
+	animation: animateCircle 2s forwards ease;
+}
 
-// @keyframes animateCircle {
-// 	0% {
-// 		--percentage: 0%;
-// 	}
+@keyframes animateCircle {
+	0% {
+		--percentage: 0%;
+	}
 
-// 	100% {
-// 		--percentage: 92%;
-// 	}
-// }
+	100% {
+		--percentage: var(--value);
+	}
+}
 
 @media screen and (width < 808px) {
 	.service {
