@@ -5,21 +5,8 @@ import Link from "next/link";
 import WordLine from "@/app/components/WordLine/WordLine";
 import PageNav from "@/app/components/PageNav/PageNav";
 import { notFound } from "next/navigation";
-import { Project } from "@/app/interfaces/Project";
+import { getWorkData } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
-
-// TODO:
-const url = process.env.API_URL!;
-const headers = {
-	"X-SILO-KEY": process.env.API_KEY!,
-	"Content-Type": "application/json",
-};
-
-// TODO:
-const getWorkData = async (): Promise<Project[]> => {
-	const response = await fetch(url, { headers, next: { revalidate: 60 } });
-	return response.json();
-};
 
 // TODO:
 export async function generateStaticParams(): Promise<{ id: string }[]> {

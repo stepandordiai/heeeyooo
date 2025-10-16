@@ -3,8 +3,8 @@ import WordLine from "./components/WordLine/WordLine";
 import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
 import Container from "./components/Container/Container";
-import { Project } from "./interfaces/Project";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
+import { getWorkData } from "./lib/api";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
@@ -16,15 +16,7 @@ export const metadata: Metadata = {
 
 // TODO:
 const Home = async () => {
-	const url = process.env.API_URL!;
-	const headers = {
-		"X-SILO-KEY": process.env.API_KEY!,
-		"Content-Type": "application/json",
-	};
-
-	// TODO:
-	const response = await fetch(url, { headers, next: { revalidate: 60 } });
-	const workData: Project[] = await response.json();
+	const workData = await getWorkData();
 
 	return (
 		<main className={styles.home}>

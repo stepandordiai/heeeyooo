@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import { Chakra_Petch } from "next/font/google";
-import { Project } from "./interfaces/Project";
+import { getWorkData } from "./lib/api";
 import "./globals.scss";
 
 const chakraPetch = Chakra_Petch({
@@ -25,16 +25,7 @@ export default async function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	// TODO:
-	const url = process.env.API_URL!;
-	const headers = {
-		"X-SILO-KEY": process.env.API_KEY!,
-		"Content-Type": "application/json",
-	};
-
-	// TODO:
-	const response = await fetch(url, { headers: headers });
-	const workData: Project[] = await response.json();
+	const workData = await getWorkData();
 
 	return (
 		<html lang="en" className={chakraPetch.className}>
