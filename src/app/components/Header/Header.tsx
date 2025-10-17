@@ -78,12 +78,12 @@ const Header = ({ workDataLength }: HeaderProps) => {
 			}
 		>
 			<div className={styles["header__inner"]}>
-				<Link className={styles["header__logo-link"]} href="">
+				<Link className={styles["header__logo-link"]} href="/">
 					<img
 						width={35}
 						height={35}
 						className={styles["header__logo-img"]}
-						// need to specify src with Next.js
+						// TODO:
 						src={logoImg.src}
 						alt="heeeyooo studio Logo"
 					/>
