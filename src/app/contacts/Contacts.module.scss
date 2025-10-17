@@ -65,21 +65,24 @@
 	width: 100%;
 }
 
-.contacts__form-container {
+.contacts__form-details {
+	display: flex;
+	row-gap: 20px;
+	flex-direction: column;
 	width: 100%;
+	border-radius: 15px;
+	padding: 20px;
+	overflow: hidden;
+	background: var(--accent-clr);
+	color: #000;
+}
 
-	textarea {
-		width: 100%;
-		border-bottom: 3px solid #000;
-		outline: none !important;
-		border-radius: 0 !important;
-		resize: none;
-		transition: all 0.3s;
-	}
+.contacts__form-details-title {
+	font-size: clamp(1.25rem, 4vw, 1.5rem);
+	font-weight: 500;
 }
 
 .contacts__form {
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	row-gap: 10px;
@@ -87,10 +90,15 @@
 
 .input {
 	border-bottom: 3px solid #000;
-	outline: none !important;
-	border-radius: 0 !important;
-	transition: all 0.3s;
 	width: 100%;
+	border-radius: 0;
+}
+
+.textarea {
+	resize: none;
+	border-bottom: 3px solid #000;
+	outline: none;
+	border-radius: 0;
 }
 
 .contacts__form-btn {
@@ -182,31 +190,6 @@
 	z-index: -1;
 }
 
-.contacts__form-details {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	row-gap: 20px;
-	flex-direction: column;
-	width: 100%;
-	min-height: 200px;
-	border-radius: 15px;
-	padding: 20px;
-	overflow: hidden;
-	background: var(--accent-clr);
-	color: #000;
-}
-
-.contacts__form-details-title {
-	font-size: clamp(1.25rem, 4vw, 1.5rem);
-	font-weight: 500;
-}
-
-.contacts__form-details-container {
-	display: flex;
-	flex-direction: column;
-}
-
 .check-container {
 	display: flex;
 	flex-direction: column;
@@ -215,11 +198,6 @@
 	input[type="checkbox"] {
 		margin-right: 5px;
 	}
-}
-
-.contacts__map-form-container {
-	display: flex;
-	gap: 20px;
 }
 
 @media screen and (width < 896px) {
@@ -231,9 +209,7 @@
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: space-between;
-		// width: 100%;
 		min-height: 200px;
-		// background: rgba(255, 255, 255, 0.15);
 		border-radius: 15px;
 		padding: 20px;
 		cursor: pointer;
@@ -261,11 +237,10 @@
 
 	.contacts__socials {
 		display: flex;
-		// gap: 10px;
 	}
 }
 
-@media screen and (width < 808px) {
+@media screen and (width <= 808px) {
 	.contacts {
 		padding: 10px;
 	}
@@ -287,10 +262,5 @@
 	.contacts__socials {
 		gap: 10px;
 		width: 100%;
-	}
-
-	.contacts__map-form-container {
-		flex-direction: column;
-		gap: 10px;
 	}
 }
