@@ -147,11 +147,11 @@ const Contacts = () => {
 								</div>
 							</div>
 							<button className={styles["contacts__form-btn"]} type="submit">
-								Let's get started!
+								Let&apos;s get started!
 							</button>
 						</form>
 						<div style={{ marginTop: 10 }}>
-							<p>Don't like forms? Write us a message instead!</p>
+							<p>Don&apos;t like forms? Write us a message instead!</p>
 							<a
 								href="mailto:stepandordiai@gmail.com"
 								style={{ color: "#000" }}
