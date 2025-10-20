@@ -24,18 +24,16 @@ const Contacts = () => {
 							<p className={styles["contacts__details-title"]}>Say hello</p>
 							<i className="fa-solid fa-envelope"></i>
 						</a>
-						<div className={styles["contacts__socials"]}>
-							<a
-								href="https://www.instagram.com/heeeyooo.studio/"
-								target="_blank"
-								className={styles["contacts__details"]}
-							>
-								<p className={styles["contacts__details-title"]}>
-									Follow us on Instagram
-								</p>
-								<i className="fa-brands fa-instagram"></i>
-							</a>
-						</div>
+						<a
+							href="https://www.instagram.com/heeeyooo.studio/"
+							target="_blank"
+							className={styles["contacts__details"]}
+						>
+							<p className={styles["contacts__details-title"]}>
+								Follow us on Instagram
+							</p>
+							<i className="fa-brands fa-instagram"></i>
+						</a>
 					</div>
 					<div className={styles["contacts__form-details"]}>
 						<p className={styles["contacts__form-details-title"]}>
