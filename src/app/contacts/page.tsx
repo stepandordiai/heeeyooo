@@ -5,6 +5,8 @@ import styles from "./Contacts.module.scss";
 
 export const metadata: Metadata = {
 	title: "Contacts • heeeyooo studio",
+	description:
+		"Get in touch with heeeyooo studio — a creative team passionate about design, web, and branding. Let’s bring your ideas to life. Contact us today!",
 	alternates: {
 		canonical: "https://www.heeeyooo.studio/contacts",
 	},

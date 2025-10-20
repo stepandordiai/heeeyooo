@@ -7,6 +7,8 @@ import styles from "./Work.module.scss";
 
 export const metadata: Metadata = {
 	title: "Work • heeeyooo studio",
+	description:
+		"Explore heeeyooo studio’s creative work — branding, design, and digital projects that bring bold ideas to life. See how we turn concepts into standout results.",
 	alternates: {
 		canonical: "https://www.heeeyooo.studio/work",
 	},
