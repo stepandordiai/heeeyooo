@@ -1,17 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./ProjectPage.module.scss";
 
-type Props = {
+type ProjectPageClientProps = {
 	projectName: string;
 	img: string;
+	index: number;
 };
 
-const ProjectPageClient = ({ projectName, img }: Props) => {
-	const pathname = usePathname();
+const ProjectPageClient = ({
+	projectName,
+	img,
+	index,
+}: ProjectPageClientProps) => {
+	const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
+
+	const [imgActive, setImgActive] = useState(
+		new Array(imgRefs.current.length).fill(false)
+	);
 
 	useEffect(() => {
 		const wrappersImg = document.querySelectorAll(
@@ -23,13 +31,21 @@ const ProjectPageClient = ({ projectName, img }: Props) => {
 			img.classList.remove(styles["project-page__img--active"])
 		);
 
-		// TODO:
+		if (!imgRefs.current.length) return;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const img = entry.target;
-						img.classList.add(styles["project-page__img--active"]);
+					const index = imgRefs.current.indexOf(
+						entry.target as HTMLImageElement
+					);
+					if (index !== -1 && entry.isIntersecting) {
+						setImgActive((prev) => {
+							if (prev[index]) return prev;
+							const updated = [...prev];
+							updated[index] = true;
+							return updated;
+						});
 					}
 				});
 			},
@@ -39,25 +55,26 @@ const ProjectPageClient = ({ projectName, img }: Props) => {
 			}
 		);
 
-		// observe each wrapper image
-		wrappersImg.forEach((img) => observer.observe(img));
+		imgRefs.current.forEach((img) => {
+			if (img) observer.observe(img);
+		});
 
-		return () => {
-			// cleanup observer
-			wrappersImg.forEach((img) => observer.unobserve(img));
-		};
-	}, [pathname]);
+		return () => observer.disconnect();
+	}, []);
 
 	return (
-		<>
-			<Image
-				className={styles["project-page__img"]}
-				src={img}
-				alt={projectName}
-				width={2560}
-				height={2560}
-			/>
-		</>
+		<Image
+			ref={(el) => {
+				imgRefs.current[index] = el;
+			}}
+			className={`${styles["project-page__img"]} ${
+				imgActive[index] ? styles["project-page__img--active"] : ""
+			}`}
+			src={img}
+			alt={projectName}
+			width={2560}
+			height={2560}
+		/>
 	);
 };
 

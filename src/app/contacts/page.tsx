@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import servicesData from "./../data/services-data.json";
 import Container from "../components/Container/Container";
 import PageNav from "../components/PageNav/PageNav";
 import styles from "./Contacts.module.scss";
@@ -71,79 +72,26 @@ const Contacts = () => {
 							<div>
 								<p style={{ marginBottom: 5 }}>How can we help?</p>
 								<div className={styles["check-container"]}>
-									<div
-										style={{
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-										}}
-									>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="strategy"
-											value="UX/UI Design"
-										/>
-										<label htmlFor="strategy">UX/UI Design</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="design"
-											value="Web Development"
-										/>
-										<label htmlFor="design">Web Development</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="development"
-											value="Hosting"
-										/>
-										<label htmlFor="development">Hosting</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="website-optimization"
-											value="Website Optimization"
-										/>
-										<label htmlFor="website-optimization">
-											Website Optimization
-										</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="website-maintenance"
-											value="Website Maintenance"
-										/>
-										<label htmlFor="website-maintenance">
-											Website Maintenance
-										</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="seo"
-											value="SEO"
-										/>
-										<label htmlFor="seo">SEO</label>
-									</div>
-									<div>
-										<input
-											type="checkbox"
-											name="howCanWeHelp"
-											id="website-redesign"
-											value="Website Redesign"
-										/>
-										<label htmlFor="website-redesign">Website Redesign</label>
-									</div>
+									{servicesData.map((service) => {
+										return (
+											<div
+												key={service.id}
+												style={{
+													display: "flex",
+													justifyContent: "center",
+													alignItems: "center",
+												}}
+											>
+												<input
+													type="checkbox"
+													name="howCanWeHelp"
+													id={service.id}
+													value={service.title}
+												/>
+												<label htmlFor="strategy">{service.title}</label>
+											</div>
+										);
+									})}
 								</div>
 							</div>
 							<button className={styles["contacts__form-btn"]} type="submit">

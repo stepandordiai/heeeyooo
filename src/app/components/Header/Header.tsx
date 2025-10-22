@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import linksData from "./../../data/links-data.json";
+import Link from "next/link";
 import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import styles from "./Header.module.scss";
 
@@ -11,15 +12,37 @@ type HeaderProps = {
 };
 
 const Header = ({ workDataLength }: HeaderProps) => {
-	// TODO:
 	const pathname = usePathname();
 
 	const [isMenuActive, setIsMenuActive] = useState(false);
+	const [headerHide, setHeaderHide] = useState(false);
+
+	useEffect(() => {
+		let prevScrollTop = 0;
+		function handleHeaderOnScroll() {
+			const scrollTop = document.documentElement.scrollTop;
+
+			if (scrollTop > prevScrollTop) {
+				setHeaderHide(true);
+			} else {
+				setHeaderHide(false);
+			}
+			prevScrollTop = scrollTop;
+		}
+		window.addEventListener("scroll", handleHeaderOnScroll);
+
+		return () => window.removeEventListener("scroll", handleHeaderOnScroll);
+	}, []);
 
 	useEffect(() => {
 		setIsMenuActive(false);
 	}, [pathname]);
 
+	function toggleBurgerBtn() {
+		setIsMenuActive((prev) => !prev);
+	}
+
+	// Close menu on Esc
 	useEffect(() => {
 		const closeMenuOnEsc = (e: KeyboardEvent) => {
 			if (e.key === "Escape") {
@@ -29,53 +52,14 @@ const Header = ({ workDataLength }: HeaderProps) => {
 
 		document.addEventListener("keydown", closeMenuOnEsc);
 
-		return () => {
-			document.removeEventListener("keydown", closeMenuOnEsc);
-		};
+		return () => document.removeEventListener("keydown", closeMenuOnEsc);
 	}, []);
-
-	useEffect(() => {
-		let prevScroll = 0;
-		function handleHeaderOnScroll() {
-			const scroll = document.documentElement.scrollTop;
-			const header =
-				(document.querySelector(`.${styles.header}`) as HTMLHeadElement) ||
-				null;
-			if (scroll > prevScroll) {
-				header?.classList.add(styles["header--hide"]);
-			} else {
-				header?.classList.remove(styles["header--hide"]);
-			}
-			prevScroll = scroll;
-		}
-		window.addEventListener("scroll", handleHeaderOnScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleHeaderOnScroll);
-		};
-	}, []);
-
-	function toggleBurgerBtn() {
-		setIsMenuActive((prev) => !prev);
-	}
-
-	const inactiveLink = styles["header__nav-link"];
-	const activeLink = `${styles["header__nav-link"]} ${styles["header__nav-link--active"]}`;
-
-	const inactiveMenuLink = isMenuActive
-		? `${styles["menu__nav-link"]} ${styles["menu__nav-link--show"]}`
-		: `${styles["menu__nav-link"]}`;
-	const activeMenuLink = isMenuActive
-		? `${styles["menu__nav-link"]} ${styles["menu__nav-link--active"]} ${styles["menu__nav-link--show"]}`
-		: `${styles["menu__nav-link"]} ${styles["menu__nav-link--active"]}`;
 
 	return (
 		<header
-			className={
-				isMenuActive
-					? `${styles.header} ${styles["header--active"]}`
-					: styles.header
-			}
+			className={`${styles.header} ${
+				isMenuActive ? styles["header--active"] : ""
+			} ${headerHide ? styles["header--hide"] : ""}`}
 		>
 			<div className={styles["header__inner"]}>
 				<Link className={styles["header__logo-link"]} href="/">
@@ -89,31 +73,26 @@ const Header = ({ workDataLength }: HeaderProps) => {
 					/>
 				</Link>
 				<nav className={styles["header__nav"]}>
-					<Link
-						className={pathname === "/" ? activeLink : inactiveLink}
-						href="/"
-					>
-						<span>Home</span>
-					</Link>
-					<Link
-						className={pathname === "/about" ? activeLink : inactiveLink}
-						href="/about"
-					>
-						About
-					</Link>
-					<Link
-						className={pathname === "/work" ? activeLink : inactiveLink}
-						href="/work"
-					>
-						<span>Work</span>
-						<span className={styles["header__work-qty"]}>{workDataLength}</span>
-					</Link>
-					<Link
-						className={pathname === "/contacts" ? activeLink : inactiveLink}
-						href="/contacts"
-					>
-						Contacts
-					</Link>
+					{linksData.map((link) => {
+						return (
+							<Link
+								key={link.id}
+								className={`${styles["header__nav-link"]} ${
+									pathname === link.path
+										? styles["header__nav-link--active"]
+										: ""
+								}`}
+								href={link.path}
+							>
+								<span>{link.name}</span>
+								{link.workQty && (
+									<span className={styles["header__work-qty"]}>
+										{workDataLength}
+									</span>
+								)}
+							</Link>
+						);
+					})}
 				</nav>
 				<div
 					onClick={toggleBurgerBtn}
@@ -136,49 +115,26 @@ const Header = ({ workDataLength }: HeaderProps) => {
 				}
 			>
 				<nav className={styles["menu__nav"]}>
-					<div className={styles["menu__nav-item"]}>
-						<Link
-							onClick={() => setIsMenuActive(false)}
-							className={pathname === "/" ? activeMenuLink : inactiveMenuLink}
-							href="/"
-						>
-							Home
-						</Link>
-					</div>
-					<div className={styles["menu__nav-item"]}>
-						<Link
-							onClick={() => setIsMenuActive(false)}
-							className={
-								pathname === "/about" ? activeMenuLink : inactiveMenuLink
-							}
-							href="/about"
-						>
-							About
-						</Link>
-					</div>
-					<div className={styles["menu__nav-item"]}>
-						<Link
-							onClick={() => setIsMenuActive(false)}
-							className={
-								pathname === "work" ? activeMenuLink : inactiveMenuLink
-							}
-							href="/work"
-						>
-							<span>Work</span>
-							<span className={styles["work-qty"]}>{workDataLength}</span>
-						</Link>
-					</div>
-					<div className={styles["menu__nav-item"]}>
-						<Link
-							onClick={() => setIsMenuActive(false)}
-							className={
-								pathname === "/contacts" ? activeMenuLink : inactiveMenuLink
-							}
-							href="/contacts"
-						>
-							Contacts
-						</Link>
-					</div>
+					{linksData.map((link) => {
+						return (
+							<div key={link.id} className={styles["menu__nav-item"]}>
+								<Link
+									onClick={() => setIsMenuActive(false)}
+									className={`${styles["menu__nav-link"]} ${
+										pathname === link.path
+											? styles["menu__nav-link--active"]
+											: ""
+									} ${isMenuActive ? styles["menu__nav-link--show"] : ""}`}
+									href={link.path}
+								>
+									<span>{link.name}</span>
+									{link.workQty && (
+										<span className={styles["work-qty"]}>{workDataLength}</span>
+									)}
+								</Link>
+							</div>
+						);
+					})}
 				</nav>
 			</div>
 		</header>

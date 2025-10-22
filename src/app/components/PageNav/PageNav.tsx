@@ -1,10 +1,10 @@
 import styles from "./PageNav.module.scss";
 import Link from "next/link";
 
-interface PageNavProps {
+type PageNavProps = {
 	pageName: string;
 	projectName?: string;
-}
+};
 
 const PageNav = ({ pageName, projectName }: PageNavProps) => {
 	return (

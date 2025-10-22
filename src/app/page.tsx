@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { getWorkData } from "./lib/api";
+import Container from "./components/Container/Container";
 import WordLine from "./components/WordLine/WordLine";
 import Services from "./components/Services/Services";
 import Technologies from "./components/Technologies/Technologies";
-import Container from "./components/Container/Container";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
-import { getWorkData } from "./lib/api";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 	},
 };
 
-// TODO:
 const Home = async () => {
 	const workData = await getWorkData();
 

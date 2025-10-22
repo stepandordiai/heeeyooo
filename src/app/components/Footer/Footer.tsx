@@ -1,15 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import linksData from "./../../data/links-data.json";
 import Container from "../Container/Container";
+import Link from "next/link";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
 	const pathname = usePathname();
-
-	const inactiveFooterLink = styles["footer__nav-link"];
-	const activeFooterLink = `${styles["footer__nav-link"]} ${styles["footer__nav-link--active"]}`;
 
 	return (
 		<footer className={styles.footer}>
@@ -18,38 +16,21 @@ const Footer = () => {
 				<div className={styles["footer-top"]}>
 					<div className={styles["footer__nav"]}>
 						<p>Sitemap</p>
-						<Link
-							className={
-								pathname === "/" ? activeFooterLink : inactiveFooterLink
-							}
-							href="/"
-						>
-							Home
-						</Link>
-						<Link
-							className={
-								pathname === "/about" ? activeFooterLink : inactiveFooterLink
-							}
-							href="/about"
-						>
-							About
-						</Link>
-						<Link
-							className={
-								pathname === "/work" ? activeFooterLink : inactiveFooterLink
-							}
-							href="/work"
-						>
-							Work
-						</Link>
-						<Link
-							className={
-								pathname === "/contacts" ? activeFooterLink : inactiveFooterLink
-							}
-							href="/contacts"
-						>
-							Contacts
-						</Link>
+						{linksData.map((link) => {
+							return (
+								<Link
+									key={link.id}
+									className={`${styles["footer__nav-link"]} ${
+										pathname === link.path
+											? styles["footer__nav-link--active"]
+											: ""
+									}`}
+									href={link.path}
+								>
+									{link.name}
+								</Link>
+							);
+						})}
 					</div>
 				</div>
 				<div className="footer-bottom">

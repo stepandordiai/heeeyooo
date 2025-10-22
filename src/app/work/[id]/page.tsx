@@ -72,7 +72,11 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 					{project.img.map((img, index) => {
 						return (
 							<div key={index} className={styles["project-page__img-wrapper"]}>
-								<ProjectPageClient projectName={project.name} img={img} />
+								<ProjectPageClient
+									projectName={project.name}
+									img={img}
+									index={index}
+								/>
 							</div>
 						);
 					})}

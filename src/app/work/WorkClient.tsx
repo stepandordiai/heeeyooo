@@ -1,26 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { Project } from "../interfaces/Project";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import styles from "./Work.module.scss";
-import { Project } from "../interfaces/Project";
-import { useRef } from "react";
 
-// TODO:
 type WorkClientProps = {
 	workData: Project[];
 };
 
 const WorkClient = ({ workData }: WorkClientProps) => {
 	const [layout, setLayout] = useState("works__list");
-
-	const floatImages = useRef<HTMLDivElement[]>([]);
-	const imageContainer = useRef<HTMLDivElement>(null);
-	const floatImageContainer = useRef<HTMLDivElement>(null);
-
 	const [image, setImage] = useState(0);
 	const [active, setActive] = useState(false);
+
+	const floatImages = useRef<HTMLDivElement[]>([]);
+	const floatImageContainer = useRef<HTMLDivElement>(null);
 
 	const handleFloatImage = (
 		e: React.MouseEvent<HTMLAnchorElement>,
@@ -62,22 +58,19 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 					transition: "all 0.2s ease-out",
 				}}
 			>
-				<div ref={imageContainer}>
-					{workData.map((project, index) => {
-						return (
-							<img
-								ref={(el) => {
-									if (el) floatImages.current[index] = el;
-								}}
-								className={styles["float-image"]}
-								key={project.id}
-								src={project.img[0]}
-							></img>
-						);
-					})}
-				</div>
+				{workData.map((project, index) => {
+					return (
+						<img
+							ref={(el) => {
+								if (el) floatImages.current[index] = el;
+							}}
+							className={styles["float-image"]}
+							key={project.id}
+							src={project.img[0]}
+						></img>
+					);
+				})}
 			</div>
-
 			<div>
 				<p className={styles["work__sec-title"]}>
 					All works <span>{workData.length}</span>
@@ -106,7 +99,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 				</button>
 			</div>
 			{layout === "works__list" && (
-				<div className={layout}>
+				<div className={styles[layout]}>
 					{workData.map((project, index) => {
 						return (
 							<Link
