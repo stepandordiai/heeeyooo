@@ -14,6 +14,11 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 	const [layout, setLayout] = useState("works__list");
 	const [image, setImage] = useState(0);
 	const [active, setActive] = useState(false);
+	const [touchDevice, setTouchDevice] = useState(false);
+
+	useEffect(() => {
+		setTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
+	}, []);
 
 	const floatImages = useRef<HTMLDivElement[]>([]);
 	const floatImageContainer = useRef<HTMLDivElement>(null);
@@ -23,7 +28,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 		bool: boolean,
 		image: number
 	) => {
-		if (floatImageContainer.current) {
+		if (floatImageContainer.current && !touchDevice) {
 			floatImageContainer.current.style.top = e.clientY + "px";
 			floatImageContainer.current.style.left = e.clientX + "px";
 		}
@@ -49,28 +54,30 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 
 	return (
 		<>
-			<div
-				ref={floatImageContainer}
-				className={styles["float-image-container"]}
-				style={{
-					opacity: `${active ? 1 : 0}`,
-					transform: `translate(-50%, -50%) scale(${active ? 1 : 0})`,
-					transition: "all 0.2s ease-out",
-				}}
-			>
-				{workData.map((project, index) => {
-					return (
-						<img
-							ref={(el) => {
-								if (el) floatImages.current[index] = el;
-							}}
-							className={styles["float-image"]}
-							key={project.id}
-							src={project.img[0]}
-						></img>
-					);
-				})}
-			</div>
+			{!touchDevice && (
+				<div
+					ref={floatImageContainer}
+					className={styles["float-image-container"]}
+					style={{
+						opacity: `${active ? 1 : 0}`,
+						transform: `translate(-50%, -50%) scale(${active ? 1 : 0})`,
+						transition: "all 0.2s ease-out",
+					}}
+				>
+					{workData.map((project, index) => {
+						return (
+							<img
+								ref={(el) => {
+									if (el) floatImages.current[index] = el;
+								}}
+								className={styles["float-image"]}
+								key={project.id}
+								src={project.img[0]}
+							></img>
+						);
+					})}
+				</div>
+			)}
 			<div>
 				<p className={styles["work__sec-title"]}>
 					All works <span>{workData.length}</span>
