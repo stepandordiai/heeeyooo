@@ -47,49 +47,52 @@ const Contacts = () => {
 							action="https://formspree.io/f/xovddpld"
 							method="post"
 						>
-							<label htmlFor="fullName">Full name</label>
-							<input
-								className={styles["input"]}
-								type="text"
-								name="fullName"
-								id="fullName"
-							/>
-							<label htmlFor="email">E-mail</label>
-							<input
-								className={styles["input"]}
-								type="email"
-								name="email"
-								id="email"
-							/>
-							<label htmlFor="message">
-								Tell us a little about the project...
-							</label>
-							<textarea
-								className={styles["textarea"]}
-								name="message"
-								id="message"
-							></textarea>
+							<div>
+								<label htmlFor="fullName">Full name</label>
+								<input
+									className={styles["input"]}
+									type="text"
+									name="fullName"
+									id="fullName"
+								/>
+							</div>
+							<div>
+								<label htmlFor="email">E-mail</label>
+								<input
+									className={styles["input"]}
+									type="email"
+									name="email"
+									id="email"
+								/>
+							</div>
+							<div>
+								<label htmlFor="message">
+									Tell us a little about the project...
+								</label>
+								<textarea
+									className={styles["textarea"]}
+									name="message"
+									id="message"
+									rows={3}
+								></textarea>
+							</div>
 							<div>
 								<p style={{ marginBottom: 5 }}>How can we help?</p>
 								<div className={styles["check-container"]}>
 									{servicesData.map((service) => {
 										return (
-											<div
+											<label
 												key={service.id}
-												style={{
-													display: "flex",
-													justifyContent: "center",
-													alignItems: "center",
-												}}
+												className={styles["checkbox-label"]}
 											>
 												<input
+													className={styles["checkbox"]}
 													type="checkbox"
 													name="howCanWeHelp"
-													id={service.id}
 													value={service.title}
 												/>
-												<label htmlFor="strategy">{service.title}</label>
-											</div>
+												{service.title}
+											</label>
 										);
 									})}
 								</div>

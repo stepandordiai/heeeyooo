@@ -85,6 +85,7 @@
 	border-bottom: 3px solid #000;
 	width: 100%;
 	border-radius: 0;
+	padding: 5px;
 }
 
 .textarea {
@@ -92,6 +93,8 @@
 	border-bottom: 3px solid #000;
 	outline: none;
 	border-radius: 0;
+	width: 100%;
+	padding: 5px;
 }
 
 .contacts__form-btn {
@@ -185,12 +188,28 @@
 
 .check-container {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 5px;
+}
 
-	input[type="checkbox"] {
-		margin-right: 5px;
+.checkbox-label {
+	border: 3px solid #000;
+	padding: 5px;
+	border-radius: 10px;
+
+	&:has(input[type="checkbox"]:checked) {
+		background: #000;
+		color: #fff;
 	}
+}
+
+.checkbox {
+	-webkit-appearance: none;
+	appearance: none;
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 @media screen and (width < 896px) {
