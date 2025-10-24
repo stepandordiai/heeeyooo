@@ -28,7 +28,10 @@ const Header = ({ workDataLength }: HeaderProps) => {
 				setHeaderHide(false);
 			}
 			prevScrollTop = scrollTop;
+
+			setIsMenuActive(false);
 		}
+
 		window.addEventListener("scroll", handleHeaderOnScroll);
 
 		return () => window.removeEventListener("scroll", handleHeaderOnScroll);
