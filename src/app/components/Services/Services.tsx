@@ -4,15 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 import servicesData from "./../../data/services-data.json";
 import WordLine from "../WordLine/WordLine";
+import img from "./../../../../public/neresen-c.png";
+import img2 from "./../../../../public/neresen-ss-v6-c.png";
 import styles from "./Services.module.scss";
 
 const Services = () => {
 	const [device, setDevice] = useState("mobile");
 	const [indicatorStyle, setIndicatorStyle] = useState({});
-
 	const [dividerActive, setDividerActive] = useState(
 		new Array(servicesData.length).fill(false)
 	);
+	const [rangeValue, setRangeValue] = useState(50);
 
 	const dividerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -226,6 +228,32 @@ const Services = () => {
 													</div>
 												</div>
 											)}
+										</div>
+									)}
+									{service.beforeAfter && (
+										<div className={styles["img-container"]}>
+											<div
+												className={styles["img-line"]}
+												style={{ left: rangeValue + "%" }}
+											></div>
+											<img className={styles["img"]} src={img.src} alt="" />
+											<img
+												className={styles["img-range"]}
+												src={img2.src}
+												alt=""
+												style={{
+													clipPath: `polygon(${rangeValue}% 0, 100% 0, 100% 100%, ${rangeValue}% 100%)`,
+												}}
+											/>
+											<input
+												onChange={(e) => setRangeValue(Number(e.target.value))}
+												type="range"
+												max={100}
+												value={rangeValue}
+												step={1}
+												name=""
+												id=""
+											/>
 										</div>
 									)}
 								</div>

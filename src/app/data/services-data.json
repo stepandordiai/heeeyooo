@@ -33,6 +33,7 @@
 	{
 		"id": "website-redesign",
 		"title": "Website Redesign",
-		"desc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals."
+		"desc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals.",
+		"beforeAfter": true
 	}
 ]
