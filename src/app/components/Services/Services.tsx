@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 import servicesData from "./../../data/services-data.json";
 import WordLine from "../WordLine/WordLine";
-import img from "./../../../../public/neresen-c.png";
-import img2 from "./../../../../public/neresen-ss-v6-c.png";
+import img from "./../../../../public/neresen-c-before.png";
+import img2 from "./../../../../public/neresen-ss-v7-c-after.png";
 import styles from "./Services.module.scss";
 
 const Services = () => {
@@ -231,29 +231,43 @@ const Services = () => {
 										</div>
 									)}
 									{service.beforeAfter && (
-										<div className={styles["img-container"]}>
-											<div
-												className={styles["img-line"]}
-												style={{ left: rangeValue + "%" }}
-											></div>
-											<img className={styles["img"]} src={img.src} alt="" />
-											<img
-												className={styles["img-range"]}
-												src={img2.src}
-												alt=""
-												style={{
-													clipPath: `polygon(${rangeValue}% 0, 100% 0, 100% 100%, ${rangeValue}% 100%)`,
-												}}
-											/>
-											<input
-												onChange={(e) => setRangeValue(Number(e.target.value))}
-												type="range"
-												max={100}
-												value={rangeValue}
-												step={1}
-												name=""
-												id=""
-											/>
+										<div
+											style={{
+												marginTop: 20,
+												border: "2px solid rgba(255, 255, 255, 0.15)",
+												padding: 10,
+												borderRadius: 15,
+											}}
+										>
+											<p style={{ fontWeight: 500, marginBottom: 10 }}>
+												Redesign showcase
+											</p>
+											<div className={styles["img-container"]}>
+												<div
+													className={styles["img-line"]}
+													style={{ left: rangeValue + "%" }}
+												></div>
+												<img className={styles["img"]} src={img.src} alt="" />
+												<img
+													className={styles["img-range"]}
+													src={img2.src}
+													alt=""
+													style={{
+														clipPath: `polygon(${rangeValue}% 0, 100% 0, 100% 100%, ${rangeValue}% 100%)`,
+													}}
+												/>
+												<input
+													onChange={(e) =>
+														setRangeValue(Number(e.target.value))
+													}
+													type="range"
+													max={100}
+													value={rangeValue}
+													step={1}
+													name=""
+													id=""
+												/>
+											</div>
 										</div>
 									)}
 								</div>

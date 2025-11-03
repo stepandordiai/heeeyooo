@@ -151,6 +151,7 @@
 .img-container {
 	position: relative;
 	overflow: hidden;
+	// border: 2px solid rgba(255, 255, 255, 0.15);
 
 	input[type="range"] {
 		appearance: none;
@@ -165,11 +166,17 @@
 		margin-left: -20px;
 
 		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
 			appearance: none;
 			width: 40px;
 			height: 40px;
-			background: rgb(84, 79, 79);
+			background: transparent;
+			box-shadow: none;
 			border-radius: 50%;
+			background-image: url(./../../../../public/left-right.png);
+			background-repeat: no-repeat;
+			background-size: 40px;
+			background-position: center;
 		}
 	}
 }
@@ -178,32 +185,34 @@
 	position: absolute;
 	height: 100%;
 	width: 2px;
-	background: #000;
+	background: rgba(255, 255, 255, 0.15);
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
 
-	&::before {
-		content: "Before";
-		position: absolute;
-		right: 20px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+	// &::before {
+	// 	content: "Before";
+	// 	position: absolute;
+	// 	right: 20px;
+	// 	top: 50%;
+	// 	transform: translateY(-50%);
+	// }
 
-	&::after {
-		content: "After";
-		position: absolute;
-		left: 20px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+	// &::after {
+	// 	content: "After";
+	// 	position: absolute;
+	// 	left: 20px;
+	// 	top: 50%;
+	// 	transform: translateY(-50%);
+	// }
 }
 
 .img-range {
 	position: absolute;
 	left: 0;
 	clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 @media screen and (width < 808px) {
