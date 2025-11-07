@@ -97,9 +97,16 @@ const Contacts = () => {
 									})}
 								</div>
 							</div>
-							<button className={styles["contacts__form-btn"]} type="submit">
-								Let&apos;s get started!
-							</button>
+							<div style={{ alignSelf: "flex-end" }}>
+								<input
+									className={styles["input-reset"]}
+									type="reset"
+									value="Reset"
+								/>
+								<button className={styles["contacts__form-btn"]} type="submit">
+									Let&apos;s get started!
+								</button>
+							</div>
 						</form>
 						<div style={{ marginTop: 10 }}>
 							<p>Don&apos;t like forms? Write us a message instead!</p>
