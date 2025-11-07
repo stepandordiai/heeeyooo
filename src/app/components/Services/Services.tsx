@@ -270,6 +270,15 @@ const Services = () => {
 											</div>
 										</div>
 									)}
+									{service.freeSupport && (
+										<>
+											<br />
+											<p style={{ color: "var(--accent-clr)" }}>
+												(Our service includes 3 months of free minor support and
+												maintenance following the website’s delivery.)
+											</p>
+										</>
+									)}
 								</div>
 							</div>
 							<div
