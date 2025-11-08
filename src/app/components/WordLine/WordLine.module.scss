@@ -4,11 +4,11 @@
 }
 
 .word-line-wrapper {
-	display: inline-block;
 	overflow: hidden;
 }
 
 .word-line {
+	display: inline-block;
 	transform: translateY(100%);
 	transition: transform 1s;
 	margin-right: 0.25em;

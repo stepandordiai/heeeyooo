@@ -10,7 +10,7 @@ type WordLineProps = {
 
 // TODO: props is always an object
 const WordLine = ({ text }: WordLineProps) => {
-	const wordRefs = useRef<(HTMLDivElement | null)[]>([]);
+	const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
 	const [wordActive, setWordActive] = useState(
 		new Array(wordRefs.current.length).fill(false)
@@ -40,26 +40,24 @@ const WordLine = ({ text }: WordLineProps) => {
 	}, []);
 
 	return (
-		<div className={styles["word-line-container"]}>
+		<span className={styles["word-line-container"]}>
 			{text.split(" ").map((word, index) => {
 				return (
-					<React.Fragment key={index}>
-						<div className={styles["word-line-wrapper"]}>
-							<div
-								ref={(el) => {
-									wordRefs.current[index] = el;
-								}}
-								className={`${styles["word-line"]} ${
-									wordActive[index] ? styles["word-line--active"] : ""
-								}`}
-							>
-								{word}
-							</div>
-						</div>
-					</React.Fragment>
+					<span key={index} className={styles["word-line-wrapper"]}>
+						<span
+							ref={(el) => {
+								wordRefs.current[index] = el;
+							}}
+							className={`${styles["word-line"]} ${
+								wordActive[index] ? styles["word-line--active"] : ""
+							}`}
+						>
+							{word}
+						</span>
+					</span>
 				);
 			})}
-		</div>
+		</span>
 	);
 };
 

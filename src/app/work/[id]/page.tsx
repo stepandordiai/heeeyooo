@@ -65,9 +65,9 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 		<main className={styles["project-page"]}>
 			<Container>
 				<PageNav pageName="Work" projectName={project.name} />
-				<div className={styles["project-page__title"]}>
+				<h1 className={styles["project-page__title"]}>
 					<WordLine text={project.name} />
-				</div>
+				</h1>
 				<div className={styles["project-page__img-grid"]}>
 					{project.img.map((img, index) => {
 						return (
@@ -86,7 +86,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 						<div
 							style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
 						>
-							<span style={{ color: "hsl(0, 0%, 50%)" }}>Colors</span>
+							<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Colors</h2>
 							<div className={styles.palette}>
 								{project.palette.map((color, index) => {
 									return (
@@ -106,7 +106,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 						<div
 							style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
 						>
-							<span style={{ color: "hsl(0, 0%, 50%)" }}>Typography</span>
+							<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Typography</h2>
 							<div className={styles["project-page__typo-container"]}>
 								<img src={project.typo} alt="" />
 							</div>
@@ -122,7 +122,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 							rowGap: 10,
 						}}
 					>
-						<span style={{ color: "hsl(0, 0%, 50%" }}>Overview</span>
+						<h2 style={{ color: "hsl(0, 0%, 50%" }}>Overview</h2>
 						<p>{project.desc}</p>
 					</div>
 				)}
