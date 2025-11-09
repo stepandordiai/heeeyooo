@@ -21,20 +21,23 @@ const Home = async () => {
 		<main className={styles.home}>
 			<Container>
 				<div className={styles["home-inner"]}>
-					<div className={styles["home-top"]}>
-						<div className={styles["construction"]}>
+					<section className={styles["home-hero"]}>
+						{/* <div className={styles["construction"]}>
 							<WordLine text="Website under construction" />
-						</div>
+						</div> */}
 						<h1 className={styles["home__title"]}>
 							<WordLine text="Creative web design & development agency" />
 						</h1>
-						<div
-							className={styles["home__desc"]}
-							style={{ color: "hsl(0,0%,50%)" }}
-						>
+						<p className={styles["home__desc"]}>
 							<WordLine text="We create modern websites, landing pages, and online stores that work fast, look great, and grow your business." />
-						</div>
-					</div>
+						</p>
+						<a
+							className={styles["home-hero__link"]}
+							href="mailto:stepandordiai@gmail.com"
+						>
+							stepandordiai@gmail.com
+						</a>
+					</section>
 					<div>
 						<h2 className={styles["featured-work__title"]}>
 							<WordLine text="Featured work" />
