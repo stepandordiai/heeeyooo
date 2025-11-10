@@ -81,51 +81,53 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 						);
 					})}
 				</div>
-				<div className={styles["project-page__palette-typo-container"]}>
-					{project.palette && (
+				<div className={styles["project-page__info-wrapper"]}>
+					{project.desc && (
 						<div
-							style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								rowGap: 10,
+								width: "100%",
+							}}
 						>
-							<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Colors</h2>
-							<div className={styles.palette}>
-								{project.palette.map((color, index) => {
-									return (
-										<div
-											key={index}
-											className={styles["palette__color"]}
-											style={{ background: color.value }}
-											data-color-value={color.value}
-											data-color-name={color.name}
-										></div>
-									);
-								})}
-							</div>
+							<h2 style={{ color: "hsl(0, 0%, 50%" }}>Overview</h2>
+							<p>{project.desc}</p>
 						</div>
 					)}
-					{project.typo && (
-						<div
-							style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
-						>
-							<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Typography</h2>
-							<div className={styles["project-page__typo-container"]}>
-								<img src={project.typo} alt="" />
+					<div className={styles["project-page__palette-typo-container"]}>
+						{project.palette && (
+							<div
+								style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
+							>
+								<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Colors</h2>
+								<div className={styles.palette}>
+									{project.palette.map((color, index) => {
+										return (
+											<div
+												key={index}
+												className={styles["palette__color"]}
+												style={{ background: color.value }}
+												data-color-value={color.value}
+												data-color-name={color.name}
+											></div>
+										);
+									})}
+								</div>
 							</div>
-						</div>
-					)}
-				</div>
-				{project.desc && (
-					<div
-						style={{
-							marginBottom: 10,
-							display: "flex",
-							flexDirection: "column",
-							rowGap: 10,
-						}}
-					>
-						<h2 style={{ color: "hsl(0, 0%, 50%" }}>Overview</h2>
-						<p>{project.desc}</p>
+						)}
+						{project.typo && (
+							<div
+								style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
+							>
+								<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Typography</h2>
+								<div className={styles["project-page__typo-container"]}>
+									<img src={project.typo} alt="" />
+								</div>
+							</div>
+						)}
 					</div>
-				)}
+				</div>
 				<div>
 					<a
 						className={styles["project-page__link"]}

@@ -34,11 +34,20 @@
 	transition: all 2s cubic-bezier(0.75, 0.5, 0.25, 1);
 }
 
+.project-page__info-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 20px;
+	margin-top: 10px;
+}
+
 .project-page__palette-typo-container {
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
-	margin: 10px 0;
+	// margin: 10px 0;
 }
 
 .palette {
@@ -107,6 +116,13 @@
 	border-radius: 10px;
 	min-width: 50px;
 	color: #000;
+}
+
+@media screen and (width <= 1200px) {
+	.project-page__info-wrapper {
+		flex-direction: column;
+		gap: 10px;
+	}
 }
 
 @media screen and (width < 808px) {
