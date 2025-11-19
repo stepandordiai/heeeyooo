@@ -14,7 +14,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 	return workData.map((project) => ({ id: project.id }));
 }
 
-// TODO:
+// TODO: LEARN THIS
 export async function generateMetadata({
 	params,
 }: {
@@ -24,12 +24,14 @@ export async function generateMetadata({
 	const workData = await getWorkData();
 	const project = workData.find((p) => p.id === id);
 
-	if (!project) {
-		return { title: "Project Not Found • heeeyooo studio" };
-	}
-
 	return {
-		title: `${project.name} • heeeyooo studio`,
+		title: project
+			? `${project.name} • heeeyooo studio`
+			: "Project Not Found • heeeyooo studio",
+		robots: {
+			index: false,
+			follow: false,
+		},
 	};
 }
 

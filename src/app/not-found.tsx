@@ -1,4 +1,13 @@
 import PageNav from "./components/PageNav/PageNav";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "404 • heeeyooo studio",
+	robots: {
+		index: false,
+		follow: false,
+	},
+};
 
 const NotFound = () => {
 	return (
