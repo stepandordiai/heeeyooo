@@ -48,7 +48,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 	// Close menu on Esc
 	useEffect(() => {
 		const closeMenuOnEsc = (e: KeyboardEvent) => {
-			if (e.key === "Escape") {
+			if (e.code === "Escape") {
 				setIsMenuActive(false);
 			}
 		};
@@ -97,18 +97,20 @@ const Header = ({ workDataLength }: HeaderProps) => {
 						);
 					})}
 				</nav>
-				<div
+				{/* menu-btn */}
+				<button
 					onClick={toggleBurgerBtn}
 					className={styles["burger-btn__container"]}
+					aria-label={isMenuActive ? "Close menu" : "Open menu"}
 				>
-					<div
+					<span
 						className={
 							isMenuActive
 								? `${styles["burger-btn"]} ${styles["burger-btn--active"]}`
 								: styles["burger-btn"]
 						}
-					></div>
-				</div>
+					></span>
+				</button>
 			</div>
 			<div
 				className={
