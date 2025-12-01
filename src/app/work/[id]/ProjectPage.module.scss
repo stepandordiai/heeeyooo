@@ -67,21 +67,6 @@
 		flex-grow: 2;
 	}
 
-	&::before {
-		content: attr(data-color-name);
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		color: #000;
-		padding-right: 10px;
-		opacity: 0;
-		transition: all 0.3s;
-	}
-
-	&:hover::before {
-		opacity: 1;
-	}
-
 	&::after {
 		content: attr(data-color-value);
 		position: absolute;

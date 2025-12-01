@@ -6,6 +6,6 @@ export interface Project {
 	img: string[];
 	siteUrl: string;
 	isFeatured?: boolean;
-	palette?: { value: string; name: string }[];
+	palette?: string[];
 	typo?: string;
 }

@@ -104,14 +104,13 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 							>
 								<h2 style={{ color: "hsl(0, 0%, 50%)" }}>Colors</h2>
 								<div className={styles.palette}>
-									{project.palette.map((color, index) => {
+									{project.palette.map((hex, index) => {
 										return (
 											<div
 												key={index}
 												className={styles["palette__color"]}
-												style={{ background: color.value }}
-												data-color-value={color.value}
-												data-color-name={color.name}
+												style={{ background: hex }}
+												data-color-value={hex}
 											></div>
 										);
 									})}
