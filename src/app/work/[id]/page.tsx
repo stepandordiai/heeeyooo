@@ -97,7 +97,14 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 							<p>{project.desc}</p>
 						</div>
 					)}
-					<div className={styles["project-page__palette-typo-container"]}>
+					<div
+						style={
+							!project.typo || !project.palette
+								? { gridTemplateColumns: "repeat(1, 1fr)" }
+								: { gridTemplateColumns: "repeat(2, 1fr)" }
+						}
+						className={styles["project-page__palette-typo-container"]}
+					>
 						{project.palette && (
 							<div
 								style={{ display: "flex", flexDirection: "column", rowGap: 10 }}
@@ -129,58 +136,49 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 						)}
 					</div>
 				</div>
-				<div>
-					<a
-						className={styles["project-page__link"]}
-						href={project.siteUrl}
-						target="_blank"
+				<a
+					style={{ textAlign: "center" }}
+					className={styles["project-page__link"]}
+					href={project.siteUrl}
+					target="_blank"
+				>
+					Live website
+				</a>
+				<nav className={styles["project-page__nav"]}>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							rowGap: 10,
+							maxWidth: "256px",
+						}}
 					>
-						Live site
-					</a>
-					<nav className={styles["project-page__nav"]}>
-						<div
-							style={{
-								display: "flex",
-								flexDirection: "column",
-								rowGap: 10,
-								maxWidth: "256px",
-							}}
+						<Link
+							className={styles["project-page__nav-link"]}
+							href={`/work/${prevProject.id}`}
 						>
-							<Link
-								className={styles["project-page__link"]}
-								href={`/work/${prevProject.id}`}
-							>
-								Previous Project
-							</Link>
-							<img
-								style={{ borderRadius: 10 }}
-								src={prevProject.img[0]}
-								alt=""
-							/>
-						</div>
+							Previous Project
+						</Link>
+						<img style={{ borderRadius: 10 }} src={prevProject.img[0]} alt="" />
+					</div>
 
-						<div
-							style={{
-								display: "flex",
-								flexDirection: "column",
-								rowGap: 10,
-								maxWidth: "256px",
-							}}
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							rowGap: 10,
+							maxWidth: "256px",
+						}}
+					>
+						<Link
+							className={styles["project-page__nav-link"]}
+							href={`/work/${nextProject.id}`}
 						>
-							<Link
-								className={styles["project-page__link"]}
-								href={`/work/${nextProject.id}`}
-							>
-								Next Project
-							</Link>
-							<img
-								style={{ borderRadius: 10 }}
-								src={nextProject.img[0]}
-								alt=""
-							/>
-						</div>
-					</nav>
-				</div>
+							Next Project
+						</Link>
+						<img style={{ borderRadius: 10 }} src={nextProject.img[0]} alt="" />
+					</div>
+				</nav>
 			</Container>
 		</main>
 	);
