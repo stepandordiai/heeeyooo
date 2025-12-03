@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1,
 		},
 		{
-			url: "https://www.heeeyooo.studio/contacts",
+			url: "https://www.heeeyooo.studio/contact",
 			lastModified: new Date(),
 			changeFrequency: "yearly",
 			priority: 1,

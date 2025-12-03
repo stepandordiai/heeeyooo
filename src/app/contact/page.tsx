@@ -2,48 +2,48 @@ import type { Metadata } from "next";
 import servicesData from "./../data/services-data.json";
 import Container from "../components/Container/Container";
 import PageNav from "../components/PageNav/PageNav";
-import styles from "./Contacts.module.scss";
+import styles from "./Contact.module.scss";
 
 export const metadata: Metadata = {
-	title: "Contacts • heeeyooo studio",
+	title: "Contact • heeeyooo studio",
 	description:
 		"Get in touch with heeeyooo studio — a creative team passionate about design, web, and branding. Let’s bring your ideas to life. Contact us today!",
 	alternates: {
-		canonical: "https://www.heeeyooo.studio/contacts",
+		canonical: "https://www.heeeyooo.studio/contact",
 	},
 };
 
-const Contacts = () => {
+const Contact = () => {
 	return (
-		<main className={styles.contacts}>
+		<main className={styles.contact}>
 			<Container>
-				<PageNav pageName="Contacts" />
-				<div className={styles["contacts__inner"]}>
-					<div className={styles["contacts__container"]}>
+				<PageNav pageName="Contact" />
+				<div className={styles["contact__inner"]}>
+					<div className={styles["contact__container"]}>
 						<a
-							className={styles["contacts__email"]}
+							className={styles["contact__email"]}
 							href="mailto:stepandordiai@gmail.com"
 						>
-							<p className={styles["contacts__details-title"]}>Say hello</p>
+							<p className={styles["contact__details-title"]}>Say hello</p>
 							<i className="fa-solid fa-envelope"></i>
 						</a>
 						<a
 							href="https://www.instagram.com/heeeyooo.studio/"
 							target="_blank"
-							className={styles["contacts__details"]}
+							className={styles["contact__details"]}
 						>
-							<p className={styles["contacts__details-title"]}>
+							<p className={styles["contact__details-title"]}>
 								Follow us on Instagram
 							</p>
 							<i className="fa-brands fa-instagram"></i>
 						</a>
 					</div>
-					<div className={styles["contacts__form-details"]}>
-						<p className={styles["contacts__form-details-title"]}>
+					<div className={styles["contact__form-details"]}>
+						<p className={styles["contact__form-details-title"]}>
 							Tell us more about yourself and what you&apos;ve got in mind.
 						</p>
 						<form
-							className={styles["contacts__form"]}
+							className={styles["contact__form"]}
 							action="https://formspree.io/f/xovddpld"
 							method="post"
 						>
@@ -103,7 +103,7 @@ const Contacts = () => {
 									type="reset"
 									value="Reset"
 								/>
-								<button className={styles["contacts__form-btn"]} type="submit">
+								<button className={styles["contact__form-btn"]} type="submit">
 									Let&apos;s get started!
 								</button>
 							</div>
@@ -124,4 +124,4 @@ const Contacts = () => {
 	);
 };
 
-export default Contacts;
+export default Contact;

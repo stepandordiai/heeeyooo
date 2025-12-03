@@ -1,24 +1,24 @@
-.contacts {
+.contact {
 	padding: 20px;
 }
 
-.contacts__title {
+.contact__title {
 	margin-bottom: 20px;
 }
 
-.contacts__inner {
+.contact__inner {
 	display: flex;
 	gap: 20px;
 }
 
-.contacts__container {
+.contact__container {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 	width: 100%;
 }
 
-.contacts__email {
+.contact__email {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column-reverse;
@@ -47,18 +47,18 @@
 	}
 }
 
-.contacts__socials-map {
+.contact__socials-map {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	gap: 20px;
 }
 
-.contacts__details-map {
+.contact__details-map {
 	width: 100%;
 }
 
-.contacts__form-details {
+.contact__form-details {
 	display: flex;
 	row-gap: 20px;
 	flex-direction: column;
@@ -70,12 +70,12 @@
 	color: #000;
 }
 
-.contacts__form-details-title {
+.contact__form-details-title {
 	font-size: clamp(1.25rem, 4vw, 1.5rem);
 	font-weight: 500;
 }
 
-.contacts__form {
+.contact__form {
 	display: flex;
 	flex-direction: column;
 	row-gap: 10px;
@@ -110,7 +110,7 @@
 	}
 }
 
-.contacts__form-btn {
+.contact__form-btn {
 	padding: 10px;
 	background: #000;
 	color: #fff;
@@ -129,7 +129,7 @@
 	height: 100%;
 }
 
-.contacts__details {
+.contact__details {
 	position: relative;
 	z-index: 1;
 	display: flex;
@@ -162,7 +162,7 @@
 	}
 }
 
-.contacts__details-map {
+.contact__details-map {
 	position: relative;
 	z-index: 1;
 	display: flex;
@@ -183,12 +183,12 @@
 	}
 }
 
-.contacts__details-title {
+.contact__details-title {
 	font-size: clamp(1.25rem, 4vw, 1.5rem);
 	font-weight: 500 !important;
 }
 
-.contacts__map {
+.contact__map {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -226,11 +226,11 @@
 }
 
 @media screen and (width < 896px) {
-	.contacts {
+	.contact {
 		flex-direction: column;
 	}
 
-	.contacts__email {
+	.contact__email {
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: space-between;
@@ -253,7 +253,7 @@
 		}
 	}
 
-	.contacts__socials-map {
+	.contact__socials-map {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -262,26 +262,26 @@
 }
 
 @media screen and (width < 808px) {
-	.contacts {
+	.contact {
 		padding: 10px;
 	}
 
-	.contacts__inner {
+	.contact__inner {
 		gap: 10px;
 		flex-direction: column;
 	}
 
-	.contacts__email {
+	.contact__email {
 		width: 100%;
 	}
 
-	.contacts__container {
+	.contact__container {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 	}
 
-	.contacts__socials {
+	.contact__socials {
 		gap: 10px;
 		width: 100%;
 	}
