@@ -6,6 +6,7 @@ import linksData from "./../../data/links-data.json";
 import Link from "next/link";
 import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import styles from "./Header.module.scss";
+import classNames from "classnames";
 
 type HeaderProps = {
 	workDataLength: number;
@@ -18,16 +19,14 @@ const Header = ({ workDataLength }: HeaderProps) => {
 	const [headerHide, setHeaderHide] = useState(false);
 
 	useEffect(() => {
-		let prevScrollTop = 0;
-		function handleHeaderOnScroll() {
-			const scrollTop = document.documentElement.scrollTop;
+		let prevScrollY = 0;
 
-			if (scrollTop > prevScrollTop) {
-				setHeaderHide(true);
-			} else {
-				setHeaderHide(false);
-			}
-			prevScrollTop = scrollTop;
+		function handleHeaderOnScroll() {
+			const scrollY = window.scrollY;
+
+			setHeaderHide(scrollY > prevScrollY);
+
+			prevScrollY = scrollY;
 
 			setIsMenuActive(false);
 		}
@@ -40,10 +39,6 @@ const Header = ({ workDataLength }: HeaderProps) => {
 	useEffect(() => {
 		setIsMenuActive(false);
 	}, [pathname]);
-
-	function toggleBurgerBtn() {
-		setIsMenuActive((prev) => !prev);
-	}
 
 	// Close menu on Esc
 	useEffect(() => {
@@ -58,11 +53,16 @@ const Header = ({ workDataLength }: HeaderProps) => {
 		return () => document.removeEventListener("keydown", closeMenuOnEsc);
 	}, []);
 
+	function toggleBurgerBtn() {
+		setIsMenuActive((prev) => !prev);
+	}
+
 	return (
 		<header
-			className={`${styles.header} ${
-				isMenuActive ? styles["header--active"] : ""
-			} ${headerHide ? styles["header--hide"] : ""}`}
+			className={classNames(styles.header, {
+				[styles["header--active"]]: isMenuActive,
+				[styles["header--hide"]]: headerHide,
+			})}
 		>
 			<div className={styles["header__inner"]}>
 				<Link className={styles["header__logo-link"]} href="/">
@@ -72,7 +72,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 						className={styles["header__logo-img"]}
 						// TODO:
 						src={logoImg.src}
-						alt="heeeyooo studio Logo"
+						alt="heeeyooo studio logo"
 					/>
 				</Link>
 				<nav className={styles["header__nav"]}>
@@ -80,11 +80,9 @@ const Header = ({ workDataLength }: HeaderProps) => {
 						return (
 							<Link
 								key={link.id}
-								className={`${styles["header__nav-link"]} ${
-									pathname === link.path
-										? styles["header__nav-link--active"]
-										: ""
-								}`}
+								className={classNames(styles["header__nav-link"], {
+									[styles["header__nav-link--active"]]: pathname === link.path,
+								})}
 								href={link.path}
 							>
 								<span>{link.name}</span>
@@ -104,20 +102,16 @@ const Header = ({ workDataLength }: HeaderProps) => {
 					aria-label={isMenuActive ? "Close menu" : "Open menu"}
 				>
 					<span
-						className={
-							isMenuActive
-								? `${styles["burger-btn"]} ${styles["burger-btn--active"]}`
-								: styles["burger-btn"]
-						}
+						className={classNames(styles["burger-btn"], {
+							[styles["burger-btn--active"]]: isMenuActive,
+						})}
 					></span>
 				</button>
 			</div>
 			<div
-				className={
-					isMenuActive
-						? `${styles["menu"]} ${styles["menu--active"]}`
-						: styles["menu"]
-				}
+				className={classNames(styles["menu"], {
+					[styles["menu--active"]]: isMenuActive,
+				})}
 			>
 				<nav className={styles["menu__nav"]}>
 					{linksData.map((link) => {
@@ -125,11 +119,10 @@ const Header = ({ workDataLength }: HeaderProps) => {
 							<div key={link.id} className={styles["menu__nav-item"]}>
 								<Link
 									onClick={() => setIsMenuActive(false)}
-									className={`${styles["menu__nav-link"]} ${
-										pathname === link.path
-											? styles["menu__nav-link--active"]
-											: ""
-									} ${isMenuActive ? styles["menu__nav-link--show"] : ""}`}
+									className={classNames(styles["menu__nav-link"], {
+										[styles["menu__nav-link--active"]]: pathname === link.path,
+										[styles["menu__nav-link--show"]]: isMenuActive,
+									})}
 									href={link.path}
 								>
 									<span>{link.name}</span>
