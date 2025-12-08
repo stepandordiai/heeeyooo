@@ -15,8 +15,8 @@ type HeaderProps = {
 const Header = ({ workDataLength }: HeaderProps) => {
 	const pathname = usePathname();
 
-	const [isMenuActive, setIsMenuActive] = useState(false);
-	const [headerHide, setHeaderHide] = useState(false);
+	const [isMenuVisible, setIsMenuVisible] = useState(false);
+	const [headerHidden, setHeaderHidden] = useState(false);
 
 	useEffect(() => {
 		let prevScrollY = 0;
@@ -24,11 +24,11 @@ const Header = ({ workDataLength }: HeaderProps) => {
 		function handleHeaderOnScroll() {
 			const scrollY = window.scrollY;
 
-			setHeaderHide(scrollY > prevScrollY);
+			setHeaderHidden(scrollY > prevScrollY);
 
 			prevScrollY = scrollY;
 
-			setIsMenuActive(false);
+			setIsMenuVisible(false);
 		}
 
 		window.addEventListener("scroll", handleHeaderOnScroll);
@@ -37,14 +37,14 @@ const Header = ({ workDataLength }: HeaderProps) => {
 	}, []);
 
 	useEffect(() => {
-		setIsMenuActive(false);
+		setIsMenuVisible(false);
 	}, [pathname]);
 
 	// Close menu on Esc
 	useEffect(() => {
 		const closeMenuOnEsc = (e: KeyboardEvent) => {
 			if (e.code === "Escape") {
-				setIsMenuActive(false);
+				setIsMenuVisible(false);
 			}
 		};
 
@@ -54,14 +54,14 @@ const Header = ({ workDataLength }: HeaderProps) => {
 	}, []);
 
 	function toggleBurgerBtn() {
-		setIsMenuActive((prev) => !prev);
+		setIsMenuVisible((prev) => !prev);
 	}
 
 	return (
 		<header
 			className={classNames(styles.header, {
-				[styles["header--active"]]: isMenuActive,
-				[styles["header--hide"]]: headerHide,
+				[styles["header--active"]]: isMenuVisible,
+				[styles["header--hide"]]: headerHidden,
 			})}
 		>
 			<div className={styles["header__inner"]}>
@@ -99,29 +99,33 @@ const Header = ({ workDataLength }: HeaderProps) => {
 				<button
 					onClick={toggleBurgerBtn}
 					className={styles["burger-btn__container"]}
-					aria-label={isMenuActive ? "Close menu" : "Open menu"}
+					aria-label={isMenuVisible ? "Close menu" : "Open menu"}
+					aria-expanded={isMenuVisible}
+					aria-controls="menu"
 				>
 					<span
 						className={classNames(styles["burger-btn"], {
-							[styles["burger-btn--active"]]: isMenuActive,
+							[styles["burger-btn--active"]]: isMenuVisible,
 						})}
 					></span>
 				</button>
 			</div>
-			<div
+			<nav
 				className={classNames(styles["menu"], {
-					[styles["menu--active"]]: isMenuActive,
+					[styles["menu--active"]]: isMenuVisible,
 				})}
+				id="menu"
+				hidden={!isMenuVisible}
 			>
-				<nav className={styles["menu__nav"]}>
+				<div className={styles["menu__nav"]}>
 					{linksData.map((link) => {
 						return (
 							<div key={link.id} className={styles["menu__nav-item"]}>
 								<Link
-									onClick={() => setIsMenuActive(false)}
+									onClick={() => setIsMenuVisible(false)}
 									className={classNames(styles["menu__nav-link"], {
 										[styles["menu__nav-link--active"]]: pathname === link.path,
-										[styles["menu__nav-link--show"]]: isMenuActive,
+										[styles["menu__nav-link--show"]]: isMenuVisible,
 									})}
 									href={link.path}
 								>
@@ -133,8 +137,8 @@ const Header = ({ workDataLength }: HeaderProps) => {
 							</div>
 						);
 					})}
-				</nav>
-			</div>
+				</div>
+			</nav>
 		</header>
 	);
 };
