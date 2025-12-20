@@ -5,7 +5,7 @@ import PageNav from "../components/PageNav/PageNav";
 import styles from "./Contact.module.scss";
 
 export const metadata: Metadata = {
-	title: "Contact • heeeyooo studio",
+	title: "Contact | heeeyooo studio",
 	description:
 		"Get in touch with heeeyooo studio — a creative team passionate about design, web, and branding. Let’s bring your ideas to life. Contact us today!",
 	alternates: {

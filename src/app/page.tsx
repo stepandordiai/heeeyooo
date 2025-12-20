@@ -8,7 +8,7 @@ import ProjectCard from "./components/ProjectCard/ProjectCard";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-	title: "Creative web design & development agency • heeeyooo studio",
+	title: "Creative web design & development agency | heeeyooo studio",
 	alternates: {
 		canonical: "https://www.heeeyooo.studio/",
 	},

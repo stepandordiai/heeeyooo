@@ -7,7 +7,7 @@ import styles from "./About.module.scss";
 import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
-	title: "About • heeeyooo studio",
+	title: "About | heeeyooo studio",
 	description:
 		"heeeyooo studio is a creative team crafting bold design, branding, and web experiences that connect with people and make brands shine.",
 	alternates: {
