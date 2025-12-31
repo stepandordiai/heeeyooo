@@ -8,10 +8,16 @@ import { notFound } from "next/navigation";
 import { getWorkData } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
 
-// TODO:
+// TODO: LEARN THIS
 export async function generateStaticParams(): Promise<{ id: string }[]> {
 	const workData = await getWorkData();
-	return workData.map((project) => ({ id: project.id }));
+	const locales = ["en", "uk"];
+	return locales.flatMap((locale) =>
+		workData.map((project) => ({
+			locale,
+			id: project.id,
+		}))
+	);
 }
 
 // TODO: LEARN THIS
