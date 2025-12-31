@@ -1,40 +1,40 @@
 [
 	{
 		"id": "ux-ui-design",
-		"title": "UX/UI Design",
-		"desc": "Looking for a website that not only looks amazing but drives results? Our professional web design services combine creativity, usability, and cutting-edge technology to create websites that attract visitors and convert them into customers. We specialize in responsive web design, e-commerce websites, landing pages, and custom solutions tailored to your brand."
+		"title": "home.uiUxDesign",
+		"desc": "home.uiUxDesignDesc"
 	},
 	{
 		"id": "web-development",
-		"title": "Web Development",
-		"desc": "Need a website or web application that works flawlessly and scales with your business? Our expert web development services deliver high-quality, custom solutions tailored to your needs. We specialize in front-end and back-end development, e-commerce platforms, custom web applications, and API integrations, ensuring your site is fast, secure, and reliable."
+		"title": "home.webDevelopment",
+		"desc": "home.webDevelopmentDesc"
 	},
 	{
 		"id": "hosting",
-		"title": "Hosting",
-		"desc": "Ensure your website is always fast, secure, and accessible with our professional web hosting services. We provide high-performance hosting, secure servers, and 99.9% uptime, giving your website the stability it needs to grow your business online."
+		"title": "home.hosting",
+		"desc": "home.hostingDesc"
 	},
 	{
 		"id": "website-optimization",
-		"title": "Website Optimization",
-		"desc": "A fast website means better user experience, higher rankings, and more conversions. We specialize in making websites load instantly and run smoothly — across all devices.",
+		"title": "home.websiteOptimization",
+		"desc": "home.websiteOptimizationDesc",
 		"performanceOverview": true
 	},
 	{
 		"id": "website-maintenance",
-		"title": "Website Maintenance",
-		"desc": "Keep your website running smoothly, securely, and up-to-date with our professional website maintenance services. We handle regular updates, security monitoring, backups, performance optimization, and content management, so your site stays fast, safe, and fully functional.",
+		"title": "home.websiteMaintenance",
+		"desc": "home.websiteMaintenance",
 		"freeSupport": true
 	},
 	{
 		"id": "seo",
-		"title": "SEO",
-		"desc": "Want your website to rank higher on Google and attract more qualified traffic? Our professional SEO services help businesses improve their online presence, drive organic traffic, and increase conversions. We specialize in on-page SEO, off-page SEO, technical SEO, keyword research, and content optimization, ensuring your website performs at its best in search engines."
+		"title": "home.seo",
+		"desc": "home.seoDesc"
 	},
 	{
 		"id": "website-redesign",
-		"title": "Website Redesign",
-		"desc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals.",
+		"title": "home.websiteRedesign",
+		"desc": "home.websiteRedesignDesc",
 		"beforeAfter": true
 	}
 ]

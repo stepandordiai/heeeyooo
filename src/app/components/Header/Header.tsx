@@ -1,9 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, getPathname } from "@/i18n/navigation";
 import linksData from "./../../data/links-data.json";
-import Link from "next/link";
+import { useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
@@ -13,7 +15,9 @@ type HeaderProps = {
 };
 
 const Header = ({ workDataLength }: HeaderProps) => {
+	const t = useTranslations();
 	const pathname = usePathname();
+	const locale = useLocale();
 
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
 	const [headerHidden, setHeaderHidden] = useState(false);
@@ -85,7 +89,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 								})}
 								href={link.path}
 							>
-								<span>{link.name}</span>
+								<span>{t(link.name)}</span>
 								{link.workQty && (
 									<span className={styles["header__work-qty"]}>
 										{workDataLength}
@@ -124,7 +128,9 @@ const Header = ({ workDataLength }: HeaderProps) => {
 								<Link
 									onClick={() => setIsMenuVisible(false)}
 									className={classNames(styles["menu__nav-link"], {
-										[styles["menu__nav-link--active"]]: pathname === link.path,
+										[styles["menu__nav-link--active"]]:
+											// TODO: LEARN THIS
+											pathname === getPathname({ href: link.path, locale }),
 										[styles["menu__nav-link--show"]]: isMenuVisible,
 									})}
 									href={link.path}

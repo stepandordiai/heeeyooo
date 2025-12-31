@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Container from "../components/Container/Container";
-import PageNav from "../components/PageNav/PageNav";
+import Container from "@/app/components/Container/Container";
+import PageNav from "@/app/components/PageNav/PageNav";
 import WorkClient from "./WorkClient";
-import { getWorkData } from "../lib/api";
+import { getWorkData } from "@/app/lib/api";
 import styles from "./Work.module.scss";
 
 export const metadata: Metadata = {

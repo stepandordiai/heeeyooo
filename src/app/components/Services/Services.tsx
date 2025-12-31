@@ -7,8 +7,10 @@ import WordLine from "../WordLine/WordLine";
 import img from "./../../../../public/neresen-c-before.png";
 import img2 from "./../../../../public/neresen-ss-v7-c-after.png";
 import styles from "./Services.module.scss";
+import { useTranslations } from "next-intl";
 
 const Services = () => {
+	const t = useTranslations();
 	const [device, setDevice] = useState("mobile");
 	const [indicatorStyle, setIndicatorStyle] = useState({});
 	const [dividerActive, setDividerActive] = useState(
@@ -67,10 +69,10 @@ const Services = () => {
 	return (
 		<div className={styles.services}>
 			<h2 className={styles["services__title"]}>
-				<WordLine text="Services" />
+				<WordLine text={t("home.services")} />
 			</h2>
 			<div className={styles["services__desc"]}>
-				<WordLine text="We specialize in crafting websites from idea, through design to development and post-deployment follow-up support." />
+				<WordLine text={t("home.servicesDesc")} />
 			</div>
 			<div className={styles["home__services-grid"]}>
 				{servicesData.map((service, index) => {
@@ -78,10 +80,10 @@ const Services = () => {
 						<React.Fragment key={service.id}>
 							<div className={styles["service"]}>
 								<div className={styles["service__title"]}>
-									<WordLine text={service.title} />
+									<WordLine text={t(service.title)} />
 								</div>
 								<div className={styles["service__desc"]}>
-									<WordLine text={service.desc} />
+									<WordLine text={t(service.desc)} />
 									{service.performanceOverview && (
 										<div
 											style={{

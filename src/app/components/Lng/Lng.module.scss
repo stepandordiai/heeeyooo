@@ -1,0 +1,22 @@
+.lng {
+	display: flex;
+	border-radius: 15px;
+	padding: 5px;
+	width: max-content;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.lng-btn {
+	padding: 5px;
+	min-width: 50px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.lng-btn--active {
+	background: var(--accent-clr) !important;
+	color: black !important;
+}

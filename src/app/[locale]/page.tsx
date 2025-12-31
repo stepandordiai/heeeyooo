@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { getWorkData } from "./lib/api";
-import Container from "./components/Container/Container";
-import WordLine from "./components/WordLine/WordLine";
-import Services from "./components/Services/Services";
-import Technologies from "./components/Technologies/Technologies";
-import ProjectCard from "./components/ProjectCard/ProjectCard";
+import { getWorkData } from "../lib/api";
+import Container from "../components/Container/Container";
+import WordLine from "../components/WordLine/WordLine";
+import Services from "../components/Services/Services";
+import Technologies from "../components/Technologies/Technologies";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 import styles from "./page.module.scss";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
 	title: "Creative web design & development agency | heeeyooo studio",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
+	const t = await getTranslations();
 	const workData = await getWorkData();
 
 	return (
@@ -26,10 +28,10 @@ const Home = async () => {
 							<WordLine text="Website under construction" />
 						</div> */}
 						<h1 className={styles["home__title"]}>
-							<WordLine text="Creative web design & development agency" />
+							<WordLine text={t("home.heroTitle")} />
 						</h1>
 						<p className={styles["home__desc"]}>
-							<WordLine text="We create modern websites, landing pages, and online stores that work fast, look great, and grow your business." />
+							<WordLine text={t("home.heroSecTitle")} />
 						</p>
 						<a
 							className={styles["home-hero__link"]}
@@ -40,10 +42,10 @@ const Home = async () => {
 					</section>
 					<div>
 						<h2 className={styles["featured-work__title"]}>
-							<WordLine text="Featured work" />
+							<WordLine text={t("home.featuredWork")} />
 						</h2>
 						<div style={{ marginTop: 20, marginBottom: 20 }}>
-							<WordLine text="Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves" />
+							<WordLine text={t("home.featuredWorkDesc")} />
 						</div>
 						<div className={styles["home__works"]}>
 							{workData

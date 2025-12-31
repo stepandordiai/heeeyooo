@@ -1,6 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import styles from "./Technologies.module.scss";
 
-const Technologies = () => {
+const Technologies = async () => {
+	const t = await getTranslations();
 	const technologiesData = [
 		{ name: "Next.js", fontClr: "#ffffff", bgClr: "#ffffff33" },
 		{ name: "React.js", fontClr: "#61dbfb", bgClr: "#61dcfb33" },
@@ -21,7 +23,7 @@ const Technologies = () => {
 
 	return (
 		<div>
-			<h2 style={{ textAlign: "center" }}>Technologies</h2>
+			<h2 style={{ textAlign: "center" }}>{t("home.technologies")}</h2>
 			<div className={styles.technologies}>
 				{technologiesData.map((technology, index) => {
 					return (

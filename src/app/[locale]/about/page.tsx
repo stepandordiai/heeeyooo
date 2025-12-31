@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Container from "../components/Container/Container";
-import PageNav from "../components/PageNav/PageNav";
+import Container from "@/app/components/Container/Container";
+import PageNav from "@/app/components/PageNav/PageNav";
 import Image from "next/image";
-import photo from "./../../../public/photo.jpg";
+import photo from "./../../../../public/photo.jpg";
 import styles from "./About.module.scss";
 import AboutClient from "./AboutClient";
 

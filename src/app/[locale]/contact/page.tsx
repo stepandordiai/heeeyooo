@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import servicesData from "./../data/services-data.json";
-import Container from "../components/Container/Container";
-import PageNav from "../components/PageNav/PageNav";
+import servicesData from "./../../data/services-data.json";
+import Container from "@/app/components/Container/Container";
+import PageNav from "@/app/components/PageNav/PageNav";
 import styles from "./Contact.module.scss";
 
 export const metadata: Metadata = {

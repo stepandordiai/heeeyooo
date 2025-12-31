@@ -1,16 +1,20 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import linksData from "./../../data/links-data.json";
 import Container from "../Container/Container";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import Lng from "../Lng/Lng";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
+	const t = useTranslations();
 	const pathname = usePathname();
 
 	return (
 		<footer className={styles.footer}>
+			<Lng />
 			<Container>
 				<p style={{ fontSize: "3rem" }}>heeeyooo studio</p>
 				<div className={styles["footer-top"]}>
@@ -27,7 +31,7 @@ const Footer = () => {
 									}`}
 									href={link.path}
 								>
-									{link.name}
+									{t(link.name)}
 								</Link>
 							);
 						})}

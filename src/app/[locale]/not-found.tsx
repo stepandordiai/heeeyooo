@@ -1,4 +1,4 @@
-import PageNav from "./components/PageNav/PageNav";
+import PageNav from "../components/PageNav/PageNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import WordLine from "@/app/components/WordLine/WordLine";
 import PageNav from "@/app/components/PageNav/PageNav";
 import { notFound } from "next/navigation";

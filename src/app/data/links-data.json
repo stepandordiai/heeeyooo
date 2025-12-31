@@ -1,6 +1,6 @@
 [
-	{ "id": 1, "name": "Home", "path": "/" },
-	{ "id": 2, "name": "About", "path": "/about" },
-	{ "id": 3, "name": "Work", "path": "/work", "workQty": true },
-	{ "id": 4, "name": "Contact", "path": "/contact" }
+	{ "id": 1, "name": "homeTitle", "path": "/" },
+	{ "id": 2, "name": "aboutTitle", "path": "/about" },
+	{ "id": 3, "name": "workTitle", "path": "/work", "workQty": true },
+	{ "id": 4, "name": "contactTitle", "path": "/contact" }
 ]
