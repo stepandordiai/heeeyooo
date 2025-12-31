@@ -10,5 +10,5 @@ export const routing = defineRouting({
 
 	// "always" ensures that /en or /uk is ALWAYS in the URL.
 	// "as-needed" (default) might hide it for the default locale.
-	localePrefix: "always",
+	// localePrefix: "always",
 });
