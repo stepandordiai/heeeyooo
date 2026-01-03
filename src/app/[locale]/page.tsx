@@ -8,12 +8,17 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 import styles from "./page.module.scss";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-	title: "Creative web design and development studio",
-	alternates: {
-		canonical: "https://www.heeeyooo.studio/",
-	},
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations();
+
+	return {
+		title: t("homeMetaTitle"),
+		description: t("homeMetaDesc"),
+		alternates: {
+			canonical: "https://www.heeeyooo.studio/",
+		},
+	};
+}
 
 const Home = async () => {
 	const t = await getTranslations();

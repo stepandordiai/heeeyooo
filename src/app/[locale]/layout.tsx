@@ -1,5 +1,6 @@
 // TODO: word "type" specifies that i only import type not an object
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";
@@ -17,11 +18,14 @@ const chakraPetch = Chakra_Petch({
 	variable: "--font-chakra-petch",
 });
 
-export const metadata: Metadata = {
-	title: "Creative web design and development studio",
-	description:
-		"heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations();
+
+	return {
+		title: t("homeMetaTitle"),
+		description: t("homeMetaDesc"),
+	};
+}
 
 type LayoutProps = {
 	children: React.ReactNode;
