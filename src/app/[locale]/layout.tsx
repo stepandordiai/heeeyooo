@@ -18,7 +18,7 @@ const chakraPetch = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-	title: "Creative web design & development agency | heeeyooo studio",
+	title: "Creative web design and development studio",
 	description:
 		"heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine.",
 };

@@ -9,7 +9,7 @@ import styles from "./page.module.scss";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-	title: "Creative web design & development agency | heeeyooo studio",
+	title: "Creative web design and development studio",
 	alternates: {
 		canonical: "https://www.heeeyooo.studio/",
 	},
