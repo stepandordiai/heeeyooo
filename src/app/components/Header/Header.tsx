@@ -135,7 +135,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 									})}
 									href={link.path}
 								>
-									<span>{link.name}</span>
+									<span>{t(link.name)}</span>
 									{link.workQty && (
 										<span className={styles["work-qty"]}>{workDataLength}</span>
 									)}

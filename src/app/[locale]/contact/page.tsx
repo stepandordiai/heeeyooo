@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import servicesData from "./../../data/services-data.json";
 import Container from "@/app/components/Container/Container";
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
 	},
 };
 
-const Contact = () => {
+export default async function Contact() {
+	const t = await getTranslations();
+
 	return (
 		<main className={styles.contact}>
 			<Container>
@@ -91,7 +94,7 @@ const Contact = () => {
 													name="howCanWeHelp"
 													value={service.title}
 												/>
-												{service.title}
+												{t(service.title)}
 											</label>
 										);
 									})}
@@ -122,6 +125,4 @@ const Contact = () => {
 			</Container>
 		</main>
 	);
-};
-
-export default Contact;
+}
