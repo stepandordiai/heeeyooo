@@ -2,14 +2,14 @@
 
 import { useRef } from "react";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/navigation"; // Використовуйте ваш файл routing
+import { useRouter, usePathname } from "@/i18n/navigation";
 import classNames from "classnames";
 import styles from "./Lng.module.scss";
 
-// Дані можна тримати тут або в окремому файлі config
 const lngData = [
 	{ code: "en", name: "EN" },
 	{ code: "uk", name: "UA" },
+	{ code: "cs", name: "CZ" },
 ];
 
 const Lng = () => {

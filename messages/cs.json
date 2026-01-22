@@ -1,0 +1,32 @@
+{
+	"homeTitle": "Domů",
+	"aboutTitle": "O nás",
+	"workTitle": "Projekty",
+	"contactTitle": "Kontakt",
+	"homeMetaTitle": "Kreativní studio pro webdesign a vývoj",
+	"homeMetaDesc": "heeeyooo studio je kreativní studio, které tvoří výrazný branding, design a webové zážitky, díky nimž značky vyniknou.",
+
+	"home": {
+		"heroTitle": "Kreativní studio pro webdesign a vývoj",
+		"heroSecTitle": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
+		"featuredWork": "Vybrané projekty",
+		"featuredWorkDesc": "Prohlédněte si naše vybrané projekty a zjistěte, jak jsme firmám pomohli zlepšit jejich online prezentaci, zvýšit zapojení a dosáhnout jejich cílů díky inovativním digitálním řešením. Některé projekty vznikly pro klienty, jiné pro nás samotné.",
+		"services": "Služby",
+		"servicesDesc": "Specializujeme se na tvorbu webů od nápadu přes design až po vývoj a následnou podporu po spuštění.",
+		"uiUxDesign": "UX/UI design",
+		"uiUxDesignDesc": "Hledáte web, který nejen skvěle vypadá, ale také přináší výsledky? Naše profesionální služby webdesignu kombinují kreativitu, použitelnost a moderní technologie, aby vznikly weby, které přitahují návštěvníky a mění je v zákazníky. Specializujeme se na responzivní webdesign, e-shopy, landing pages a řešení na míru vaší značce.",
+		"webDevelopment": "Webový vývoj",
+		"webDevelopmentDesc": "Potřebujete web nebo webovou aplikaci, která funguje bezchybně a poroste spolu s vaším podnikáním? Naše služby webového vývoje přinášejí kvalitní řešení na míru vašim potřebám. Zaměřujeme se na front-end i back-end vývoj, e-commerce platformy, webové aplikace na míru a integrace API — aby byl váš web rychlý, bezpečný a spolehlivý.",
+		"hosting": "Hosting",
+		"hostingDesc": "Zajistěte, aby byl váš web vždy rychlý, bezpečný a dostupný díky našemu profesionálnímu hostingu. Nabízíme výkonný hosting, zabezpečené servery a 99,9% dostupnost, která vašemu webu poskytne stabilitu potřebnou pro růst online.",
+		"websiteOptimization": "Optimalizace webu",
+		"websiteOptimizationDesc": "Rychlý web znamená lepší uživatelský zážitek, vyšší pozice ve vyhledávání a více konverzí. Specializujeme se na to, aby se weby načítaly okamžitě a běžely plynule — na všech zařízeních.",
+		"websiteMaintenance": "Údržba webu",
+		"websiteMaintenanceDesc": "Udržujte svůj web plynulý, bezpečný a aktuální díky naší profesionální správě webu. Zajišťujeme pravidelné aktualizace, monitoring zabezpečení, zálohování, optimalizaci výkonu i správu obsahu, aby váš web zůstal rychlý, bezpečný a plně funkční.",
+		"seo": "SEO",
+		"seoDesc": "Chcete se umisťovat výš na Googlu a získat více relevantní návštěvnosti? Naše profesionální SEO služby pomáhají firmám zlepšit online viditelnost, zvýšit organickou návštěvnost a růst konverzí. Specializujeme se na on-page SEO, off-page SEO, technické SEO, analýzu klíčových slov a optimalizaci obsahu, aby váš web ve vyhledávačích podával maximální výkon.",
+		"websiteRedesign": "Redesign webu",
+		"websiteRedesignDesc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
+		"technologies": "Technologie"
+	}
+}
