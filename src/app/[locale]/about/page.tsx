@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
-import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import Image from "next/image";
 import photo from "./../../../../public/photo.jpg";
 import styles from "./About.module.scss";
 import AboutClient from "./AboutClient";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
 	title: "About | heeeyooo studio",
@@ -15,11 +16,13 @@ export const metadata: Metadata = {
 	},
 };
 
-const About = () => {
+export default async function About() {
+	const t = await getTranslations();
+
 	return (
 		<main className={styles.about}>
 			<Container>
-				<Breadcrumbs pageName="About" />
+				<Breadcrumbs links={[{ label: t("aboutTitle") }]} />
 				<AboutClient />
 				<div className={styles["about__container"]}>
 					<p>
@@ -44,6 +47,4 @@ const About = () => {
 			</Container>
 		</main>
 	);
-};
-
-export default About;
+}

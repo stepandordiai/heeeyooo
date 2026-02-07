@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
 import { Link } from "@/i18n/navigation";
 import WordLine from "@/app/components/WordLine/WordLine";
-import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { fetchWork } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
@@ -46,7 +47,9 @@ interface ProjectPageProps {
 }
 
 // TODO:
-const ProjectPage = async ({ params }: ProjectPageProps) => {
+export default async function ProjectPage({ params }: ProjectPageProps) {
+	const t = await getTranslations();
+
 	const workData = await fetchWork();
 
 	const { id } = await params;
@@ -72,7 +75,12 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 	return (
 		<main className={styles["project-page"]}>
 			<Container>
-				<Breadcrumbs pageName="Work" projectName={project.name} />
+				<Breadcrumbs
+					links={[
+						{ label: t("workTitle"), path: "/work" },
+						{ label: project.name },
+					]}
+				/>
 				<h1 className={styles["project-page__title"]}>
 					<WordLine text={project.name} />
 				</h1>
@@ -188,6 +196,4 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 			</Container>
 		</main>
 	);
-};
-
-export default ProjectPage;
+}

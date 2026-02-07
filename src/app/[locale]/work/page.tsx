@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Container from "@/app/components/Container/Container";
-import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import WorkClient from "./WorkClient";
 import { fetchWork } from "@/app/lib/api";
 import styles from "./Work.module.scss";
@@ -15,17 +16,17 @@ export const metadata: Metadata = {
 };
 
 // TODO:
-const Work = async () => {
+export default async function Work() {
+	const t = await getTranslations();
+
 	const workData = await fetchWork();
 
 	return (
 		<main className={styles.work}>
 			<Container>
-				<Breadcrumbs pageName="Work" />
+				<Breadcrumbs links={[{ label: t("workTitle") }]} />
 				<WorkClient workData={workData} />
 			</Container>
 		</main>
 	);
-};
-
-export default Work;
+}

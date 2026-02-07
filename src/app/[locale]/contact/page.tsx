@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import servicesData from "./../../data/services-data.json";
 import Container from "@/app/components/Container/Container";
-import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import styles from "./Contact.module.scss";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default async function Contact() {
 	return (
 		<main className={styles.contact}>
 			<Container>
-				<Breadcrumbs pageName="Contact" />
+				<Breadcrumbs links={[{ label: t("contactTitle") }]} />
 				<div className={styles["contact__inner"]}>
 					<div className={styles["contact__container"]}>
 						<a
