@@ -2,13 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { usePathname, getPathname } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import linksData from "@/app/data/links-data.json";
-import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import logoImg from "./../../../../../public/heeeyooo-studio-logo-white-v1.svg";
-import styles from "./Header.module.scss";
 import classNames from "classnames";
+import Image from "next/image";
+import styles from "./Header.module.scss";
 
 type HeaderProps = {
 	workLength: number;
@@ -17,7 +16,6 @@ type HeaderProps = {
 const Header = ({ workLength }: HeaderProps) => {
 	const t = useTranslations();
 	const pathname = usePathname();
-	const locale = useLocale();
 
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
 	const [headerHidden, setHeaderHidden] = useState(false);
@@ -47,7 +45,7 @@ const Header = ({ workLength }: HeaderProps) => {
 	// Close menu on Esc
 	useEffect(() => {
 		const closeMenuOnEsc = (e: KeyboardEvent) => {
-			if (e.code === "Escape") {
+			if (e.key === "Escape") {
 				setIsMenuVisible(false);
 			}
 		};
@@ -57,9 +55,7 @@ const Header = ({ workLength }: HeaderProps) => {
 		return () => document.removeEventListener("keydown", closeMenuOnEsc);
 	}, []);
 
-	function toggleBurgerBtn() {
-		setIsMenuVisible((prev) => !prev);
-	}
+	const toggleMenu = () => setIsMenuVisible((prev) => !prev);
 
 	return (
 		<header
@@ -70,12 +66,11 @@ const Header = ({ workLength }: HeaderProps) => {
 		>
 			<div className={styles["header__inner"]}>
 				<Link className={styles["header__logo-link"]} href="/">
-					<img
+					<Image
 						width={35}
 						height={35}
 						className={styles["header__logo-img"]}
-						// TODO:
-						src={logoImg.src}
+						src="/heeeyooo-studio-logo-white-v1.svg"
 						alt="heeeyooo studio logo"
 					/>
 				</Link>
@@ -101,15 +96,18 @@ const Header = ({ workLength }: HeaderProps) => {
 				</nav>
 				{/* menu-btn */}
 				<button
-					onClick={toggleBurgerBtn}
-					className={styles["burger-btn__container"]}
-					aria-label={isMenuVisible ? "Close menu" : "Open menu"}
+					onClick={toggleMenu}
+					className={styles["burger-btn"]}
+					aria-label={
+						isMenuVisible ? t("header.closeMenu") : t("header.openMenu")
+					}
 					aria-expanded={isMenuVisible}
 					aria-controls="menu"
+					title={isMenuVisible ? t("header.closeMenu") : t("header.openMenu")}
 				>
 					<span
-						className={classNames(styles["burger-btn"], {
-							[styles["burger-btn--active"]]: isMenuVisible,
+						className={classNames(styles["burger-btn-inner"], {
+							[styles["burger-btn-inner--active"]]: isMenuVisible,
 						})}
 					></span>
 				</button>
@@ -128,9 +126,7 @@ const Header = ({ workLength }: HeaderProps) => {
 								<Link
 									onClick={() => setIsMenuVisible(false)}
 									className={classNames(styles["menu__nav-link"], {
-										[styles["menu__nav-link--active"]]:
-											// TODO: LEARN THIS
-											pathname === getPathname({ href: link.path, locale }),
+										[styles["menu__nav-link--active"]]: pathname === link.path,
 										[styles["menu__nav-link--show"]]: isMenuVisible,
 									})}
 									href={link.path}
