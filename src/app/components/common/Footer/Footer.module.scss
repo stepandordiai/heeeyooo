@@ -15,6 +15,8 @@
 
 .footer-bottom {
 	@include flex-between-center;
+	flex-wrap: wrap;
+	gap: 10px;
 }
 
 .footer__nav {
@@ -31,15 +33,11 @@
 }
 
 .footer__nav-link--active {
-	color: var(--accent-clr);
+	color: var(--accent-clr) !important;
 }
 
 @media screen and (width < 808px) {
 	.footer {
 		padding: 0 10px 10px 10px;
-	}
-
-	.footer-bottom {
-		flex-direction: column;
 	}
 }

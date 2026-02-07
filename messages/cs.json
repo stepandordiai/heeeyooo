@@ -33,5 +33,10 @@
 		"websiteRedesign": "Redesign webu",
 		"websiteRedesignDesc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
 		"technologies": "Technologie"
+	},
+
+	"footer": {
+		"sitemap": "Mapa stránek",
+		"allRightsReserved": "Všechna práva vyhrazena"
 	}
 }
