@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
-import PageNav from "@/app/components/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
 import WorkClient from "./WorkClient";
 import { getWorkData } from "@/app/lib/api";
 import styles from "./Work.module.scss";
@@ -21,7 +21,7 @@ const Work = async () => {
 	return (
 		<main className={styles.work}>
 			<Container>
-				<PageNav pageName="Work" />
+				<Breadcrumbs pageName="Work" />
 				<WorkClient workData={workData} />
 			</Container>
 		</main>

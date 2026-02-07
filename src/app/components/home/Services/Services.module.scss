@@ -68,7 +68,9 @@
 	background: var(--accent-clr);
 	border-radius: 10px;
 	z-index: -1;
-	transition: width 0.3s, left 0.3s;
+	transition:
+		width 0.3s,
+		left 0.3s;
 }
 
 // TODO:
@@ -173,7 +175,7 @@
 			background: transparent;
 			box-shadow: none;
 			border-radius: 50%;
-			background-image: url(./../../../../public/left-right.png);
+			background-image: url(./../../../../../public/left-right.png);
 			background-repeat: no-repeat;
 			background-size: 40px;
 			background-position: center;

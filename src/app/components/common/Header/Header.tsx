@@ -3,10 +3,10 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { usePathname, getPathname } from "@/i18n/navigation";
-import linksData from "./../../data/links-data.json";
+import linksData from "@/app/data/links-data.json";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import logoImg from "./../../../../public/heeeyooo-studio-logo-white-v1.svg";
+import logoImg from "./../../../../../public/heeeyooo-studio-logo-white-v1.svg";
 import styles from "./Header.module.scss";
 import classNames from "classnames";
 

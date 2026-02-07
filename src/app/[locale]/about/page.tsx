@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
-import PageNav from "@/app/components/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
 import Image from "next/image";
 import photo from "./../../../../public/photo.jpg";
 import styles from "./About.module.scss";
@@ -19,7 +19,7 @@ const About = () => {
 	return (
 		<main className={styles.about}>
 			<Container>
-				<PageNav pageName="About" />
+				<Breadcrumbs pageName="About" />
 				<AboutClient />
 				<div className={styles["about__container"]}>
 					<p>

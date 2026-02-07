@@ -1,8 +1,8 @@
 // TODO: word "type" specifies that i only import type not an object
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "../components/common/Header/Header";
+import Footer from "../components/common/Footer/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";
 import { Chakra_Petch } from "next/font/google";
 import { routing } from "@/i18n/routing";

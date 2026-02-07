@@ -2,10 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import linksData from "./../../data/links-data.json";
-import Container from "../Container/Container";
+import linksData from "@/app/data/links-data.json";
+import Container from "../../Container/Container";
 import { Link } from "@/i18n/navigation";
-import Lng from "../Lng/Lng";
+import Lng from "../../Lng/Lng";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {

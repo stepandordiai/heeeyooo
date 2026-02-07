@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import React from "react";
-import servicesData from "./../../data/services-data.json";
-import WordLine from "../WordLine/WordLine";
-import img from "./../../../../public/neresen-c-before.png";
-import img2 from "./../../../../public/neresen-ss-v7-c-after.png";
+import servicesData from "@/app/data/services-data.json";
+import WordLine from "../../WordLine/WordLine";
+import img from "./../../../../../public/neresen-c-before.png";
+import img2 from "./../../../../../public/neresen-ss-v7-c-after.png";
 import styles from "./Services.module.scss";
 import { useTranslations } from "next-intl";
 
@@ -14,7 +14,7 @@ const Services = () => {
 	const [device, setDevice] = useState("mobile");
 	const [indicatorStyle, setIndicatorStyle] = useState({});
 	const [dividerActive, setDividerActive] = useState(
-		new Array(servicesData.length).fill(false)
+		new Array(servicesData.length).fill(false),
 	);
 	const [rangeValue, setRangeValue] = useState(50);
 
@@ -29,7 +29,7 @@ const Services = () => {
 			(entries) => {
 				entries.forEach((entry) => {
 					const index = dividerRefs.current.indexOf(
-						entry.target as HTMLDivElement
+						entry.target as HTMLDivElement,
 					);
 
 					if (index !== -1 && entry.isIntersecting) {
@@ -42,7 +42,7 @@ const Services = () => {
 					}
 				});
 			},
-			{ threshold: 1 }
+			{ threshold: 1 },
 		);
 
 		dividerRefs.current.forEach((divider) => {
@@ -55,7 +55,7 @@ const Services = () => {
 	// FIXME:
 	useEffect(() => {
 		const btn = document.querySelector(
-			`.${styles["portfolio-btn--active"]}`
+			`.${styles["portfolio-btn--active"]}`,
 		) as HTMLButtonElement;
 
 		if (btnIndicator.current && btn) {

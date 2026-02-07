@@ -3,7 +3,7 @@ import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
 import { Link } from "@/i18n/navigation";
 import WordLine from "@/app/components/WordLine/WordLine";
-import PageNav from "@/app/components/PageNav/PageNav";
+import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
 import { notFound } from "next/navigation";
 import { getWorkData } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
@@ -16,7 +16,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 		workData.map((project) => ({
 			locale,
 			id: project.id,
-		}))
+		})),
 	);
 }
 
@@ -57,7 +57,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 
 	// TODO: better to use here findIndex instead of indexOf
 	const currentProjectIndex = workData.findIndex(
-		(currentProject) => currentProject.id === project.id
+		(currentProject) => currentProject.id === project.id,
 	);
 	const prevProjectIndex =
 		currentProjectIndex > 0 ? currentProjectIndex - 1 : workData.length - 1;
@@ -72,7 +72,7 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 	return (
 		<main className={styles["project-page"]}>
 			<Container>
-				<PageNav pageName="Work" projectName={project.name} />
+				<Breadcrumbs pageName="Work" projectName={project.name} />
 				<h1 className={styles["project-page__title"]}>
 					<WordLine text={project.name} />
 				</h1>

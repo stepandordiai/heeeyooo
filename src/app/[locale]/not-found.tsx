@@ -1,4 +1,4 @@
-import PageNav from "../components/PageNav/PageNav";
+import Breadcrumbs from "../components/common/PageNav/PageNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const NotFound = () => {
 	return (
 		<main className="not-found">
-			<PageNav pageName="404" />
+			<Breadcrumbs pageName="404" />
 			<p
 				style={{
 					position: "absolute",
