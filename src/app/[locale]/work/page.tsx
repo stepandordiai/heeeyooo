@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
 import WorkClient from "./WorkClient";
-import { getWorkData } from "@/app/lib/api";
+import { fetchWork } from "@/app/lib/api";
 import styles from "./Work.module.scss";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 // TODO:
 const Work = async () => {
-	const workData = await getWorkData();
+	const workData = await fetchWork();
 
 	return (
 		<main className={styles.work}>

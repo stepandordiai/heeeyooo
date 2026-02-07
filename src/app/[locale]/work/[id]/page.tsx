@@ -5,12 +5,12 @@ import { Link } from "@/i18n/navigation";
 import WordLine from "@/app/components/WordLine/WordLine";
 import Breadcrumbs from "@/app/components/common/PageNav/PageNav";
 import { notFound } from "next/navigation";
-import { getWorkData } from "@/app/lib/api";
+import { fetchWork } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
 
 // TODO: LEARN THIS
 export async function generateStaticParams(): Promise<{ id: string }[]> {
-	const workData = await getWorkData();
+	const workData = await fetchWork();
 	const locales = ["en", "uk"];
 	return locales.flatMap((locale) =>
 		workData.map((project) => ({
@@ -27,7 +27,7 @@ export async function generateMetadata({
 	params: Promise<{ id: string }>;
 }): Promise<Metadata> {
 	const { id } = await params;
-	const workData = await getWorkData();
+	const workData = await fetchWork();
 	const project = workData.find((p) => p.id === id);
 
 	return {
@@ -47,7 +47,7 @@ interface ProjectPageProps {
 
 // TODO:
 const ProjectPage = async ({ params }: ProjectPageProps) => {
-	const workData = await getWorkData();
+	const workData = await fetchWork();
 
 	const { id } = await params;
 

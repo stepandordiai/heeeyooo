@@ -1,16 +1,16 @@
 // TODO: word "type" specifies that i only import type not an object
+import { Chakra_Petch } from "next/font/google";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import Header from "../components/common/Header/Header";
 import Footer from "../components/common/Footer/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";
-import { Chakra_Petch } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { getWorkData } from "../lib/api";
+import { fetchWork } from "../lib/api";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import "@/app/scss/globals.scss";
 
+// TODO: learn this
 const chakraPetch = Chakra_Petch({
 	subsets: ["latin"],
 	weight: ["400", "500"],
@@ -18,27 +18,44 @@ const chakraPetch = Chakra_Petch({
 	variable: "--font-chakra-petch",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations();
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+	const baseUrl = "https://www.heeeyooo.studio";
+
+	const lngUrls = {
+		en: `${baseUrl}/en`,
+		uk: `${baseUrl}/uk`,
+		cs: `${baseUrl}/cs`,
+	};
 
 	return {
-		title: t("homeMetaTitle"),
-		description: t("homeMetaDesc"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}`,
+			languages: {
+				...lngUrls,
+				"x-default": `${baseUrl}/en`,
+			},
+		},
 	};
 }
 
-type LayoutProps = {
+type LocaleLayoutProps = {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({
+export default async function LocaleLayout({
 	children,
 	params,
-}: Readonly<LayoutProps>) {
-	const workData = await getWorkData();
+}: Readonly<LocaleLayoutProps>) {
+	const work = await fetchWork();
 	const { locale } = await params;
 
+	// TODO: learn this
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
 	}
@@ -46,10 +63,10 @@ export default async function RootLayout({
 	return (
 		<html lang={locale} className={chakraPetch.className}>
 			<body>
-				<NextIntlClientProvider>
-					<Header workDataLength={workData.length} />
-					{children}
+				<NextIntlClientProvider locale={locale}>
+					<Header workLength={work.length} />
 					<CustomCursor />
+					{children}
 					<Footer />
 				</NextIntlClientProvider>
 			</body>

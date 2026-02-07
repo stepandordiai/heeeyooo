@@ -7,7 +7,7 @@ const headers = {
 	"Content-Type": "application/json",
 };
 
-export const getWorkData = async (): Promise<Project[]> => {
+export const fetchWork = async (): Promise<Project[]> => {
 	const response = await fetch(url, { headers });
 	const workData = await response.json();
 	return workData;

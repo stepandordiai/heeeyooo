@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getWorkData } from "../lib/api";
+import { fetchWork } from "../lib/api";
 import Container from "../components/Container/Container";
 import WordLine from "../components/WordLine/WordLine";
 import Services from "../components/home/Services/Services";
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const Home = async () => {
 	const t = await getTranslations();
-	const workData = await getWorkData();
+	const workData = await fetchWork();
 
 	return (
 		<main className={styles.home}>

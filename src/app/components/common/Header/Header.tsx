@@ -11,10 +11,10 @@ import styles from "./Header.module.scss";
 import classNames from "classnames";
 
 type HeaderProps = {
-	workDataLength: number;
+	workLength: number;
 };
 
-const Header = ({ workDataLength }: HeaderProps) => {
+const Header = ({ workLength }: HeaderProps) => {
 	const t = useTranslations();
 	const pathname = usePathname();
 	const locale = useLocale();
@@ -92,7 +92,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 								<span>{t(link.name)}</span>
 								{link.workQty && (
 									<span className={styles["header__work-qty"]}>
-										{workDataLength}
+										{workLength}
 									</span>
 								)}
 							</Link>
@@ -137,7 +137,7 @@ const Header = ({ workDataLength }: HeaderProps) => {
 								>
 									<span>{t(link.name)}</span>
 									{link.workQty && (
-										<span className={styles["work-qty"]}>{workDataLength}</span>
+										<span className={styles["work-qty"]}>{workLength}</span>
 									)}
 								</Link>
 							</div>
