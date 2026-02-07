@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { fetchWork } from "../lib/api";
 import Container from "../components/Container/Container";
 import WordLine from "../components/WordLine/WordLine";
 import Services from "../components/home/Services/Services";
 import Technologies from "../components/home/Technologies/Technologies";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-import styles from "./page.module.scss";
-import { getTranslations } from "next-intl/server";
+import styles from "./Home.module.scss";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const t = await getTranslations();
@@ -14,15 +14,12 @@ export async function generateMetadata(): Promise<Metadata> {
 	return {
 		title: t("homeMetaTitle"),
 		description: t("homeMetaDesc"),
-		alternates: {
-			canonical: "https://www.heeeyooo.studio/",
-		},
 	};
 }
 
-const Home = async () => {
+export default async function Home() {
 	const t = await getTranslations();
-	const workData = await fetchWork();
+	const work = await fetchWork();
 
 	return (
 		<main className={styles.home}>
@@ -53,7 +50,7 @@ const Home = async () => {
 							<WordLine text={t("home.featuredWorkDesc")} />
 						</div>
 						<div className={styles["home__works"]}>
-							{workData
+							{work
 								.filter((project) => project.isFeatured)
 								.map((project) => (
 									<ProjectCard key={project.id} project={project} />
@@ -106,6 +103,4 @@ const Home = async () => {
 			</Container>
 		</main>
 	);
-};
-
-export default Home;
+}
