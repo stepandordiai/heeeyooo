@@ -21,7 +21,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 	);
 }
 
-// TODO: LEARN THIS
+// TODO: learn this
 export async function generateMetadata({
 	params,
 }: {
@@ -34,11 +34,7 @@ export async function generateMetadata({
 	return {
 		title: project
 			? `${project.name} • heeeyooo studio`
-			: "Project Not Found • heeeyooo studio",
-		robots: {
-			index: false,
-			follow: false,
-		},
+			: "404 • heeeyooo studio",
 	};
 }
 
