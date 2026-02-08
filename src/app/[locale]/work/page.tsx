@@ -6,16 +6,36 @@ import WorkClient from "./WorkClient";
 import { fetchWork } from "@/app/lib/api";
 import styles from "./Work.module.scss";
 
-export const metadata: Metadata = {
-	title: "Work | heeeyooo studio",
-	description:
-		"Explore heeeyooo studio’s creative work — branding, design, and digital projects that bring bold ideas to life. See how we turn concepts into standout results.",
-	alternates: {
-		canonical: "https://www.heeeyooo.studio/work",
-	},
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
 
-// TODO:
+	// TODO: learn this
+	const t = await getTranslations({ locale });
+	const baseUrl = "https://www.heeeyooo.studio";
+
+	const lngUrls = {
+		en: `${baseUrl}/en/work`,
+		uk: `${baseUrl}/uk/work`,
+		cs: `${baseUrl}/cs/work`,
+	};
+
+	return {
+		title: t("workTitle"),
+		description: t("workMetaDesc"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}/work`,
+			languages: {
+				...lngUrls,
+				"x-default": `${baseUrl}/en/work`,
+			},
+		},
+	};
+}
+
 export default async function Work() {
 	const t = await getTranslations();
 
