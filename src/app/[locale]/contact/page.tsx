@@ -5,14 +5,35 @@ import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import styles from "./Contact.module.scss";
 
-export const metadata: Metadata = {
-	title: "Contact | heeeyooo studio",
-	description:
-		"Get in touch with heeeyooo studio — a creative team passionate about design, web, and branding. Let’s bring your ideas to life. Contact us today!",
-	alternates: {
-		canonical: "https://www.heeeyooo.studio/contact",
-	},
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+
+	// TODO: learn this
+	const t = await getTranslations({ locale });
+	const baseUrl = "https://www.heeeyooo.studio";
+
+	const lngUrls = {
+		en: `${baseUrl}/en/contact`,
+		uk: `${baseUrl}/uk/contact`,
+		cs: `${baseUrl}/cs/contact`,
+	};
+
+	return {
+		title: t("contactTitle"),
+		description: t("contactMetaDesc"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}/contact`,
+			languages: {
+				...lngUrls,
+				"x-default": `${baseUrl}/en/contact`,
+			},
+		},
+	};
+}
 
 export default async function Contact() {
 	const t = await getTranslations();
