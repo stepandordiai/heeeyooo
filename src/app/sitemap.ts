@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	return [
 		{
+			// TODO: ?
 			url: BASE_URL,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
