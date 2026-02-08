@@ -7,14 +7,35 @@ import styles from "./About.module.scss";
 import AboutClient from "./AboutClient";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-	title: "About | heeeyooo studio",
-	description:
-		"heeeyooo studio is a creative team crafting bold design, branding, and web experiences that connect with people and make brands shine.",
-	alternates: {
-		canonical: "https://www.heeeyooo.studio/about",
-	},
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+
+	// TODO: learn this
+	const t = await getTranslations({ locale });
+	const baseUrl = "https://www.heeeyooo.studio";
+
+	const lngUrls = {
+		en: `${baseUrl}/en/about`,
+		uk: `${baseUrl}/uk/about`,
+		cs: `${baseUrl}/cs/about`,
+	};
+
+	return {
+		title: t("aboutTitle"),
+		description: t("aboutMetaDesc"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}/about`,
+			languages: {
+				...lngUrls,
+				"x-default": `${baseUrl}/en/about`,
+			},
+		},
+	};
+}
 
 export default async function About() {
 	const t = await getTranslations();
