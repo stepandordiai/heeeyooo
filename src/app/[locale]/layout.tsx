@@ -18,31 +18,6 @@ const chakraPetch = Chakra_Petch({
 	variable: "--font-chakra-petch",
 });
 
-export async function generateMetadata({
-	params,
-}: {
-	params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-	const { locale } = await params;
-	const baseUrl = "https://www.heeeyooo.studio";
-
-	const lngUrls = {
-		en: `${baseUrl}/en`,
-		uk: `${baseUrl}/uk`,
-		cs: `${baseUrl}/cs`,
-	};
-
-	return {
-		alternates: {
-			canonical: `${baseUrl}/${locale}`,
-			languages: {
-				...lngUrls,
-				"x-default": `${baseUrl}/en`,
-			},
-		},
-	};
-}
-
 type LocaleLayoutProps = {
 	children: React.ReactNode;
 	params: Promise<{ locale: string }>;

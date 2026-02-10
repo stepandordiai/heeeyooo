@@ -7,12 +7,28 @@ import Technologies from "../components/home/Technologies/Technologies";
 import FeaturedWork from "../components/home/FeaturedWork/FeaturedWork";
 import styles from "./Home.module.scss";
 
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations();
+// TODO: learn this
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const baseUrl = "https://www.heeeyooo.studio";
+	const { locale } = await params;
+	const t = await getTranslations({ locale });
 
 	return {
 		title: t("homeMetaTitle"),
 		description: t("homeMetaDesc"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}`,
+			languages: {
+				en: `${baseUrl}/en`,
+				uk: `${baseUrl}/uk`,
+				cs: `${baseUrl}/cs`,
+				"x-default": `${baseUrl}/en`,
+			},
+		},
 	};
 }
 
