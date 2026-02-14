@@ -25,19 +25,24 @@
 
 .header__inner {
 	min-height: 50px;
-	padding: 5px 10px 5px 10px;
+	padding: 5px 5px 5px 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
 }
 
-.header__lng-btn-wrapper {
+.lng-btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 40px;
 	aspect-ratio: 1/1;
+	border-radius: 10px;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.15);
+	}
 }
 
 .header__logo-link {
@@ -194,10 +199,6 @@
 }
 
 @media screen and (width <= 540px) {
-	.header__inner {
-		padding: 5px 5px 5px 10px;
-	}
-
 	.header__logo-title {
 		display: none;
 	}

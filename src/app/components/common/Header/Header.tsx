@@ -7,6 +7,7 @@ import linksData from "@/app/data/links-data.json";
 import { Link } from "@/i18n/navigation";
 import classNames from "classnames";
 import Image from "next/image";
+import GlobeIcon from "@/app/icons/GlobeIcon";
 import styles from "./Header.module.scss";
 
 type HeaderProps = {
@@ -94,23 +95,35 @@ const Header = ({ workLength }: HeaderProps) => {
 						);
 					})}
 				</nav>
-				{/* menu-btn */}
-				<button
-					onClick={toggleMenu}
-					className={styles["burger-btn"]}
-					aria-label={
-						isMenuVisible ? t("header.closeMenu") : t("header.openMenu")
-					}
-					aria-expanded={isMenuVisible}
-					aria-controls="menu"
-					title={isMenuVisible ? t("header.closeMenu") : t("header.openMenu")}
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						gap: 5,
+					}}
 				>
-					<span
-						className={classNames(styles["burger-btn-inner"], {
-							[styles["burger-btn-inner--active"]]: isMenuVisible,
-						})}
-					></span>
-				</button>
+					<button className={styles["lng-btn"]}>
+						<GlobeIcon size={20} />
+					</button>
+					{/* menu-btn */}
+					<button
+						onClick={toggleMenu}
+						className={styles["burger-btn"]}
+						aria-label={
+							isMenuVisible ? t("header.closeMenu") : t("header.openMenu")
+						}
+						aria-expanded={isMenuVisible}
+						aria-controls="menu"
+						title={isMenuVisible ? t("header.closeMenu") : t("header.openMenu")}
+					>
+						<span
+							className={classNames(styles["burger-btn-inner"], {
+								[styles["burger-btn-inner--active"]]: isMenuVisible,
+							})}
+						></span>
+					</button>
+				</div>
 			</div>
 			<nav
 				className={classNames(styles["menu"], {
