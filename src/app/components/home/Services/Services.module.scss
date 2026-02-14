@@ -73,7 +73,7 @@
 		left 0.3s;
 }
 
-// TODO:
+// TODO: learn this
 @property --percentage {
 	syntax: "<percentage>";
 	inherits: false;
@@ -81,12 +81,14 @@
 }
 
 .circles-container {
-	display: grid;
+	display: flex;
+	justify-content: space-evenly;
 	gap: 10px;
-	grid-template-columns: repeat(4, 1fr);
+	flex-wrap: wrap;
 }
 
 .circle-container {
+	width: min(100%, 100px);
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -100,6 +102,7 @@
 }
 
 .circle {
+	--percentage: 0%;
 	position: relative;
 	width: 100%;
 	max-width: 100px;
@@ -112,6 +115,7 @@
 		var(--accent-clr) var(--percentage),
 		var(--accent-clr-semi-tp) 0
 	);
+	transition: --percentage 2s ease;
 
 	&::before {
 		content: attr(data-value);
@@ -136,8 +140,8 @@
 	}
 }
 
-.circle {
-	animation: animateCircle 2s forwards ease;
+.circle--active {
+	--percentage: var(--value);
 }
 
 @keyframes animateCircle {
@@ -224,11 +228,5 @@
 
 	.service__desc {
 		max-width: 100%;
-	}
-}
-
-@media screen and (width < 450px) {
-	.circles-container {
-		grid-template-columns: repeat(1, 1fr);
 	}
 }

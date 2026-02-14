@@ -6,11 +6,29 @@ import React from "react";
 import servicesData from "@/app/data/services-data.json";
 import WordLine from "../../WordLine/WordLine";
 import Image from "next/image";
+import classNames from "classnames";
 import styles from "./Services.module.scss";
+
+const websitePerformance = [
+	{
+		device: "Mobile",
+		performance: 94,
+		accessibility: 91,
+		bestPractices: 100,
+		seo: 100,
+	},
+	{
+		device: "Desktop",
+		performance: 100,
+		accessibility: 91,
+		bestPractices: 100,
+		seo: 100,
+	},
+];
 
 const Services = () => {
 	const t = useTranslations();
-	const [device, setDevice] = useState("mobile");
+	const [device, setDevice] = useState(websitePerformance[0].device);
 	const [indicatorStyle, setIndicatorStyle] = useState({});
 	const [dividerActive, setDividerActive] = useState(
 		new Array(servicesData.length).fill(false),
@@ -65,6 +83,10 @@ const Services = () => {
 		}
 	}, [device]);
 
+	const currentDevice = websitePerformance.find(
+		(item) => item.device === device,
+	);
+
 	return (
 		<div className={styles.services}>
 			<h2 className={styles["services__title"]}>
@@ -78,9 +100,9 @@ const Services = () => {
 					return (
 						<React.Fragment key={service.id}>
 							<div className={styles["service"]}>
-								<div className={styles["service__title"]}>
+								<h3 className={styles["service__title"]}>
 									<WordLine text={t(service.title)} />
-								</div>
+								</h3>
 								<div className={styles["service__desc"]}>
 									<WordLine text={t(service.desc)} />
 									{service.performanceOverview && (
@@ -104,131 +126,92 @@ const Services = () => {
 													ref={btnIndicator}
 													style={indicatorStyle}
 												></div>
-												<button
-													className={
-														device === "mobile"
-															? `${styles["btn"]} ${styles["portfolio__btn--active"]}`
-															: styles["btn"]
-													}
-													onClick={() => setDevice("mobile")}
-												>
-													<span
-														style={
-															device === "mobile"
-																? { color: "#000" }
-																: { color: "#fff" }
-														}
-													>
-														Mobile
-													</span>
-												</button>
-												<button
-													className={
-														device === "desktop"
-															? `${styles["btn"]} ${styles["portfolio__btn--active"]}`
-															: styles["btn"]
-													}
-													onClick={() => setDevice("desktop")}
-												>
-													<span
-														style={
-															device === "desktop"
-																? { color: "#000" }
-																: { color: "#fff" }
-														}
-													>
-														Desktop
-													</span>
-												</button>
+												{websitePerformance.map((el) => {
+													return (
+														<button
+															key={el.device}
+															className={
+																device === el.device
+																	? `${styles["btn"]} ${styles["portfolio__btn--active"]}`
+																	: styles["btn"]
+															}
+															onClick={() => setDevice(el.device)}
+														>
+															<span
+																style={
+																	device === el.device
+																		? { color: "#000" }
+																		: { color: "#fff" }
+																}
+															>
+																{el.device}
+															</span>
+														</button>
+													);
+												})}
 											</div>
-											{device === "mobile" && (
-												<div className={styles["circles-container"]}>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "81%" } as React.CSSProperties
-															}
-															data-value={81}
-														></div>
-														<span>Performance</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "91%" } as React.CSSProperties
-															}
-															data-value={91}
-														></div>
-														<span>Accessibility</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "100%" } as React.CSSProperties
-															}
-															data-value={100}
-														></div>
-														<span>Best Practices</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "100%" } as React.CSSProperties
-															}
-															data-value={100}
-														></div>
-														<span>SEO</span>
-													</div>
+											<div className={styles["circles-container"]}>
+												<div className={styles["circle-container"]}>
+													<div
+														className={classNames(styles["circle"], {
+															[styles["circle--active"]]:
+																device === currentDevice?.device,
+														})}
+														style={
+															{
+																"--value": `${currentDevice?.performance}%`,
+															} as React.CSSProperties
+														}
+														data-value={currentDevice?.performance}
+													></div>
+													<span>Performance</span>
 												</div>
-											)}
-											{device === "desktop" && (
-												<div className={styles["circles-container"]}>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "80%" } as React.CSSProperties
-															}
-															data-value={80}
-														></div>
-														<span>Performance</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "91%" } as React.CSSProperties
-															}
-															data-value={91}
-														></div>
-														<span>Accessibility</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "100%" } as React.CSSProperties
-															}
-															data-value={100}
-														></div>
-														<span>Best Practices</span>
-													</div>
-													<div className={styles["circle-container"]}>
-														<div
-															className={styles["circle"]}
-															style={
-																{ "--value": "100%" } as React.CSSProperties
-															}
-															data-value={100}
-														></div>
-														<span>SEO</span>
-													</div>
+												<div className={styles["circle-container"]}>
+													<div
+														className={classNames(styles["circle"], {
+															[styles["circle--active"]]:
+																device === currentDevice?.device,
+														})}
+														style={
+															{
+																"--value": `${currentDevice?.accessibility}%`,
+															} as React.CSSProperties
+														}
+														data-value={currentDevice?.accessibility}
+													></div>
+													<span>Accessibility</span>
 												</div>
-											)}
+												<div className={styles["circle-container"]}>
+													<div
+														className={classNames(styles["circle"], {
+															[styles["circle--active"]]:
+																device === currentDevice?.device,
+														})}
+														style={
+															{
+																"--value": `${currentDevice?.bestPractices}%`,
+															} as React.CSSProperties
+														}
+														data-value={currentDevice?.bestPractices}
+													></div>
+													<span>Best Practices</span>
+												</div>
+												<div className={styles["circle-container"]}>
+													<div
+														className={classNames(styles["circle"], {
+															[styles["circle--active"]]:
+																device === currentDevice?.device,
+														})}
+														style={
+															{
+																"--value": `${currentDevice?.seo}%`,
+															} as React.CSSProperties
+														}
+														data-value={currentDevice?.seo}
+													></div>
+													<span>SEO</span>
+												</div>
+											</div>
 										</div>
 									)}
 									{service.beforeAfter && (
