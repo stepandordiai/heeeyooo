@@ -266,8 +266,8 @@ const Services = () => {
 													max={100}
 													value={rangeValue}
 													step={1}
-													name=""
-													id=""
+													// TODO: learn this
+													aria-label="Image slider"
 												/>
 											</div>
 										</div>
