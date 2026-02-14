@@ -1,13 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
 import servicesData from "@/app/data/services-data.json";
 import WordLine from "../../WordLine/WordLine";
-import img from "./../../../../../public/neresen-c-before.png";
-import img2 from "./../../../../../public/neresen-ss-v7-c-after.png";
+import Image from "next/image";
 import styles from "./Services.module.scss";
-import { useTranslations } from "next-intl";
 
 const Services = () => {
 	const t = useTranslations();
@@ -249,14 +248,22 @@ const Services = () => {
 													className={styles["img-line"]}
 													style={{ left: rangeValue + "%" }}
 												></div>
-												<img className={styles["img"]} src={img.src} alt="" />
-												<img
-													className={styles["img-range"]}
-													src={img2.src}
-													alt=""
+												<Image
+													className={styles["img"]}
+													src="/neresen-ss-c-before.png"
+													width={2560}
+													height={1440}
+													alt="Before"
+												/>
+												<Image
 													style={{
 														clipPath: `polygon(${rangeValue}% 0, 100% 0, 100% 100%, ${rangeValue}% 100%)`,
 													}}
+													className={styles["img-range"]}
+													src="/neresen-ss-v7-c-after.png"
+													width={2560}
+													height={1440}
+													alt="After"
 												/>
 												<input
 													onChange={(e) =>
@@ -267,7 +274,7 @@ const Services = () => {
 													value={rangeValue}
 													step={1}
 													// TODO: learn this
-													aria-label="Image slider"
+													aria-label="Before and after comparison"
 												/>
 											</div>
 										</div>
