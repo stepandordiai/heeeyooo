@@ -5,9 +5,10 @@ import styles from "./ProjectCard.module.scss";
 
 type ProjectCardProps = {
 	project: Project;
+	priority?: boolean;
 };
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
+const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
 	return (
 		<Link
 			data-cursor-text="See more"
@@ -21,6 +22,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 					width={2560}
 					height={2560}
 					alt={project.name}
+					priority={priority}
 				/>
 			</div>
 			<div className={styles["project-card__details"]}>

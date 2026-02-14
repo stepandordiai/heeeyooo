@@ -19,8 +19,12 @@ const FeaturedWork = async () => {
 			<div className={styles["featured-work__grid"]}>
 				{work
 					.filter((project) => project.isFeatured)
-					.map((project) => (
-						<ProjectCard key={project.id} project={project} />
+					.map((project, index) => (
+						<ProjectCard
+							key={project.id}
+							project={project}
+							priority={index < 6}
+						/>
 					))}
 			</div>
 		</section>
