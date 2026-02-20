@@ -1,43 +1,77 @@
 "use client";
 
-import { useRef } from "react";
+// TODO: LEARN THIS
+import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
+import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import classNames from "classnames";
+import UnitedStatesFlag from "@/app/icons/UnitedStatesFlag";
+import CzechiaFlag from "@/app/icons/CzechiaFlag";
+import UkraineFlag from "@/app/icons/UkraineFlag";
 import styles from "./Lng.module.scss";
 
 const lngData = [
-	{ code: "en", name: "EN" },
-	{ code: "uk", name: "UA" },
-	{ code: "cs", name: "CZ" },
+	{ code: "en", name: "English", flag: <UnitedStatesFlag size={20} /> },
+	{ code: "uk", name: "Українська", flag: <UkraineFlag size={20} /> },
+	{ code: "cs", name: "Čeština", flag: <CzechiaFlag size={20} /> },
 ];
 
-const Lng = () => {
-	const locale = useLocale(); // Отримуємо поточну мову (uk або en)
+type LngProps = {
+	lngModalVisible: boolean;
+	// TODO: learn this
+	setLngModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Lng = ({ lngModalVisible, setLngModalVisible }: LngProps) => {
+	const t = useTranslations();
+	const locale = useLocale();
 	const router = useRouter();
 	const pathname = usePathname();
-	const lngSelectRef = useRef<HTMLDivElement | null>(null);
+
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
 	const handleLanguageChange = (newLocale: string) => {
-		// next-intl сама оновить URL, зберігши поточний шлях
-		// Наприклад: /uk/about -> /en/about
 		router.replace(pathname, { locale: newLocale });
 	};
 
-	return (
-		<div ref={lngSelectRef} className={styles.lng}>
-			{lngData.map((lng) => (
-				<button
-					key={lng.code}
-					onClick={() => handleLanguageChange(lng.code)}
-					className={classNames(styles["lng-btn"], {
-						[styles["lng-btn--active"]]: locale === lng.code,
-					})}
-				>
-					<span>{lng.name}</span>
-				</button>
-			))}
-		</div>
+	if (!mounted || !lngModalVisible) return null;
+
+	return createPortal(
+		<div
+			className={classNames(styles.modal, {
+				[styles["modal--visible"]]: lngModalVisible,
+			})}
+		>
+			<div className={styles.container}>
+				<div style={{ display: "flex", justifyContent: "space-between" }}>
+					<p>{t("lng.title")}</p>
+					<button onClick={() => setLngModalVisible(false)}>
+						{t("lng.close")}
+					</button>
+				</div>
+				<div className={styles.inner}>
+					{lngData.map((lng) => (
+						<button
+							key={lng.code}
+							onClick={() => handleLanguageChange(lng.code)}
+							className={classNames(styles["lng-btn"], {
+								[styles["lng-btn--active"]]: locale === lng.code,
+							})}
+						>
+							{lng.flag}
+							<span>{lng.name}</span>
+						</button>
+					))}
+				</div>
+			</div>
+		</div>,
+		document.body,
 	);
 };
 

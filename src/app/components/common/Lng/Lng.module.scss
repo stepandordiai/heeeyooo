@@ -14,9 +14,45 @@
 	justify-content: center;
 	align-items: center;
 	gap: 5px;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.15);
+	}
 }
 
 .lng-btn--active {
-	background: var(--accent-clr) !important;
-	color: black !important;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.modal {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.75);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
+
+.modal--visible {
+	display: flex;
+}
+
+.container {
+	width: min(calc(100% - 40px), 500px);
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.inner {
+	border: 2px solid rgba(255, 255, 255, 0.15);
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 5px;
+	padding: 5px;
 }

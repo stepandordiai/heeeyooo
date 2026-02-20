@@ -7,6 +7,7 @@ import linksData from "@/app/data/links-data.json";
 import { Link } from "@/i18n/navigation";
 import classNames from "classnames";
 import Image from "next/image";
+import Lng from "../../common/Lng/Lng";
 import GlobeIcon from "@/app/icons/GlobeIcon";
 import styles from "./Header.module.scss";
 
@@ -20,6 +21,7 @@ const Header = ({ workLength }: HeaderProps) => {
 
 	const [isMenuVisible, setIsMenuVisible] = useState(false);
 	const [headerHidden, setHeaderHidden] = useState(false);
+	const [lngModalVisible, setLngModalVisible] = useState(false);
 
 	useEffect(() => {
 		let prevScrollY = 0;
@@ -103,9 +105,16 @@ const Header = ({ workLength }: HeaderProps) => {
 						gap: 5,
 					}}
 				>
-					<button className={styles["lng-btn"]}>
+					<button
+						onClick={() => setLngModalVisible(true)}
+						className={styles["lng-btn"]}
+					>
 						<GlobeIcon size={20} />
 					</button>
+					<Lng
+						lngModalVisible={lngModalVisible}
+						setLngModalVisible={setLngModalVisible}
+					/>
 					{/* menu-btn */}
 					<button
 						onClick={toggleMenu}
