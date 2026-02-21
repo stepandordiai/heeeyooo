@@ -6,12 +6,17 @@ import styles from "./ProjectCard.module.scss";
 type ProjectCardProps = {
 	project: Project;
 	priority?: boolean;
+	cursorTxt?: string;
 };
 
-const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
+const ProjectCard = ({
+	project,
+	priority = false,
+	cursorTxt = "See more",
+}: ProjectCardProps) => {
 	return (
 		<Link
-			data-cursor-text="See more"
+			data-cursor-text={cursorTxt}
 			className={styles["project-card"]}
 			href={`/work/${project.id}`}
 		>

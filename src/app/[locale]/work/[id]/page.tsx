@@ -8,6 +8,7 @@ import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { fetchWork } from "@/app/lib/api";
 import styles from "./ProjectPage.module.scss";
+import ProjectCard from "@/app/components/ProjectCard/ProjectCard";
 
 // TODO: LEARN THIS
 export async function generateStaticParams(): Promise<{ id: string }[]> {
@@ -88,6 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 									projectName={project.name}
 									img={img}
 									index={index}
+									priority={index < 2}
 								/>
 							</div>
 						);
@@ -160,33 +162,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 							display: "flex",
 							flexDirection: "column",
 							rowGap: 10,
-							maxWidth: "256px",
 						}}
 					>
-						<Link
-							className={styles["project-page__nav-link"]}
-							href={`/work/${prevProject.id}`}
-						>
-							Previous Project
-						</Link>
-						<img style={{ borderRadius: 10 }} src={prevProject.img[0]} alt="" />
+						<span>PREVIOUS</span>
+						<ProjectCard project={prevProject} cursorTxt="Previous" />
 					</div>
 
 					<div
 						style={{
 							display: "flex",
+							alignItems: "flex-end",
 							flexDirection: "column",
 							rowGap: 10,
-							maxWidth: "256px",
 						}}
 					>
-						<Link
-							className={styles["project-page__nav-link"]}
-							href={`/work/${nextProject.id}`}
-						>
-							Next Project
-						</Link>
-						<img style={{ borderRadius: 10 }} src={nextProject.img[0]} alt="" />
+						<span>NEXT</span>
+						<ProjectCard project={nextProject} cursorTxt="Next" />
 					</div>
 				</nav>
 			</Container>

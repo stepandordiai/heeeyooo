@@ -8,36 +8,29 @@ type ProjectPageClientProps = {
 	projectName: string;
 	img: string;
 	index: number;
+	priority: boolean;
 };
 
 const ProjectPageClient = ({
 	projectName,
 	img,
 	index,
+	priority,
 }: ProjectPageClientProps) => {
 	const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
 
 	const [imgActive, setImgActive] = useState(
-		new Array(imgRefs.current.length).fill(false)
+		new Array(imgRefs.current.length).fill(false),
 	);
 
 	useEffect(() => {
-		const wrappersImg = document.querySelectorAll(
-			`.${styles["project-page__img"]}`
-		);
-
-		// remove all classes initially
-		wrappersImg.forEach((img) =>
-			img.classList.remove(styles["project-page__img--active"])
-		);
-
 		if (!imgRefs.current.length) return;
 
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					const index = imgRefs.current.indexOf(
-						entry.target as HTMLImageElement
+						entry.target as HTMLImageElement,
 					);
 					if (index !== -1 && entry.isIntersecting) {
 						setImgActive((prev) => {
@@ -52,7 +45,7 @@ const ProjectPageClient = ({
 			// if part of element is in view it fires immediately
 			{
 				threshold: 0,
-			}
+			},
 		);
 
 		imgRefs.current.forEach((img) => {
@@ -74,6 +67,7 @@ const ProjectPageClient = ({
 			alt={projectName}
 			width={2560}
 			height={2560}
+			priority={priority}
 		/>
 	);
 };
