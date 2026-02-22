@@ -43,6 +43,12 @@
 		"technologies": "Technologies"
 	},
 
+	"work": {
+		"title": "All works",
+		"list": "List",
+		"grid": "Grid"
+	},
+
 	"aboutUs": {
 		"title": "We create custom websites that feel truly different.",
 		"desc1": "We design and develop fast, responsive, and user-friendly digital experiences using a minimal and modern approach — focusing on what truly matters while eliminating the unnecessary.",

@@ -43,6 +43,12 @@
 		"technologies": "Technologie"
 	},
 
+	"work": {
+		"title": "Všechny projekty",
+		"list": "Seznam",
+		"grid": "Mřížka"
+	},
+
 	"aboutUs": {
 		"title": "Vytváříme weby na míru, které působí skutečně jinak.",
 		"desc1": "Navrhujeme a vyvíjíme rychlé, responzivní a uživatelsky přívětivé digitální zážitky s minimalistickým a moderním přístupem — soustředíme se na to podstatné a odstraňujeme zbytečné.",

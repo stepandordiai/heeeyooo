@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
 import { Project } from "@/app/interfaces/Project";
 import { Link } from "@/i18n/navigation";
@@ -10,7 +11,9 @@ type WorkClientProps = {
 	workData: Project[];
 };
 
-const WorkClient = ({ workData }: WorkClientProps) => {
+export default function WorkClient({ workData }: WorkClientProps) {
+	const t = useTranslations();
+
 	const [layout, setLayout] = useState("works__list");
 	const [image, setImage] = useState(0);
 	const [active, setActive] = useState(false);
@@ -26,7 +29,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 	const handleFloatImage = (
 		e: React.MouseEvent<HTMLAnchorElement>,
 		bool: boolean,
-		image: number
+		image: number,
 	) => {
 		if (floatImageContainer.current && !touchDevice) {
 			floatImageContainer.current.style.top = e.clientY + "px";
@@ -80,7 +83,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 			)}
 			<div>
 				<p className={styles["work__sec-title"]}>
-					All works <span>{workData.length}</span>
+					{t("work.title")} <span>{workData.length}</span>
 				</p>
 			</div>
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
@@ -92,7 +95,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 					}
 					onClick={() => handleLayout("works__list")}
 				>
-					<span>List</span>
+					<span>{t("work.list")}</span>
 				</button>
 				<button
 					className={
@@ -102,7 +105,7 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 					}
 					onClick={() => handleLayout("works__grid")}
 				>
-					<span>Grid</span>
+					<span>{t("work.grid")}</span>
 				</button>
 			</div>
 			{layout === "works__list" && (
@@ -145,6 +148,4 @@ const WorkClient = ({ workData }: WorkClientProps) => {
 			)}
 		</>
 	);
-};
-
-export default WorkClient;
+}
