@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import classNames from "classnames";
-import styles from "./About.module.scss";
+import styles from "./AboutUs.module.scss";
 
-const AboutClient = () => {
+export default function AboutUsClient() {
 	const [popUpActive, setPopUpActive] = useState(false);
 
 	useEffect(() => {
@@ -28,6 +28,4 @@ const AboutClient = () => {
 			</button>
 		</span>
 	);
-};
-
-export default AboutClient;
+}

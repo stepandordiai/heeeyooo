@@ -1,6 +1,6 @@
 {
 	"homeTitle": "Home",
-	"aboutTitle": "About",
+	"aboutUsTitle": "About us",
 	"workTitle": "Work",
 	"contactTitle": "Contact",
 	"homeMetaTitle": "Creative web design and development studio",
@@ -41,6 +41,13 @@
 		"websiteRedesign": "Website Redesign",
 		"websiteRedesignDesc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals.",
 		"technologies": "Technologies"
+	},
+
+	"aboutUs": {
+		"title": "We create custom websites that feel truly different.",
+		"desc1": "We design and develop fast, responsive, and user-friendly digital experiences using a minimal and modern approach — focusing on what truly matters while eliminating the unnecessary.",
+		"desc2": "Our work is crafted for startups, small businesses, and individuals seeking a distinctive digital presence, not just another template.",
+		"desc3": "Based in this world, we collaborate with clients globally — transforming ideas into clean, functional, and refined websites."
 	},
 
 	"footer": {

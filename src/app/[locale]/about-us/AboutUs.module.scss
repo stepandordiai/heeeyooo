@@ -30,25 +30,24 @@
 }
 
 .about {
-	min-height: 100dvh;
 	padding: 20px;
+	min-height: 100svh;
 }
 
-.about__container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.about-us__title {
+	font-size: clamp(2rem, 4vw, 3rem);
+	width: min(100%, 1000px);
+	margin-bottom: 20px;
+}
+
+.about-hero {
+	p {
+		width: min(100%, 600px);
+	}
 }
 
 @media screen and (width < 808px) {
 	.about {
 		padding: 10px;
-	}
-
-	.about__container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
 	}
 }

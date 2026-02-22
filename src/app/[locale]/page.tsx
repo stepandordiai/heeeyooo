@@ -7,7 +7,6 @@ import Technologies from "../components/home/Technologies/Technologies";
 import FeaturedWork from "../components/home/FeaturedWork/FeaturedWork";
 import styles from "./Home.module.scss";
 
-// TODO: learn this
 export async function generateMetadata({
 	params,
 }: {
@@ -15,6 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const baseUrl = "https://www.heeeyooo.studio";
 	const { locale } = await params;
+	// TODO: learn this
 	const t = await getTranslations({ locale });
 
 	return {
@@ -40,21 +40,18 @@ export default async function Home() {
 			<Container>
 				<div className={styles["home-inner"]}>
 					<section className={styles["home-hero"]}>
-						{/* <div className={styles["construction"]}>
-							<WordLine text="Website under construction" />
-						</div> */}
 						<h1 className={styles["home__title"]}>
 							<WordLine text={t("home.heroTitle")} />
 						</h1>
 						<p className={styles["home__desc"]}>
 							<WordLine text={t("home.heroSecTitle")} />
 						</p>
-						<a
+						{/* <a
 							className={styles["home-hero__link"]}
 							href="mailto:stepandordiai@gmail.com"
 						>
 							stepandordiai@gmail.com
-						</a>
+						</a> */}
 					</section>
 					<FeaturedWork />
 					<Services />

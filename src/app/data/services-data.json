@@ -23,7 +23,7 @@
 	{
 		"id": "website-maintenance",
 		"title": "home.websiteMaintenance",
-		"desc": "home.websiteMaintenance",
+		"desc": "home.websiteMaintenanceDesc",
 		"freeSupport": true
 	},
 	{

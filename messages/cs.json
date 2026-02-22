@@ -1,6 +1,6 @@
 {
 	"homeTitle": "Domů",
-	"aboutTitle": "O nás",
+	"aboutUsTitle": "O studiu",
 	"workTitle": "Projekty",
 	"contactTitle": "Kontakt",
 	"homeMetaTitle": "Kreativní studio pro webdesign a vývoj",
@@ -41,6 +41,13 @@
 		"websiteRedesign": "Redesign webu",
 		"websiteRedesignDesc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
 		"technologies": "Technologie"
+	},
+
+	"aboutUs": {
+		"title": "Vytváříme weby na míru, které působí skutečně jinak.",
+		"desc1": "Navrhujeme a vyvíjíme rychlé, responzivní a uživatelsky přívětivé digitální zážitky s minimalistickým a moderním přístupem — soustředíme se na to podstatné a odstraňujeme zbytečné.",
+		"desc2": "Naše práce je určena pro startupy, malé firmy i jednotlivce, kteří hledají výraznou digitální prezentaci, ne jen další šablonu.",
+		"desc3": "Jsme založeni v tomto světě a spolupracujeme s klienty po celém světě — proměňujeme nápady v čisté, funkční a profesionální weby."
 	},
 
 	"footer": {

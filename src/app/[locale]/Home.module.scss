@@ -4,7 +4,7 @@
 	padding: 0 20px;
 
 	h2 {
-		font-size: clamp(2rem, 4vw, 3rem) !important;
+		font-size: clamp(2rem, 4vw, 3rem);
 	}
 }
 
@@ -19,29 +19,16 @@
 	padding: 20px 0;
 }
 
-.construction {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--accent-clr);
-	background: rgba(178, 231, 65, 0.2);
-	border-radius: 10px;
-	padding: 5px;
-	width: max-content;
-	margin: 0 auto;
-}
-
 .home__title {
 	margin: 20px 0;
-	font-size: clamp(3rem, 4vw, 4rem);
-	color: hsl(0, 0%, 50%);
-	max-width: 700px;
+	font-size: clamp(3rem, 6vw, 4rem);
+	font-weight: 500;
+	width: min(100%, 1000px);
 }
 
 .home__desc {
-	font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
-	color: #fff !important;
-	max-width: 800px;
+	font-size: 18px;
+	width: min(100%, 600px);
 }
 
 .home-hero__link {

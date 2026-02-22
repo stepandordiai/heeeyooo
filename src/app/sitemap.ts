@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://www.pixelflower.studio";
 const locales = ["en", "uk", "cs"] as const;
-const paths = ["/", "/about", "/work", "/contact"];
+const paths = ["/", "/about-us", "/work", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	// TODO: learn this
