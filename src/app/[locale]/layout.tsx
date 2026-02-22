@@ -1,6 +1,5 @@
 // TODO: word "type" specifies that i only import type not an object
 import { Chakra_Petch } from "next/font/google";
-import type { Metadata } from "next";
 import Header from "../components/layout/Header/Header";
 import Footer from "../components/layout/Footer/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";

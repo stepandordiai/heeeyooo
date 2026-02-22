@@ -2,6 +2,7 @@
 	position: fixed;
 	left: 50%;
 	top: -100%;
+	z-index: 1;
 	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
@@ -41,6 +42,8 @@
 }
 
 .about-hero {
+	min-height: 100svh;
+
 	p {
 		width: min(100%, 600px);
 	}

@@ -80,7 +80,7 @@ export default async function Contact() {
 					</div>
 					<div className={styles["contact__form-details"]}>
 						<p className={styles["contact__form-details-title"]}>
-							Tell us more about yourself and what you've got in mind.
+							Tell us more about yourself and what you&apos;ve got in mind.
 						</p>
 						<form
 							className={styles["contact__form"]}
@@ -148,12 +148,12 @@ export default async function Contact() {
 									value="Reset"
 								/>
 								<button className={styles["contact__form-btn"]} type="submit">
-									Let's get started!
+									Let&apos;s get started!
 								</button>
 							</div>
 						</form>
 						<div style={{ marginTop: 10 }}>
-							<p>Don't like forms? Write us a message instead!</p>
+							<p>Don&apos;t like forms? Write us a message instead!</p>
 							<a
 								className={styles["form__link"]}
 								href="mailto:stepandordiai@gmail.com"

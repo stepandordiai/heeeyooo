@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
-import Image from "next/image";
-import photo from "./../../../../public/photo.jpg";
 import AboutClient from "./AboutUsClient";
 import { getTranslations } from "next-intl/server";
-import styles from "./AboutUs.module.scss";
 import WordLine from "@/app/components/WordLine/WordLine";
+import ContactUs from "@/app/components/ContactUs/ContactUs";
+import styles from "./AboutUs.module.scss";
 
 export async function generateMetadata({
 	params,
@@ -74,6 +73,7 @@ export default async function AboutUs() {
 						></Image>
 					</div> */}
 				</section>
+				<ContactUs />
 			</Container>
 		</main>
 	);

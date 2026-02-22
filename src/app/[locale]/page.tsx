@@ -5,6 +5,7 @@ import WordLine from "../components/WordLine/WordLine";
 import Services from "../components/home/Services/Services";
 import Technologies from "../components/home/Technologies/Technologies";
 import FeaturedWork from "../components/home/FeaturedWork/FeaturedWork";
+import ContactUs from "../components/ContactUs/ContactUs";
 import styles from "./Home.module.scss";
 
 export async function generateMetadata({
@@ -56,6 +57,7 @@ export default async function Home() {
 					<FeaturedWork />
 					<Services />
 					<Technologies />
+					<ContactUs />
 					{/* <h2>Our process</h2>
 				<p>Efficient, Transparent, and Custom-Tailored</p>
 				<p>

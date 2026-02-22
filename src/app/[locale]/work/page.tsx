@@ -4,6 +4,7 @@ import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import WorkClient from "./WorkClient";
 import { fetchWork } from "@/app/lib/api";
+import ContactUs from "@/app/components/ContactUs/ContactUs";
 import styles from "./Work.module.scss";
 
 export async function generateMetadata({
@@ -46,6 +47,7 @@ export default async function Work() {
 			<Container>
 				<Breadcrumbs links={[{ label: t("workTitle") }]} />
 				<WorkClient workData={workData} />
+				<ContactUs />
 			</Container>
 		</main>
 	);
