@@ -94,6 +94,8 @@ export default async function Contact() {
 									type="text"
 									name="fullName"
 									id="fullName"
+									autoComplete="name"
+									required
 								/>
 							</div>
 							<div>
@@ -103,6 +105,8 @@ export default async function Contact() {
 									type="email"
 									name="email"
 									id="email"
+									autoComplete="email"
+									required
 								/>
 							</div>
 							<div>
@@ -151,8 +155,8 @@ export default async function Contact() {
 						<div style={{ marginTop: 10 }}>
 							<p>Don't like forms? Write us a message instead!</p>
 							<a
+								className={styles["form__link"]}
 								href="mailto:stepandordiai@gmail.com"
-								style={{ color: "#000" }}
 							>
 								stepandordiai@gmail.com
 							</a>

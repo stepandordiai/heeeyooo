@@ -178,6 +178,48 @@
 	height: 0;
 }
 
+.form__link {
+	position: relative;
+	color: #000;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #000;
+		transform-origin: right;
+		transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #000;
+		transform-origin: left;
+		transform: scaleX(0);
+		transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+	}
+
+	&:hover {
+		&::before {
+			transform: scaleX(0);
+			transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+		}
+
+		&::after {
+			transform: scaleX(1);
+			transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
+		}
+	}
+}
+
 @media screen and (width < 896px) {
 	.contact {
 		flex-direction: column;
