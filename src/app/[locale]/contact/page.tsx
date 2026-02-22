@@ -4,6 +4,8 @@ import servicesData from "./../../data/services-data.json";
 import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import styles from "./Contact.module.scss";
+import EnvelopeIcon from "@/app/icons/EnvelopeIcon";
+import InstagramIcon from "@/app/icons/InstagramIcon";
 
 export async function generateMetadata({
 	params,
@@ -45,26 +47,40 @@ export default async function Contact() {
 				<div className={styles["contact__inner"]}>
 					<div className={styles["contact__container"]}>
 						<a
-							className={styles["contact__email"]}
+							className={styles["contact__details"]}
 							href="mailto:stepandordiai@gmail.com"
 						>
-							<p className={styles["contact__details-title"]}>Say hello</p>
-							<i className="fa-solid fa-envelope"></i>
+							<div
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									alignSelf: "flex-end",
+								}}
+							>
+								<span className={styles["contact__details-title"]}>
+									Say hello
+								</span>
+								<span>hello@heeeyooo.studio</span>
+							</div>
+							<EnvelopeIcon size={24} />
 						</a>
 						<a
 							href="https://www.instagram.com/heeeyooo.studio/"
 							target="_blank"
 							className={styles["contact__details"]}
 						>
-							<p className={styles["contact__details-title"]}>
+							<span
+								style={{ alignSelf: "flex-end" }}
+								className={styles["contact__details-title"]}
+							>
 								Follow us on Instagram
-							</p>
-							<i className="fa-brands fa-instagram"></i>
+							</span>
+							<InstagramIcon size={24} />
 						</a>
 					</div>
 					<div className={styles["contact__form-details"]}>
 						<p className={styles["contact__form-details-title"]}>
-							Tell us more about yourself and what you&apos;ve got in mind.
+							Tell us more about yourself and what you've got in mind.
 						</p>
 						<form
 							className={styles["contact__form"]}
@@ -128,12 +144,12 @@ export default async function Contact() {
 									value="Reset"
 								/>
 								<button className={styles["contact__form-btn"]} type="submit">
-									Let&apos;s get started!
+									Let's get started!
 								</button>
 							</div>
 						</form>
 						<div style={{ marginTop: 10 }}>
-							<p>Don&apos;t like forms? Write us a message instead!</p>
+							<p>Don't like forms? Write us a message instead!</p>
 							<a
 								href="mailto:stepandordiai@gmail.com"
 								style={{ color: "#000" }}
