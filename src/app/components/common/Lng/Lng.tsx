@@ -36,6 +36,15 @@ const Lng = ({ lngModalVisible, setLngModalVisible }: LngProps) => {
 		setMounted(true);
 	}, []);
 
+	useEffect(() => {
+		if (!lngModalVisible) return;
+
+		document.documentElement.style.overflow = "hidden";
+		return () => {
+			document.documentElement.style.overflow = "";
+		};
+	}, [lngModalVisible]);
+
 	const handleLanguageChange = (newLocale: string) => {
 		router.replace(pathname, { locale: newLocale });
 	};
