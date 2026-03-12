@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
-import { Link } from "@/i18n/navigation";
 import WordLine from "@/app/components/WordLine/WordLine";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { fetchWork } from "@/app/lib/api";
-import styles from "./ProjectPage.module.scss";
 import ProjectCard from "@/app/components/ProjectCard/ProjectCard";
+import styles from "./ProjectPage.module.scss";
 
-// TODO: LEARN THIS
 export async function generateStaticParams(): Promise<{ id: string }[]> {
 	const workData = await fetchWork();
-	const locales = ["en", "uk"];
+	const locales = ["en", "uk", "cs"];
+
 	return locales.flatMap((locale) =>
 		workData.map((project) => ({
 			locale,
@@ -22,7 +21,6 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 	);
 }
 
-// TODO: learn this
 export async function generateMetadata({
 	params,
 }: {
@@ -43,7 +41,6 @@ interface ProjectPageProps {
 	params: Promise<{ id: string }>;
 }
 
-// TODO:
 export default async function ProjectPage({ params }: ProjectPageProps) {
 	const t = await getTranslations();
 

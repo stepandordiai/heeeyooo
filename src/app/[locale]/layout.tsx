@@ -1,5 +1,5 @@
-// TODO: word "type" specifies that i only import type not an object
 import { Chakra_Petch } from "next/font/google";
+import type { Metadata } from "next";
 import Header from "../components/layout/Header/Header";
 import Footer from "../components/layout/Footer/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";
@@ -9,13 +9,16 @@ import { fetchWork } from "../lib/api";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import "@/app/scss/globals.scss";
 
-// TODO: learn this
 const chakraPetch = Chakra_Petch({
 	subsets: ["latin"],
 	weight: ["400", "500"],
 	style: ["normal"],
 	variable: "--font-chakra-petch",
 });
+
+export const metadata: Metadata = {
+	metadataBase: new URL("https://www.heeeyooo.studio"),
+};
 
 type LocaleLayoutProps = {
 	children: React.ReactNode;
@@ -29,7 +32,6 @@ export default async function LocaleLayout({
 	const work = await fetchWork();
 	const { locale } = await params;
 
-	// TODO: learn this
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
 	}

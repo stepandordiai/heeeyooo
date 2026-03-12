@@ -14,24 +14,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { locale } = await params;
 
-	// TODO: learn this
 	const t = await getTranslations({ locale });
-	const baseUrl = "https://www.heeeyooo.studio";
 
-	const lngUrls = {
-		en: `${baseUrl}/en/work`,
-		uk: `${baseUrl}/uk/work`,
-		cs: `${baseUrl}/cs/work`,
-	};
+	const locales = ["en", "uk", "cs"];
+	const alternates = Object.fromEntries(locales.map((l) => [l, `/${l}/work`]));
 
 	return {
 		title: t("workTitle"),
 		description: t("workMetaDesc"),
 		alternates: {
-			canonical: `${baseUrl}/${locale}/work`,
+			canonical: `/${locale}/work`,
 			languages: {
-				...lngUrls,
-				"x-default": `${baseUrl}/en/work`,
+				...alternates,
+				"x-default": "/en/work",
 			},
 		},
 	};

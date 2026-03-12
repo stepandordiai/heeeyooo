@@ -13,21 +13,20 @@ export async function generateMetadata({
 }: {
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-	const baseUrl = "https://www.heeeyooo.studio";
 	const { locale } = await params;
-	// TODO: learn this
 	const t = await getTranslations({ locale });
+
+	const locales = ["en", "uk", "cs"];
+	const alternates = Object.fromEntries(locales.map((l) => [l, `/${l}`]));
 
 	return {
 		title: t("homeMetaTitle"),
 		description: t("homeMetaDesc"),
 		alternates: {
-			canonical: `${baseUrl}/${locale}`,
+			canonical: `/${locale}`,
 			languages: {
-				en: `${baseUrl}/en`,
-				uk: `${baseUrl}/uk`,
-				cs: `${baseUrl}/cs`,
-				"x-default": `${baseUrl}/en`,
+				...alternates,
+				"x-default": "/en",
 			},
 		},
 	};

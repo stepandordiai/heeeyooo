@@ -1,11 +1,11 @@
-import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import servicesData from "./../../data/services-data.json";
 import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
-import styles from "./Contact.module.scss";
 import EnvelopeIcon from "@/app/icons/EnvelopeIcon";
 import InstagramIcon from "@/app/icons/InstagramIcon";
+import styles from "./Contact.module.scss";
 
 export async function generateMetadata({
 	params,
@@ -14,24 +14,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { locale } = await params;
 
-	// TODO: learn this
 	const t = await getTranslations({ locale });
-	const baseUrl = "https://www.heeeyooo.studio";
 
-	const lngUrls = {
-		en: `${baseUrl}/en/contact`,
-		uk: `${baseUrl}/uk/contact`,
-		cs: `${baseUrl}/cs/contact`,
-	};
+	const locales = ["en", "uk", "cs"];
+	const alternates = Object.fromEntries(
+		locales.map((l) => [l, `/${l}/contact`]),
+	);
 
 	return {
 		title: t("contactTitle"),
 		description: t("contactMetaDesc"),
 		alternates: {
-			canonical: `${baseUrl}/${locale}/contact`,
+			canonical: "/${locale}/contact",
 			languages: {
-				...lngUrls,
-				"x-default": `${baseUrl}/en/contact`,
+				...alternates,
+				"x-default": "/en/contact",
 			},
 		},
 	};
