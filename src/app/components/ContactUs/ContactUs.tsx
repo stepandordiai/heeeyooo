@@ -1,18 +1,19 @@
+import { getTranslations } from "next-intl/server";
 import styles from "./ContactUs.module.scss";
 
-const ContactUs = () => {
+const ContactUs = async () => {
+	const t = await getTranslations();
+
 	return (
-		<div className={styles["contact-us"]}>
-			<p className={styles["contact-us__title"]}>
-				Let&apos;s create something awesome together!
-			</p>
+		<section className={styles["contact-us"]}>
+			<h3 className={styles["contact-us__title"]}>{t("contactUs.title")}</h3>
 			<a
 				className={styles["underline-link"]}
 				href="mailto:stepandordiai@gmail.com"
 			>
 				hello@heeeyooo.studio
 			</a>
-		</div>
+		</section>
 	);
 };
 

@@ -115,7 +115,7 @@ const Services = () => {
 											}}
 										>
 											<p style={{ fontWeight: 500 }}>
-												Current website performance
+												{t("services.websiteOptimization.currentOptimization")}
 											</p>
 											<div
 												className={styles["portfolio__btn-container"]}
@@ -224,7 +224,7 @@ const Services = () => {
 											}}
 										>
 											<p style={{ fontWeight: 500, marginBottom: 10 }}>
-												Redesign showcase
+												{t("services.websiteRedesign.redesignShowcase")}
 											</p>
 											<div className={styles["img-container"]}>
 												<div
@@ -266,8 +266,7 @@ const Services = () => {
 										<>
 											<br />
 											<p style={{ color: "var(--accent-clr)" }}>
-												(Our service includes 3 months of free minor support and
-												maintenance following the website’s delivery.)
+												({t("services.websiteMaintenance.bonusDesc")})
 											</p>
 										</>
 									)}

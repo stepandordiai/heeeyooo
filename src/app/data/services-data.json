@@ -22,8 +22,8 @@
 	},
 	{
 		"id": "website-maintenance",
-		"title": "home.websiteMaintenance",
-		"desc": "home.websiteMaintenanceDesc",
+		"title": "services.websiteMaintenance.title",
+		"desc": "services.websiteMaintenance.desc",
 		"freeSupport": true
 	},
 	{

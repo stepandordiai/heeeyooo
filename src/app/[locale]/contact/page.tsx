@@ -55,7 +55,7 @@ export default async function Contact() {
 								}}
 							>
 								<span className={styles["contact__details-title"]}>
-									Say hello
+									{t("contact.sayHello")}
 								</span>
 								<span>hello@heeeyooo.studio</span>
 							</div>
@@ -70,14 +70,14 @@ export default async function Contact() {
 								style={{ alignSelf: "flex-end" }}
 								className={styles["contact__details-title"]}
 							>
-								Follow us on Instagram
+								{t("contact.followUsOnInst")}
 							</span>
 							<InstagramIcon size={24} />
 						</a>
 					</div>
 					<div className={styles["contact__form-details"]}>
 						<p className={styles["contact__form-details-title"]}>
-							Tell us more about yourself and what you&apos;ve got in mind.
+							{t("contact.formTitle")}
 						</p>
 						<form
 							className={styles["contact__form"]}
@@ -85,7 +85,7 @@ export default async function Contact() {
 							method="post"
 						>
 							<div>
-								<label htmlFor="fullName">Full name</label>
+								<label htmlFor="fullName">{t("contact.fullName")}</label>
 								<input
 									className={styles["input"]}
 									type="text"
@@ -107,18 +107,7 @@ export default async function Contact() {
 								/>
 							</div>
 							<div>
-								<label htmlFor="message">
-									Tell us a little about the project...
-								</label>
-								<textarea
-									className={styles["textarea"]}
-									name="message"
-									id="message"
-									rows={3}
-								></textarea>
-							</div>
-							<div>
-								<p style={{ marginBottom: 5 }}>How can we help?</p>
+								<p style={{ marginBottom: 5 }}>{t("contact.howCanWeHelp")}</p>
 								<div className={styles["check-container"]}>
 									{servicesData.map((service) => {
 										return (
@@ -138,19 +127,29 @@ export default async function Contact() {
 									})}
 								</div>
 							</div>
+							<div>
+								<label htmlFor="message">{t("contact.message")}</label>
+								<textarea
+									className={styles["textarea"]}
+									name="message"
+									id="message"
+									rows={3}
+								></textarea>
+							</div>
+
 							<div style={{ alignSelf: "flex-end" }}>
-								<input
+								{/* <input
 									className={styles["input-reset"]}
 									type="reset"
 									value="Reset"
-								/>
+								/> */}
 								<button className={styles["contact__form-btn"]} type="submit">
-									Let&apos;s get started!
+									{t("contact.formSendBtn")}
 								</button>
 							</div>
 						</form>
 						<div style={{ marginTop: 10 }}>
-							<p>Don&apos;t like forms? Write us a message instead!</p>
+							<p>{t("contact.doNotLikeForms")}</p>
 							<a
 								className={styles["form__link"]}
 								href="mailto:stepandordiai@gmail.com"

@@ -43,6 +43,24 @@
 		"technologies": "Technologie"
 	},
 
+	"services": {
+		"websiteOptimization": {
+			"title": "Optimalizace webu",
+			"desc": "Rychlý web znamená lepší uživatelský zážitek, vyšší pozice ve vyhledávání a více konverzí. Specializujeme se na to, aby se weby načítaly okamžitě a běžely plynule — na všech zařízeních.",
+			"currentOptimization": "Aktuální výkon webu"
+		},
+		"websiteMaintenance": {
+			"title": "Údržba webu",
+			"desc": "Udržujte svůj web plynulý, bezpečný a aktuální díky naší profesionální správě webu. Zajišťujeme pravidelné aktualizace, monitoring zabezpečení, zálohování, optimalizaci výkonu i správu obsahu, aby váš web zůstal rychlý, bezpečný a plně funkční.",
+			"bonusDesc": "Součástí našich služeb jsou 3 měsíce bezplatné podpory a údržby po spuštění webu."
+		},
+		"websiteRedesign": {
+			"title": "Redesign webu",
+			"desc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
+			"redesignShowcase": "Ukázka redesignu (Před / Po)"
+		}
+	},
+
 	"work": {
 		"title": "Všechny projekty",
 		"list": "Seznam",
@@ -54,6 +72,21 @@
 		"desc1": "Navrhujeme a vyvíjíme rychlé, responzivní a uživatelsky přívětivé digitální zážitky s minimalistickým a moderním přístupem — soustředíme se na to podstatné a odstraňujeme zbytečné.",
 		"desc2": "Naše práce je určena pro startupy, malé firmy i jednotlivce, kteří hledají výraznou digitální prezentaci, ne jen další šablonu.",
 		"desc3": "Jsme založeni v tomto světě a spolupracujeme s klienty po celém světě — proměňujeme nápady v čisté, funkční a profesionální weby."
+	},
+
+	"contact": {
+		"sayHello": "Napište nám",
+		"followUsOnInst": "Sledujte nás na Instagramu",
+		"formTitle": "Řekněte nám o sobě a o svém projektu.",
+		"fullName": "Jméno a příjmení",
+		"message": "Řekněte nám něco málo o projektu...",
+		"formSendBtn": "Začněme!",
+		"doNotLikeForms": "Nemáte rádi formuláře? Napište nám zprávu.",
+		"howCanWeHelp": "Jak vám můžeme pomoci?"
+	},
+
+	"contactUs": {
+		"title": "Vytvořme spolu něco úžasného!"
 	},
 
 	"footer": {
