@@ -1,11 +1,6 @@
 @use "./reset";
 @use "./variables";
 
-:root {
-	--accent-clr: #b3e741;
-	--accent-clr-semi-tp: rgba(179, 231, 65, 0.25);
-}
-
 html {
 	overscroll-behavior: none;
 }
