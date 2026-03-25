@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import Container from "@/app/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
 import WordLine from "@/app/components/WordLine/WordLine";
@@ -11,9 +12,8 @@ import styles from "./ProjectPage.module.scss";
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
 	const workData = await fetchWork();
-	const locales = ["en", "uk", "cs"];
 
-	return locales.flatMap((locale) =>
+	return routing.locales.flatMap((locale) =>
 		workData.map((project) => ({
 			locale,
 			id: project.id,

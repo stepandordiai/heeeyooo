@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import Container from "@/app/components/Container/Container";
 import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
 import AboutClient from "./AboutUsClient";
-import { getTranslations } from "next-intl/server";
 import WordLine from "@/app/components/WordLine/WordLine";
 import ContactUs from "@/app/components/ContactUs/ContactUs";
 import styles from "./AboutUs.module.scss";
@@ -13,22 +14,20 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-
 	const t = await getTranslations({ locale });
-
-	const locales = ["en", "uk", "cs"];
-	const alternates = Object.fromEntries(
-		locales.map((l) => [l, `/${l}/about-us`]),
+	const page = "about-us";
+	const languages = Object.fromEntries(
+		routing.locales.map((l) => [l, `/${l}/${page}`]),
 	);
 
 	return {
 		title: t("aboutUsTitle"),
 		description: t("aboutMetaDesc"),
 		alternates: {
-			canonical: `/${locale}/about-us`,
+			canonical: `/${locale}/${page}`,
 			languages: {
-				...alternates,
-				"x-default": "/en/about-us",
+				...languages,
+				"x-default": `/${routing.defaultLocale}/${page}`,
 			},
 		},
 	};

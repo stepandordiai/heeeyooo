@@ -1,7 +1,7 @@
+import { routing } from "@/i18n/routing";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.pixelflower.studio";
-const locales = ["en", "uk", "cs"] as const;
+const BASE_URL = "https://www.heeeyooo.studio";
 const paths = ["/", "/about-us", "/work", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1,
 			alternates: getAlternates("/"),
 		},
-		...locales.flatMap((locale) =>
+		...routing.locales.flatMap((locale) =>
 			paths.map((path) => ({
 				url: `${BASE_URL}/${locale}${path === "/" ? "" : path}`,
 				lastModified: new Date(),
