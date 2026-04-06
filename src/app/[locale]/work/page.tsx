@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import Container from "@/app/components/Container/Container";
-import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
+import Container from "@/components/Container/Container";
+import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import WorkClient from "./WorkClient";
-import { fetchWork } from "@/app/lib/api";
-import ContactUs from "@/app/components/ContactUs/ContactUs";
+import { fetchWork } from "@/lib/api";
+import ContactUs from "@/components/ContactUs/ContactUs";
 import styles from "./Work.module.scss";
 
 export async function generateMetadata({

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import isTouchDevice from "@/app/utils/isTouchDevice";
+import isTouchDevice from "@/utils/isTouchDevice";
 import styles from "./CustomCursor.module.scss";
 
 const CustomCursor = () => {
@@ -15,7 +15,7 @@ const CustomCursor = () => {
 
 		const handleMouseMove = (e: MouseEvent) => {
 			const inactiveTarget = (e?.target as HTMLElement).closest(
-				"[data-cursor-inactive]"
+				"[data-cursor-inactive]",
 			);
 			if (!customCursor.current) return;
 			if (inactiveTarget) {

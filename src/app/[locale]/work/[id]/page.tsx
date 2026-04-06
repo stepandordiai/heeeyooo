@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import Container from "@/app/components/Container/Container";
+import Container from "@/components/Container/Container";
 import ProjectPageClient from "./ProjectPageClient";
-import WordLine from "@/app/components/WordLine/WordLine";
-import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
+import WordLine from "@/components/WordLine/WordLine";
+import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import { notFound } from "next/navigation";
-import { fetchWork } from "@/app/lib/api";
-import ProjectCard from "@/app/components/ProjectCard/ProjectCard";
+import { fetchWork } from "@/lib/api";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./ProjectPage.module.scss";
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {

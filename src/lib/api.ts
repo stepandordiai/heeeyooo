@@ -1,4 +1,4 @@
-import { Project } from "../interfaces/Project";
+import { Project } from "@/interfaces/Project";
 
 // TODO:
 const url = process.env.API_URL!;

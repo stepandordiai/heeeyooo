@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
 			userAgent: "*",
 			allow: "/",
 		},
-		sitemap: "https://www.heeeyooo.studio/sitemap.xml",
+		sitemap: "https://www.heeeyooo.com/sitemap.xml",
 	};
 }

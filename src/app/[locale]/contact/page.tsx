@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import servicesData from "./../../data/services-data.json";
-import Container from "@/app/components/Container/Container";
-import Breadcrumbs from "@/app/components/common/Breadcrumbs/Breadcrumbs";
-import EnvelopeIcon from "@/app/icons/EnvelopeIcon";
-import InstagramIcon from "@/app/icons/InstagramIcon";
+import servicesData from "@/data/services-data.json";
+import Container from "@/components/Container/Container";
+import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
+import EnvelopeIcon from "@/components/icons/EnvelopeIcon";
+import InstagramIcon from "@/components/icons/InstagramIcon";
 import styles from "./Contact.module.scss";
 
 export async function generateMetadata({

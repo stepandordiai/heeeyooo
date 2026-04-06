@@ -3,12 +3,12 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { usePathname } from "@/i18n/navigation";
-import linksData from "@/app/data/links-data.json";
+import linksData from "@/data/links-data.json";
 import { Link } from "@/i18n/navigation";
 import classNames from "classnames";
 import Image from "next/image";
-import Lng from "../../common/Lng/Lng";
-import GlobeIcon from "@/app/icons/GlobeIcon";
+import Lng from "@/components/common/Lng/Lng";
+import GlobeIcon from "@/components/icons/GlobeIcon";
 import styles from "./Header.module.scss";
 
 type HeaderProps = {

@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
-import linksData from "@/app/data/links-data.json";
-import Container from "../../Container/Container";
+import linksData from "@/data/links-data.json";
+import Container from "@/components/Container/Container";
 import { Link } from "@/i18n/navigation";
 import classNames from "classnames";
 import styles from "./Footer.module.scss";

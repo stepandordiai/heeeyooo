@@ -1,13 +1,13 @@
 import { Chakra_Petch } from "next/font/google";
 import type { Metadata } from "next";
-import Header from "../components/layout/Header/Header";
-import Footer from "../components/layout/Footer/Footer";
-import CustomCursor from "../components/CustomCursor/CustomCursor";
+import Header from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/Footer/Footer";
+import CustomCursor from "@/components/CustomCursor/CustomCursor";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { fetchWork } from "../lib/api";
+import { fetchWork } from "@/lib/api";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import "@/app/scss/globals.scss";
+import "@/scss/globals.scss";
 
 const chakraPetch = Chakra_Petch({
 	subsets: ["latin"],
@@ -17,7 +17,7 @@ const chakraPetch = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://www.heeeyooo.studio"),
+	metadataBase: new URL("https://www.heeeyooo.com"),
 };
 
 type LocaleLayoutProps = {

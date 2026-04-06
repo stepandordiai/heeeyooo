@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
-import { Project } from "@/app/interfaces/Project";
+import { Project } from "@/interfaces/Project";
 import { Link } from "@/i18n/navigation";
-import ProjectCard from "@/app/components/ProjectCard/ProjectCard";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./Work.module.scss";
 
 type WorkClientProps = {

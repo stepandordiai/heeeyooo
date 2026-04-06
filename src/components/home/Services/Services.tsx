@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
-import servicesData from "@/app/data/services-data.json";
+import servicesData from "@/data/services-data.json";
 import WordLine from "../../WordLine/WordLine";
 import Image from "next/image";
 import classNames from "classnames";

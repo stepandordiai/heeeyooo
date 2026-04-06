@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import Container from "../components/Container/Container";
-import WordLine from "../components/WordLine/WordLine";
-import Services from "../components/home/Services/Services";
-import Technologies from "../components/home/Technologies/Technologies";
-import FeaturedWork from "../components/home/FeaturedWork/FeaturedWork";
-import ContactUs from "../components/ContactUs/ContactUs";
+import Container from "@/components/Container/Container";
+import WordLine from "@/components/WordLine/WordLine";
+import Services from "@/components/home/Services/Services";
+import Technologies from "@/components/home/Technologies/Technologies";
+import FeaturedWork from "@/components/home/FeaturedWork/FeaturedWork";
+import ContactUs from "@/components/ContactUs/ContactUs";
 import styles from "./Home.module.scss";
 
 export async function generateMetadata({

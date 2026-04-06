@@ -7,9 +7,9 @@ import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import classNames from "classnames";
-import UnitedStatesFlag from "@/app/icons/UnitedStatesFlag";
-import CzechiaFlag from "@/app/icons/CzechiaFlag";
-import UkraineFlag from "@/app/icons/UkraineFlag";
+import UnitedStatesFlag from "@/components/icons/UnitedStatesFlag";
+import CzechiaFlag from "@/components/icons/CzechiaFlag";
+import UkraineFlag from "@/components/icons/UkraineFlag";
 import styles from "./Lng.module.scss";
 
 const lngData = [

@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { Project } from "@/app/interfaces/Project";
+import { Project } from "@/interfaces/Project";
 import styles from "./ProjectCard.module.scss";
 
 type ProjectCardProps = {

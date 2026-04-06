@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import WordLine from "../../WordLine/WordLine";
+import WordLine from "@/components/WordLine/WordLine";
 import styles from "./Technologies.module.scss";
 
 const technologies = [

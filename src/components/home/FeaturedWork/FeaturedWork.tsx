@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { fetchWork } from "@/app/lib/api";
-import ProjectCard from "../../ProjectCard/ProjectCard";
-import WordLine from "../../WordLine/WordLine";
+import { fetchWork } from "@/lib/api";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import WordLine from "@/components/WordLine/WordLine";
 import styles from "./FeaturedWork.module.scss";
 
 const FeaturedWork = async () => {
