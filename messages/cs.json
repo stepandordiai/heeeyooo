@@ -3,11 +3,6 @@
 	"aboutUsTitle": "O studiu",
 	"workTitle": "Projekty",
 	"contactTitle": "Kontakt",
-	"homeMetaTitle": "Kreativní studio pro webdesign a vývoj",
-	"homeMetaDesc": "heeeyooo studio je kreativní studio, které tvoří výrazný branding, design a webové zážitky, díky nimž značky vyniknou.",
-	"workMetaDesc": "Objevte kreativní práci studia heeeyooo — branding, design a digitální projekty, které proměňují odvážné nápady ve výrazné výsledky. Podívejte se, jak přetváříme koncepty v silné značky a funkční vizuální řešení.",
-	"contactMetaDesc": "Spojte se se studiem heeeyooo — kreativním týmem zapáleným pro design, web a branding. Proměňme vaše nápady ve skutečnost. Kontaktujte nás ještě dnes!",
-	"aboutMetaDesc": "heeeyooo studio je kreativní tým, který vytváří odvážný design, branding a webové zážitky propojující značky s lidmi a pomáhající jim zazářit.",
 
 	"header": {
 		"openMenu": "Otevřít menu",
@@ -20,6 +15,10 @@
 	},
 
 	"home": {
+		"meta": {
+			"title": "Kreativní studio pro webdesign a vývoj",
+			"desc": "heeeyooo studio je kreativní studio, které tvoří výrazný branding, design a webové zážitky, díky nimž značky vyniknou."
+		},
 		"heroTitle": "Kreativní studio pro webdesign a vývoj",
 		"heroSecTitle": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
 		"featuredWork": "Vybrané projekty",
@@ -62,12 +61,20 @@
 	},
 
 	"work": {
+		"meta": {
+			"title": "Portfolio | heeeyooo studio – Webdesign, branding a digitální projekty",
+			"desc": "Prohlédněte si naše portfolio webdesignu, brandingu a digitálních řešení. Podívejte se, jak heeeyooo studio vytváří kreativní projekty, které posilují značky a přinášejí výsledky."
+		},
 		"title": "Všechny projekty",
 		"list": "Seznam",
 		"grid": "Mřížka"
 	},
 
 	"aboutUs": {
+		"meta": {
+			"title": "O nás | heeeyooo studio – Kreativní webdesign a brandingová agentura",
+			"desc": "heeeyooo studio je kreativní webová agentura zaměřená na odvážný design, branding a výkonné webové stránky, které pomáhají firmám růst, oslovit zákazníky a vyniknout online."
+		},
 		"title": "Vytváříme weby na míru, které působí skutečně jinak.",
 		"desc1": "Navrhujeme a vyvíjíme rychlé, responzivní a uživatelsky přívětivé digitální zážitky s minimalistickým a moderním přístupem — soustředíme se na to podstatné a odstraňujeme zbytečné.",
 		"desc2": "Naše práce je určena pro startupy, malé firmy i jednotlivce, kteří hledají výraznou digitální prezentaci, ne jen další šablonu.",
@@ -75,6 +82,10 @@
 	},
 
 	"contact": {
+		"meta": {
+			"title": "Kontakt | heeeyooo studio – Webdesign a brandingová agentura",
+			"desc": "Kontaktujte heeeyooo studio pro webdesign, branding a digitální řešení. Pojďme probrat váš projekt a vytvořit web, který přináší výsledky."
+		},
 		"sayHello": "Napište nám",
 		"followUsOnInst": "Sledujte nás na Instagramu",
 		"formTitle": "Řekněte nám o sobě a o svém projektu.",

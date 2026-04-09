@@ -3,11 +3,6 @@
 	"aboutUsTitle": "About us",
 	"workTitle": "Work",
 	"contactTitle": "Contact",
-	"homeMetaTitle": "Creative web design and development studio",
-	"homeMetaDesc": "heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine.",
-	"workMetaDesc": "Explore heeeyooo studio’s creative work — branding, design, and digital projects that bring bold ideas to life. See how we turn concepts into standout results.",
-	"contactMetaDesc": "Get in touch with heeeyooo studio — a creative team passionate about design, web, and branding. Let’s bring your ideas to life. Contact us today!",
-	"aboutMetaDesc": "heeeyooo studio is a creative team crafting bold design, branding, and web experiences that connect with people and make brands shine.",
 
 	"header": {
 		"openMenu": "Open menu",
@@ -20,6 +15,10 @@
 	},
 
 	"home": {
+		"meta": {
+			"title": "Creative web design and development studio",
+			"desc": "heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine."
+		},
 		"heroTitle": "Creative web design & development studio",
 		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business.",
 		"featuredWork": "Featured work",
@@ -62,12 +61,20 @@
 	},
 
 	"work": {
+		"meta": {
+			"title": "Portfolio | heeeyooo studio – Web Design, Branding & Digital Projects",
+			"desc": "Browse our portfolio of web design, branding, and digital experiences. See how heeeyooo studio delivers creative solutions that elevate brands and drive results."
+		},
 		"title": "All works",
 		"list": "List",
 		"grid": "Grid"
 	},
 
 	"aboutUs": {
+		"meta": {
+			"title": "About heeeyooo studio | Creative Web Design & Branding Agency",
+			"desc": "heeeyooo studio is a creative web agency specializing in bold design, branding, and high-performing websites that help businesses connect, grow, and stand out online."
+		},
 		"title": "We create custom websites that feel truly different.",
 		"desc1": "We design and develop fast, responsive, and user-friendly digital experiences using a minimal and modern approach — focusing on what truly matters while eliminating the unnecessary.",
 		"desc2": "Our work is crafted for startups, small businesses, and individuals seeking a distinctive digital presence, not just another template.",
@@ -75,6 +82,10 @@
 	},
 
 	"contact": {
+		"meta": {
+			"title": "Contact heeeyooo studio | Web Design & Branding Agency",
+			"desc": "Contact heeeyooo studio for web design, branding, and digital solutions. Let’s discuss your project and create a website that drives results."
+		},
 		"sayHello": "Say hello",
 		"followUsOnInst": "Follow us on Instagram",
 		"formTitle": "Tell us about you and your project.",
