@@ -2,10 +2,30 @@ import { routing } from "@/i18n/routing";
 import type { MetadataRoute } from "next";
 import { BASE_URL } from "@/lib/constants";
 
-const paths = ["/", "/about-us", "/work", "/contact"];
+const pages = [
+	{
+		path: "/",
+		changeFrequency: "weekly",
+		priority: 1,
+	},
+	{
+		path: "/about-us",
+		changeFrequency: "monthly",
+		priority: 0.8,
+	},
+	{
+		path: "/work",
+		changeFrequency: "weekly",
+		priority: 0.9,
+	},
+	{
+		path: "/contact",
+		changeFrequency: "monthly",
+		priority: 0.7,
+	},
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	// TODO: learn this
 	const getAlternates = (path: string) => ({
 		languages: {
 			en: `${BASE_URL}/en${path === "/" ? "" : path}`,
@@ -17,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	return [
 		{
-			// TODO: ?
 			url: BASE_URL,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
@@ -25,12 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			alternates: getAlternates("/"),
 		},
 		...routing.locales.flatMap((locale) =>
-			paths.map((path) => ({
-				url: `${BASE_URL}/${locale}${path === "/" ? "" : path}`,
+			pages.map((page) => ({
+				url: `${BASE_URL}/${locale}${page.path === "/" ? "" : page.path}`,
 				lastModified: new Date(),
-				changeFrequency: "monthly" as const,
-				priority: path === "/" ? 1 : 0.8,
-				alternates: getAlternates(path),
+				changeFrequency: page.changeFrequency,
+				priority: page.priority,
+				alternates: getAlternates(page.path),
 			})),
 		),
 	];
