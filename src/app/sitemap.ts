@@ -1,7 +1,7 @@
 import { routing } from "@/i18n/routing";
 import type { MetadataRoute } from "next";
+import { BASE_URL } from "@/lib/constants";
 
-const BASE_URL = "https://www.heeeyooo.com";
 const paths = ["/", "/about-us", "/work", "/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {

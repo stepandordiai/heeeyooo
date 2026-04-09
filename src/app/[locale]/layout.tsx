@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { fetchWork } from "@/lib/api";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { BASE_URL } from "@/lib/constants";
 import "@/scss/globals.scss";
 
 const chakraPetch = Chakra_Petch({
@@ -17,7 +18,7 @@ const chakraPetch = Chakra_Petch({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://www.heeeyooo.com"),
+	metadataBase: new URL(BASE_URL),
 };
 
 type LocaleLayoutProps = {
