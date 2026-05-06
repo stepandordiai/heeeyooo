@@ -28,8 +28,6 @@
 	pointer-events: none;
 
 	div {
-		// display: flex;
-		// flex-direction: column;
 		height: 100%;
 	}
 }
@@ -64,15 +62,17 @@
 	}
 }
 
-.works__list {
+.work-list {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 20px;
 }
 
-.works__grid {
+.work-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
+	margin-bottom: 20px;
 }
 
 .project {
@@ -116,7 +116,7 @@
 }
 
 @media screen and (width <= 1000px) {
-	.works__grid {
+	.work-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
@@ -133,7 +133,7 @@
 }
 
 @media screen and (width <= 600px) {
-	.works__grid {
+	.work-grid {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }

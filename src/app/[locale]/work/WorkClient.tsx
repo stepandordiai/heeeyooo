@@ -7,6 +7,14 @@ import { Link } from "@/i18n/navigation";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./Work.module.scss";
 
+const layouts = [
+	{ id: "grid", label: "work.grid" },
+	{
+		id: "list",
+		label: "work.list",
+	},
+];
+
 type WorkClientProps = {
 	workData: Project[];
 };
@@ -14,7 +22,7 @@ type WorkClientProps = {
 export default function WorkClient({ workData }: WorkClientProps) {
 	const t = useTranslations();
 
-	const [layout, setLayout] = useState("works__list");
+	const [layout, setLayout] = useState(layouts[0].id);
 	const [image, setImage] = useState(0);
 	const [active, setActive] = useState(false);
 	const [touchDevice, setTouchDevice] = useState(false);
@@ -87,29 +95,31 @@ export default function WorkClient({ workData }: WorkClientProps) {
 				</p>
 			</div>
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
-				<button
-					className={
-						layout === "works__list"
-							? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-							: styles["portfolio__btn"]
-					}
-					onClick={() => handleLayout("works__list")}
-				>
-					<span>{t("work.list")}</span>
-				</button>
-				<button
-					className={
-						layout === "works__grid"
-							? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
-							: styles["portfolio__btn"]
-					}
-					onClick={() => handleLayout("works__grid")}
-				>
-					<span>{t("work.grid")}</span>
-				</button>
+				{layouts.map((l) => {
+					return (
+						<button
+							key={l.id}
+							className={
+								layout === l.id
+									? `${styles["portfolio__btn"]} ${styles["portfolio__btn--active"]}`
+									: styles["portfolio__btn"]
+							}
+							onClick={() => handleLayout(l.id)}
+						>
+							<span>{t(l.label)}</span>
+						</button>
+					);
+				})}
 			</div>
-			{layout === "works__list" && (
-				<div className={styles[layout]}>
+			{layout === layouts[0].id && (
+				<div className={styles["work-grid"]}>
+					{workData.map((project) => (
+						<ProjectCard key={project.id} project={project} />
+					))}
+				</div>
+			)}
+			{layout === layouts[1].id && (
+				<div className={styles["work-list"]}>
 					{workData.map((project, index) => {
 						return (
 							<Link
@@ -127,7 +137,7 @@ export default function WorkClient({ workData }: WorkClientProps) {
 										className={styles["work__date"]}
 										style={{
 											fontWeight: 300,
-											color: "rgba(255,255,255,0.5",
+											color: "rgba(255,255,255,0.5)",
 										}}
 									>
 										{project.date}
@@ -137,13 +147,6 @@ export default function WorkClient({ workData }: WorkClientProps) {
 							</Link>
 						);
 					})}
-				</div>
-			)}
-			{layout === "works__grid" && (
-				<div className={styles[layout]}>
-					{workData.map((project) => (
-						<ProjectCard key={project.id} project={project} />
-					))}
 				</div>
 			)}
 		</>
