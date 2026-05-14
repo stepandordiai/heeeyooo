@@ -6,19 +6,28 @@ import linksData from "@/data/links-data.json";
 import Container from "@/components/Container/Container";
 import { Link } from "@/i18n/navigation";
 import classNames from "classnames";
+import ArrowUpIcon from "@/components/icons/ArrowUpIcon";
 import styles from "./Footer.module.scss";
 
-const Footer = ({}) => {
+const Footer = () => {
 	const t = useTranslations();
 	const pathname = usePathname();
 
+	const handleScrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth",
+		});
+	};
+
 	return (
-		<footer className={styles.footer}>
-			<Container>
-				<p style={{ fontSize: "3rem" }}>heeeyooo studio</p>
-				<div className={styles["footer-top"]}>
-					<div className={styles["footer__nav"]}>
-						<h3 style={{ marginBottom: 5 }}>{t("footer.sitemap")}</h3>
+		<Container>
+			<footer className={styles.footer}>
+				<h2 style={{ fontSize: "3rem" }}>heeeyooo studio</h2>
+				<div>
+					<p style={{ marginBottom: 5 }}>{t("footer.sitemap")}</p>
+					<nav className={styles["footer__nav"]}>
 						{linksData.map((link) => {
 							return (
 								<Link
@@ -33,14 +42,20 @@ const Footer = ({}) => {
 								</Link>
 							);
 						})}
-					</div>
+					</nav>
 				</div>
-				<div className={styles["footer-bottom"]}>
+				<div>
 					<p>&copy; {new Date().getFullYear()} heeeyooo studio</p>
 					<p>{t("footer.allRightsReserved")}</p>
 				</div>
-			</Container>
-		</footer>
+				<button
+					onClick={handleScrollToTop}
+					className={styles["footer__scroll-to-top-btn"]}
+				>
+					<ArrowUpIcon size={20} />
+				</button>
+			</footer>
+		</Container>
 	);
 };
 

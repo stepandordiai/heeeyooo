@@ -1,22 +1,14 @@
 @use "@/scss/mixins" as *;
 
 .footer {
-	margin-top: 90px;
+	position: relative;
+	margin: 90px 20px 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	padding: 0 20px 20px 20px;
-}
-
-.footer-top {
-	display: flex;
-	gap: 20px;
-}
-
-.footer-bottom {
-	@include flex-between-center;
-	flex-wrap: wrap;
-	gap: 10px;
+	padding: 20px 20px 20px 20px;
+	background: var(--grey-tp-clr);
+	border-radius: 15px;
 }
 
 .footer__nav {
@@ -36,8 +28,44 @@
 	color: var(--accent-clr) !important;
 }
 
+.footer__scroll-to-top-btn {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50px;
+	aspect-ratio: 1/1;
+	background: #000;
+	border-radius: 15px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: transparent;
+		width: 30px;
+		aspect-ratio: 1/1;
+		transform: translateY(-100%);
+		border-radius: 0 0 15px 0;
+		box-shadow: 15px 15px #000;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: transparent;
+		width: 30px;
+		aspect-ratio: 1/1;
+		transform: translateX(-100%);
+		border-radius: 0 0 15px 0;
+		box-shadow: 15px 15px #000;
+	}
+}
+
 @media screen and (width < 808px) {
 	.footer {
-		padding: 0 10px 10px 10px;
+		margin: 90px 10px 10px;
 	}
 }
