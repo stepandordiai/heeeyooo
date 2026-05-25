@@ -5,17 +5,17 @@ import WordLine from "@/components/WordLine/WordLine";
 import styles from "./FeaturedWork.module.scss";
 
 const FeaturedWork = async () => {
-	const t = await getTranslations();
+	const t = await getTranslations("featuredWork");
 	const work = await fetchWork();
 
 	return (
 		<section>
 			<h2>
-				<WordLine text={t("home.featuredWork")} />
+				<WordLine text={t("title")} />
 			</h2>
-			<div style={{ marginTop: 20, marginBottom: 20 }}>
-				<WordLine text={t("home.featuredWorkDesc")} />
-			</div>
+			<p style={{ marginTop: 20, marginBottom: 20 }}>
+				<WordLine text={t("desc")} />
+			</p>
 			<div className={styles["featured-work__grid"]}>
 				{work
 					.filter((project) => project.isFeatured)

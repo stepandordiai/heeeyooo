@@ -21,9 +21,12 @@
 		},
 		"heroTitle": "Creative web design & development studio",
 		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business.",
-		"featuredWork": "Featured work",
-		"featuredWorkDesc": "Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves",
 		"technologies": "Technologies"
+	},
+
+	"featuredWork": {
+		"title": "Featured Projects & Case Studies",
+		"desc": "Explore our portfolio of custom web design and full-stack development projects. Discover how we help brands scale through high-performance websites, seamless digital products, and innovative in-house solutions tailored for measurable business growth."
 	},
 
 	"services": {

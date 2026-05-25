@@ -21,13 +21,16 @@
 		},
 		"heroTitle": "Kreativní studio pro webdesign a vývoj",
 		"heroSecTitle": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
-		"featuredWork": "Vybrané projekty",
-		"featuredWorkDesc": "Prohlédněte si naše vybrané projekty a zjistěte, jak jsme firmám pomohli zlepšit jejich online prezentaci, zvýšit zapojení a dosáhnout jejich cílů díky inovativním digitálním řešením. Některé projekty vznikly pro klienty, jiné pro nás samotné.",
 		"technologies": "Technologie"
 	},
 
+	"featuredWork": {
+		"title": "Vybrané projekty a případové studie",
+		"desc": "Prohlédněte si naše portfolio zakázkového webdesignu a full-stack vývoje. Zjistěte, jak pomáháme značkám růst prostřednictvím vysoce výkonných webů, bezproblémových digitálních produktů a inovativních vlastních řešení navržených pro měřitelné obchodní výsledky."
+	},
+
 	"services": {
-		"title": "Naše Služby",
+		"title": "Naše služby",
 		"desc": "Jako full-service studio pro design a vývoj webů vytváříme digitální řešení s vysokým konverzním poměrem od prvního konceptu až po spuštění. Plynule propojujeme strategický UX/UI design, zakázkový vývoj a proaktivní podporu po spuštění, abychom pomohli vašemu podnikání růst online.",
 		"uiUxDesign": {
 			"title": "UX/UI Design",
