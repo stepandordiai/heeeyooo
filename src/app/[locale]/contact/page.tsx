@@ -108,12 +108,9 @@ export default async function Contact() {
 							<div>
 								<p style={{ marginBottom: 5 }}>{t("contact.howCanWeHelp")}</p>
 								<div className={styles["check-container"]}>
-									{servicesData.map((service) => {
+									{servicesData.map((service, i) => {
 										return (
-											<label
-												key={service.id}
-												className={styles["checkbox-label"]}
-											>
+											<label key={i} className={styles["checkbox-label"]}>
 												<input
 													className={styles["checkbox"]}
 													type="checkbox"
