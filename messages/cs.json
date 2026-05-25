@@ -68,6 +68,12 @@
 			"desc": "Udržujte svůj web rychlý, bezpečný a dostupný 24/7 s naším prémiovým spravovaným webhostingem. Poskytujeme vysoce výkonný cloud hosting, zabezpečené serverové prostředí, SSL certifikáty a 99,9% záruku dostupnosti (uptime), což dává vašemu podnikání stabilní základ pro bezproblémový růst online."
 		}
 	},
+
+	"technologies": {
+		"title": "Náš technologický stack a frameworky",
+		"desc": "Vyvíjíme rychlé, bezpečné a škálovatelné digitální produkty za použití špičkových technologií. Od responzivních front-endových frameworků a robustní backendové architektury až po bezproblémové AI integrace – vybíráme ty nejlepší nástroje, aby váš web fungoval bezchybně."
+	},
+
 	"work": {
 		"meta": {
 			"title": "Portfolio | heeeyooo studio – Webdesign, branding a digitální projekty",

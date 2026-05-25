@@ -22,13 +22,16 @@ const technologies = [
 ];
 
 const Technologies = async () => {
-	const t = await getTranslations();
+	const t = await getTranslations("technologies");
 
 	return (
-		<section className={styles.section}>
+		<section>
 			<h2>
-				<WordLine text={t("home.technologies")} />
+				<WordLine text={t("title")} />
 			</h2>
+			<p>
+				<WordLine text={t("desc")} />
+			</p>
 			<ul className={styles.technologies}>
 				{technologies.map((technology, index) => {
 					return <li key={index}>{technology}</li>;

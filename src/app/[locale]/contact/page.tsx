@@ -115,9 +115,9 @@ export default async function Contact() {
 													className={styles["checkbox"]}
 													type="checkbox"
 													name="howCanWeHelp"
-													value={service.title}
+													value={t("services." + service.title)}
 												/>
-												{t(service.title)}
+												{t("services." + service.title)}
 											</label>
 										);
 									})}

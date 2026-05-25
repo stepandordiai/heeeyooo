@@ -40,8 +40,11 @@ export default async function Home() {
 		<main className={styles.home}>
 			<Container>
 				<div className={styles["home-inner"]}>
-					<section className={styles["home-hero"]}>
-						<h1 className={styles["home__title"]}>
+					<section
+						className={styles["home-hero"]}
+						aria-labelledby="hero-heading"
+					>
+						<h1 id="hero-heading" className={styles["home__title"]}>
 							<WordLine text={t("home.heroTitle")} />
 						</h1>
 						<p className={styles["home__desc"]}>

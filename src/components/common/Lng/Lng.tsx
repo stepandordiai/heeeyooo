@@ -58,12 +58,7 @@ const Lng = ({ lngModalVisible, setLngModalVisible }: LngProps) => {
 			})}
 		>
 			<div className={styles.container}>
-				<div style={{ display: "flex", justifyContent: "space-between" }}>
-					<p>{t("lng.title")}</p>
-					<button onClick={() => setLngModalVisible(false)}>
-						{t("lng.close")}
-					</button>
-				</div>
+				<p className={styles["modal__title"]}>{t("lng.title")}</p>
 				<div className={styles.inner}>
 					{lngData.map((lng) => (
 						<button
@@ -78,6 +73,12 @@ const Lng = ({ lngModalVisible, setLngModalVisible }: LngProps) => {
 						</button>
 					))}
 				</div>
+				<button
+					className="primary-btn"
+					onClick={() => setLngModalVisible(false)}
+				>
+					{t("lng.close")}
+				</button>
 			</div>
 		</div>,
 		document.body,

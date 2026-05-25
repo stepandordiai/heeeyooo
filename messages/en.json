@@ -20,8 +20,7 @@
 			"desc": "heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine."
 		},
 		"heroTitle": "Creative web design & development studio",
-		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business.",
-		"technologies": "Technologies"
+		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business."
 	},
 
 	"featuredWork": {
@@ -67,6 +66,11 @@
 			"title": "Hosting & Infrastructure",
 			"desc": "Keep your website fast, safe, and accessible 24/7 with our premium managed web hosting services. We provide high-performance cloud hosting, secure server environments, SSL certificates, and a 99.9% uptime guarantee, giving your business the stable foundation it needs to scale seamlessly online."
 		}
+	},
+
+	"technologies": {
+		"title": "Our Tech Stack & Frameworks",
+		"desc": "We engineer fast, secure, and scalable digital products using industry-leading technologies. From responsive front-end frameworks and robust backend architecture to seamless AI integrations, we select the perfect tools to ensure your website performs flawlessly."
 	},
 
 	"work": {
