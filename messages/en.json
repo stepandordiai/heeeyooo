@@ -23,40 +23,46 @@
 		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business.",
 		"featuredWork": "Featured work",
 		"featuredWorkDesc": "Explore our featured projects to see how we’ve helped businesses improve their online presence, boost engagement, and achieve their goals through innovative digital solutions. Some projects were built for clients, others for ourselves",
-		"services": "Services",
-		"servicesDesc": "We specialize in crafting websites from idea, through design to development and post-deployment follow-up support.",
-		"uiUxDesign": "UX/UI Design",
-		"uiUxDesignDesc": "Looking for a website that not only looks amazing but drives results? Our professional web design services combine creativity, usability, and cutting-edge technology to create websites that attract visitors and convert them into customers. We specialize in responsive web design, e-commerce websites, landing pages, and custom solutions tailored to your brand.",
-		"webDevelopment": "Web Development",
-		"webDevelopmentDesc": "Need a website or web application that works flawlessly and scales with your business? Our expert web development services deliver high-quality, custom solutions tailored to your needs. We specialize in front-end and back-end development, e-commerce platforms, custom web applications, and API integrations, ensuring your site is fast, secure, and reliable.",
-		"hosting": "Hosting",
-		"hostingDesc": "Ensure your website is always fast, secure, and accessible with our professional web hosting services. We provide high-performance hosting, secure servers, and 99.9% uptime, giving your website the stability it needs to grow your business online.",
-		"websiteOptimization": "Website Optimization",
-		"websiteOptimizationDesc": "A fast website means better user experience, higher rankings, and more conversions. We specialize in making websites load instantly and run smoothly — across all devices.",
-		"websiteMaintenance": "Website Maintenance",
-		"websiteMaintenanceDesc": "Keep your website running smoothly, securely, and up-to-date with our professional website maintenance services. We handle regular updates, security monitoring, backups, performance optimization, and content management, so your site stays fast, safe, and fully functional.",
-		"seo": "SEO",
-		"seoDesc": "Want your website to rank higher on Google and attract more qualified traffic? Our professional SEO services help businesses improve their online presence, drive organic traffic, and increase conversions. We specialize in on-page SEO, off-page SEO, technical SEO, keyword research, and content optimization, ensuring your website performs at its best in search engines.",
-		"websiteRedesign": "Website Redesign",
-		"websiteRedesignDesc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals.",
 		"technologies": "Technologies"
 	},
 
 	"services": {
+		"title": "Our Services",
+		"desc": "As a full-service web design and development studio, we build high-converting digital experiences from concept to launch. We seamlessly combine strategic UX/UI design, custom web development, and proactive post-launch maintenance to scale your business online.",
+		"uiUxDesign": {
+			"title": "UX/UI Design",
+			"desc": "Looking for a custom website design that looks stunning and drives measurable business growth? Our professional UX/UI design services blend creative branding with high-converting user experiences. We specialize in custom responsive web design, mobile-first layouts, high-performance landing pages, and intuitive e-commerce interfaces designed to turn casual visitors into loyal customers."
+		},
+		"webDevelopment": {
+			"title": "Web Development",
+			"desc": "Need a secure website or a scalable web application that works flawlessly? Our expert web development services deliver clean code and custom solutions tailored to your business goals. We specialize in front-end and back-end development, robust e-commerce platforms, full-stack custom web applications, and seamless API integrations to ensure your digital product is fast, reliable, and secure."
+		},
+		"websiteRedesign": {
+			"title": "Website Redesign & Modernization",
+			"desc": "Is an outdated, slow, or frustrating website costing you leads? Our website redesign services transform your legacy site into a modern, high-performing digital asset. We overhaul your visual identity, improve navigation, fix technical debt, and realign your digital presence with your current brand identity and business objectives.",
+			"redesignShowcase": "Redesign Showcase (Before / After)"
+		},
+		"aiIntegration": {
+			"title": "AI Integration & Automation",
+			"desc": "Ready to supercharge your business efficiency with artificial intelligence? We design and deploy custom AI solutions and automated workflows that save time and reduce overhead. From training custom AI chatbots for 24/7 customer support to integrating smart automation tools (like Make and Zapier) and LLM APIs into your existing web apps, we build systems that work for you around the clock."
+		},
+		"seo": {
+			"title": "SEO (Search Engine Optimization)",
+			"desc": "Want your website to rank on the first page of Google and attract high-intent organic traffic? Our data-driven SEO services optimize your entire digital presence. We specialize in technical SEO, keyword research, on-page content optimization, link building, and local SEO to maximize your visibility and boost conversions."
+		},
 		"websiteOptimization": {
-			"title": "Website Optimization",
-			"desc": "A fast website means better user experience, higher rankings, and more conversions. We specialize in making websites load instantly and run smoothly — across all devices.",
+			"title": "Website Speed & Performance Optimization",
+			"desc": "A slow website destroys conversions and tanks your Google rankings. We specialize in advanced speed optimization, maximizing your Core Web Vitals, and ensuring lightning-fast page loads across all mobile and desktop devices for a flawless user experience.",
 			"currentOptimization": "Current website performance"
 		},
 		"websiteMaintenance": {
-			"title": "Website Maintenance",
-			"desc": "Keep your website running smoothly, securely, and up-to-date with our professional website maintenance services. We handle regular updates, security monitoring, backups, performance optimization, and content management, so your site stays fast, safe, and fully functional.",
+			"title": "Website Maintenance & Support",
+			"desc": "Protect your digital investment with proactive website maintenance services. We manage real-time security monitoring, automated backups, plugin and core software updates, bug fixes, and continuous performance tuning so your site stays fast, safe, and fully functional while you focus on running your business.",
 			"bonusDesc": "Our services include 3 months of free support and maintenance after the website launch."
 		},
-		"websiteRedesign": {
-			"title": "Website Redesign",
-			"desc": "Your website is often the first impression customers have of your business. If it feels outdated, slow, or hard to use, you may be losing valuable opportunities. Our Website Redesign & Development service transforms your existing website into a modern, high-performing digital platform that aligns with your brand and goals.",
-			"redesignShowcase": "Redesign Showcase (Before / After)"
+		"hosting": {
+			"title": "Hosting & Infrastructure",
+			"desc": "Keep your website fast, safe, and accessible 24/7 with our premium managed web hosting services. We provide high-performance cloud hosting, secure server environments, SSL certificates, and a 99.9% uptime guarantee, giving your business the stable foundation it needs to scale seamlessly online."
 		}
 	},
 

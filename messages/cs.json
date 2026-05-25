@@ -23,43 +23,48 @@
 		"heroSecTitle": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
 		"featuredWork": "Vybrané projekty",
 		"featuredWorkDesc": "Prohlédněte si naše vybrané projekty a zjistěte, jak jsme firmám pomohli zlepšit jejich online prezentaci, zvýšit zapojení a dosáhnout jejich cílů díky inovativním digitálním řešením. Některé projekty vznikly pro klienty, jiné pro nás samotné.",
-		"services": "Služby",
-		"servicesDesc": "Specializujeme se na tvorbu webů od nápadu přes design až po vývoj a následnou podporu po spuštění.",
-		"uiUxDesign": "UX/UI design",
-		"uiUxDesignDesc": "Hledáte web, který nejen skvěle vypadá, ale také přináší výsledky? Naše profesionální služby webdesignu kombinují kreativitu, použitelnost a moderní technologie, aby vznikly weby, které přitahují návštěvníky a mění je v zákazníky. Specializujeme se na responzivní webdesign, e-shopy, landing pages a řešení na míru vaší značce.",
-		"webDevelopment": "Webový vývoj",
-		"webDevelopmentDesc": "Potřebujete web nebo webovou aplikaci, která funguje bezchybně a poroste spolu s vaším podnikáním? Naše služby webového vývoje přinášejí kvalitní řešení na míru vašim potřebám. Zaměřujeme se na front-end i back-end vývoj, e-commerce platformy, webové aplikace na míru a integrace API — aby byl váš web rychlý, bezpečný a spolehlivý.",
-		"hosting": "Hosting",
-		"hostingDesc": "Zajistěte, aby byl váš web vždy rychlý, bezpečný a dostupný díky našemu profesionálnímu hostingu. Nabízíme výkonný hosting, zabezpečené servery a 99,9% dostupnost, která vašemu webu poskytne stabilitu potřebnou pro růst online.",
-		"websiteOptimization": "Optimalizace webu",
-		"websiteOptimizationDesc": "Rychlý web znamená lepší uživatelský zážitek, vyšší pozice ve vyhledávání a více konverzí. Specializujeme se na to, aby se weby načítaly okamžitě a běžely plynule — na všech zařízeních.",
-		"websiteMaintenance": "Údržba webu",
-		"websiteMaintenanceDesc": "Udržujte svůj web plynulý, bezpečný a aktuální díky naší profesionální správě webu. Zajišťujeme pravidelné aktualizace, monitoring zabezpečení, zálohování, optimalizaci výkonu i správu obsahu, aby váš web zůstal rychlý, bezpečný a plně funkční.",
-		"seo": "SEO",
-		"seoDesc": "Chcete se umisťovat výš na Googlu a získat více relevantní návštěvnosti? Naše profesionální SEO služby pomáhají firmám zlepšit online viditelnost, zvýšit organickou návštěvnost a růst konverzí. Specializujeme se na on-page SEO, off-page SEO, technické SEO, analýzu klíčových slov a optimalizaci obsahu, aby váš web ve vyhledávačích podával maximální výkon.",
-		"websiteRedesign": "Redesign webu",
-		"websiteRedesignDesc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
 		"technologies": "Technologie"
 	},
 
 	"services": {
+		"title": "Naše Služby",
+		"desc": "Jako full-service studio pro design a vývoj webů vytváříme digitální řešení s vysokým konverzním poměrem od prvního konceptu až po spuštění. Plynule propojujeme strategický UX/UI design, zakázkový vývoj a proaktivní podporu po spuštění, abychom pomohli vašemu podnikání růst online.",
+		"uiUxDesign": {
+			"title": "UX/UI Design",
+			"desc": "Hledáte design webu na míru, který vypadá skvěle a přináší měřitelné obchodní výsledky? Naše profesionální UX/UI služby propojují kreativní branding s uživatelským zážitkem zaměřeným na konverze. Specializujeme se na zakázkový responzivní webdesign, mobilní rozvržení (mobile-first), vysoce výkonné landing pages a intuitivní e-shopy navržené tak, aby proměnily běžné návštěvníky v loajální zákazníky."
+		},
+		"webDevelopment": {
+			"title": "Vývoj webu",
+			"desc": "Potřebujete bezpečný web nebo škálovatelnou webovou aplikaci, která funguje bezchybně? Naše expertní vývojářské služby přinášejí čistý kód a zakázková řešení přizpůsobená vašim obchodním cílům. Specializujeme se na front-end a back-end vývoj, robustní e-commerce platformy, full-stack webové aplikace na míru a bezproblémové integrace API, abychom zajistili, že váš digitální produkt bude rychlý, spolehlivý a bezpečný."
+		},
+		"websiteRedesign": {
+			"title": "Redesign a modernizace webu",
+			"desc": "Přicházíte o potenciální zákazníky kvůli zastaralému, pomalému nebo nepřehlednému webu? Náš redesign promění váš původní web v moderní, vysoce výkonný digitální nástroj. Kompletně přepracujeme vaši vizuální identitu, vylepšíme navigaci, odstraníme technický dluh a sladíme váš web s aktuální identitou značky a vašimi obchodními cíli.",
+			"redesignShowcase": "Ukázky redesignu (Před / Po)"
+		},
+		"aiIntegration": {
+			"title": "AI integrace a automatizace",
+			"desc": "Jste připraveni raketově zvýšit efektivitu svého podnikání pomocí umělé inteligence? Navrhujeme a nasazujeme AI řešení na míru a automatizované procesy, které šetří čas a snižují provozní náklady. Od trénování vlastních AI chatbotů pro nepřetržitou zákaznickou podporu 24/7 až po integraci chytrých automatizačních nástrojů (jako Make a Zapier) a LLM API do vašich stávajících aplikací – budujeme systémy, které pracují pro vás non-stop."
+		},
+		"seo": {
+			"title": "SEO (Optimalizace pro vyhledávače)",
+			"desc": "Chcete, aby se váš web zobrazoval na první stránce Google a přitahoval relevantní organickou návštěvnost? Naše SEO služby založené na datech optimalizují vaši kompletní digitální přítomnost. Specializujeme se na technické SEO, analýzu klíčových slov, on-page optimalizaci obsahu, linkbuilding a lokální SEO, abychom maximalizovali vaši viditelnost a zvýšili konverze."
+		},
 		"websiteOptimization": {
-			"title": "Optimalizace webu",
-			"desc": "Rychlý web znamená lepší uživatelský zážitek, vyšší pozice ve vyhledávání a více konverzí. Specializujeme se na to, aby se weby načítaly okamžitě a běžely plynule — na všech zařízeních.",
+			"title": "Optimalizace rychlosti a výkonu webu",
+			"desc": "Pomalý web zabíjí konverze a sráží vaše pozice ve vyhledávačích. Specializujeme se na pokročilou optimalizaci rychlosti, maximalizaci metrik Core Web Vitals a zajištění bleskového načítání stránek na všech mobilních i stolních zařízeních pro bezchybný uživatelský zážitek.",
 			"currentOptimization": "Aktuální výkon webu"
 		},
 		"websiteMaintenance": {
-			"title": "Údržba webu",
-			"desc": "Udržujte svůj web plynulý, bezpečný a aktuální díky naší profesionální správě webu. Zajišťujeme pravidelné aktualizace, monitoring zabezpečení, zálohování, optimalizaci výkonu i správu obsahu, aby váš web zůstal rychlý, bezpečný a plně funkční.",
-			"bonusDesc": "Součástí našich služeb jsou 3 měsíce bezplatné podpory a údržby po spuštění webu."
+			"title": "Správa a podpora webu",
+			"desc": "Chraňte svou digitální investici pomocí proaktivní správy webu. Zajišťujeme monitorování bezpečnosti v reálném čase, automatické zálohování, aktualizace pluginů a jádra systému, opravy chyb a průběžné ladění výkonu. Váš web tak zůstane rychlý, bezpečný a plně funkční, zatímco vy se můžete soustředit na své podnikání.",
+			"bonusDesc": "Naše služby zahrnují 3 měsíce podpory a správy webu po jeho spuštění zdarma."
 		},
-		"websiteRedesign": {
-			"title": "Redesign webu",
-			"desc": "Váš web je často první dojem, který si zákazníci o vaší firmě udělají. Pokud působí zastarale, je pomalý nebo se špatně používá, můžete přicházet o cenné příležitosti. Naše služba Redesign & vývoj webu promění váš stávající web v moderní, výkonnou digitální platformu, která odpovídá vaší značce i vašim cílům.",
-			"redesignShowcase": "Ukázka redesignu (Před / Po)"
+		"hosting": {
+			"title": "Hosting a infrastruktura",
+			"desc": "Udržujte svůj web rychlý, bezpečný a dostupný 24/7 s naším prémiovým spravovaným webhostingem. Poskytujeme vysoce výkonný cloud hosting, zabezpečené serverové prostředí, SSL certifikáty a 99,9% záruku dostupnosti (uptime), což dává vašemu podnikání stabilní základ pro bezproblémový růst online."
 		}
 	},
-
 	"work": {
 		"meta": {
 			"title": "Portfolio | heeeyooo studio – Webdesign, branding a digitální projekty",

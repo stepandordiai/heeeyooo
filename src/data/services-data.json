@@ -1,40 +1,37 @@
 [
 	{
-		"id": "ux-ui-design",
-		"title": "home.uiUxDesign",
-		"desc": "home.uiUxDesignDesc"
+		"title": "uiUxDesign.title",
+		"desc": "uiUxDesign.desc"
 	},
 	{
-		"id": "web-development",
-		"title": "home.webDevelopment",
-		"desc": "home.webDevelopmentDesc"
+		"title": "webDevelopment.title",
+		"desc": "webDevelopment.desc"
 	},
 	{
-		"id": "hosting",
-		"title": "home.hosting",
-		"desc": "home.hostingDesc"
+		"title": "websiteRedesign.title",
+		"desc": "websiteRedesign.desc",
+		"beforeAfter": true
 	},
 	{
-		"id": "website-optimization",
-		"title": "home.websiteOptimization",
-		"desc": "home.websiteOptimizationDesc",
+		"title": "aiIntegration.title",
+		"desc": "aiIntegration.desc"
+	},
+	{
+		"title": "seo.title",
+		"desc": "seo.desc"
+	},
+	{
+		"title": "websiteOptimization.title",
+		"desc": "websiteOptimization.desc",
 		"performanceOverview": true
 	},
 	{
-		"id": "website-maintenance",
-		"title": "services.websiteMaintenance.title",
-		"desc": "services.websiteMaintenance.desc",
+		"title": "websiteMaintenance.title",
+		"desc": "websiteMaintenance.desc",
 		"freeSupport": true
 	},
 	{
-		"id": "seo",
-		"title": "home.seo",
-		"desc": "home.seoDesc"
-	},
-	{
-		"id": "website-redesign",
-		"title": "home.websiteRedesign",
-		"desc": "home.websiteRedesignDesc",
-		"beforeAfter": true
+		"title": "hosting.title",
+		"desc": "hosting.desc"
 	}
 ]

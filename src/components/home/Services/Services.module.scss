@@ -26,7 +26,6 @@
 
 .service__title {
 	font-size: 2rem;
-	min-width: max-content;
 	font-weight: 500;
 }
 
@@ -157,7 +156,6 @@
 .img-container {
 	position: relative;
 	overflow: hidden;
-	// border: 2px solid rgba(255, 255, 255, 0.15);
 
 	input[type="range"] {
 		appearance: none;
@@ -195,22 +193,6 @@
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
-
-	// &::before {
-	// 	content: "Before";
-	// 	position: absolute;
-	// 	right: 20px;
-	// 	top: 50%;
-	// 	transform: translateY(-50%);
-	// }
-
-	// &::after {
-	// 	content: "After";
-	// 	position: absolute;
-	// 	left: 20px;
-	// 	top: 50%;
-	// 	transform: translateY(-50%);
-	// }
 }
 
 .img-range {
