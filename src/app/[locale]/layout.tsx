@@ -5,7 +5,6 @@ import Footer from "@/components/layout/Footer/Footer";
 import CustomCursor from "@/components/CustomCursor/CustomCursor";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { fetchWork } from "@/lib/api";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { BASE_URL } from "@/lib/constants";
 import "@/scss/globals.scss";
@@ -30,7 +29,6 @@ export default async function LocaleLayout({
 	children,
 	params,
 }: Readonly<LocaleLayoutProps>) {
-	const work = await fetchWork();
 	const { locale } = await params;
 
 	if (!hasLocale(routing.locales, locale)) {
@@ -41,7 +39,7 @@ export default async function LocaleLayout({
 		<html lang={locale} className={chakraPetch.className}>
 			<body>
 				<NextIntlClientProvider locale={locale}>
-					<Header workLength={work.length} />
+					<Header />
 					<CustomCursor />
 					{children}
 					<Footer />

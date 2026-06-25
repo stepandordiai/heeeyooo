@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import Container from "@/components/Container/Container";
@@ -6,17 +6,15 @@ import ProjectPageClient from "./ProjectPageClient";
 import WordLine from "@/components/WordLine/WordLine";
 import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import { notFound } from "next/navigation";
-import { fetchWork } from "@/lib/api";
+import work from "@/data/work.json";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./ProjectPage.module.scss";
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
-	const workData = await fetchWork();
-
-	return routing.locales.flatMap((locale) =>
-		workData.map((project) => ({
-			locale,
-			id: project.id,
+	return routing.locales.flatMap((l) =>
+		work.map((p) => ({
+			l,
+			id: p.id,
 		})),
 	);
 }
@@ -27,8 +25,7 @@ export async function generateMetadata({
 	params: Promise<{ id: string }>;
 }): Promise<Metadata> {
 	const { id } = await params;
-	const workData = await fetchWork();
-	const project = workData.find((p) => p.id === id);
+	const project = work.find((p) => p.id === id);
 
 	return {
 		title: project
@@ -44,27 +41,25 @@ interface ProjectPageProps {
 export default async function ProjectPage({ params }: ProjectPageProps) {
 	const t = await getTranslations();
 
-	const workData = await fetchWork();
-
 	const { id } = await params;
 
-	const project = workData.find((project) => project.id === id);
+	const project = work.find((p) => p.id === id);
 
 	if (!project) return notFound();
 
 	// TODO: better to use here findIndex instead of indexOf
-	const currentProjectIndex = workData.findIndex(
+	const currentProjectIndex = work.findIndex(
 		(currentProject) => currentProject.id === project.id,
 	);
 	const prevProjectIndex =
-		currentProjectIndex > 0 ? currentProjectIndex - 1 : workData.length - 1;
+		currentProjectIndex > 0 ? currentProjectIndex - 1 : work.length - 1;
 
 	const nextProjectIndex =
-		currentProjectIndex < workData.length - 1 ? currentProjectIndex + 1 : 0;
+		currentProjectIndex < work.length - 1 ? currentProjectIndex + 1 : 0;
 
-	const nextProject = workData[nextProjectIndex];
+	const nextProject = work[nextProjectIndex];
 
-	const prevProject = workData[prevProjectIndex];
+	const prevProject = work[prevProjectIndex];
 
 	return (
 		<main className={styles["project-page"]}>
@@ -106,7 +101,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 							<p>{project.desc}</p>
 						</div>
 					)}
-					<div
+					{/* FIXME: */}
+					{/* <div
 						style={
 							!project.typo || !project.palette
 								? { gridTemplateColumns: "repeat(1, 1fr)" }
@@ -143,7 +139,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 								</div>
 							</div>
 						)}
-					</div>
+					</div> */}
 				</div>
 				<a
 					style={{ textAlign: "center" }}

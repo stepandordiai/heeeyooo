@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
-import { Project } from "@/interfaces/Project";
 import { Link } from "@/i18n/navigation";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import work from "@/data/work.json";
 import styles from "./Work.module.scss";
 
 const layouts = [
@@ -15,11 +15,7 @@ const layouts = [
 	},
 ];
 
-type WorkClientProps = {
-	workData: Project[];
-};
-
-export default function WorkClient({ workData }: WorkClientProps) {
+export default function WorkClient() {
 	const t = useTranslations();
 
 	const [layout, setLayout] = useState(layouts[0].id);
@@ -75,7 +71,7 @@ export default function WorkClient({ workData }: WorkClientProps) {
 						transition: "all 0.2s ease-out",
 					}}
 				>
-					{workData.map((project, index) => {
+					{work.map((project, index) => {
 						return (
 							<img
 								ref={(el) => {
@@ -91,7 +87,7 @@ export default function WorkClient({ workData }: WorkClientProps) {
 			)}
 			<div>
 				<p className={styles["work__sec-title"]}>
-					{t("work.title")} <span>{workData.length}</span>
+					{t("work.title")} <span>{work.length}</span>
 				</p>
 			</div>
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
@@ -113,14 +109,14 @@ export default function WorkClient({ workData }: WorkClientProps) {
 			</div>
 			{layout === layouts[0].id && (
 				<div className={styles["work-grid"]}>
-					{workData.map((project) => (
+					{work.map((project) => (
 						<ProjectCard key={project.id} project={project} />
 					))}
 				</div>
 			)}
 			{layout === layouts[1].id && (
 				<div className={styles["work-list"]}>
-					{workData.map((project, index) => {
+					{work.map((project, index) => {
 						return (
 							<Link
 								onMouseEnter={(e) => handleFloatImage(e, true, index)}

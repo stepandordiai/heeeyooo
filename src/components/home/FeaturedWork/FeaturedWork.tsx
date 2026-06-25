@@ -1,12 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { fetchWork } from "@/lib/api";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import WordLine from "@/components/WordLine/WordLine";
+import work from "@/data/work.json";
 import styles from "./FeaturedWork.module.scss";
 
 const FeaturedWork = async () => {
 	const t = await getTranslations("featuredWork");
-	const work = await fetchWork();
 
 	return (
 		<section>

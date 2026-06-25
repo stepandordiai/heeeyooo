@@ -4,7 +4,6 @@ import { routing } from "@/i18n/routing";
 import Container from "@/components/Container/Container";
 import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import WorkClient from "./WorkClient";
-import { fetchWork } from "@/lib/api";
 import ContactUs from "@/components/ContactUs/ContactUs";
 import styles from "./Work.module.scss";
 
@@ -36,13 +35,11 @@ export async function generateMetadata({
 export default async function Work() {
 	const t = await getTranslations();
 
-	const workData = await fetchWork();
-
 	return (
 		<main className={styles.work}>
 			<Container>
 				<Breadcrumbs links={[{ label: t("workTitle") }]} />
-				<WorkClient workData={workData} />
+				<WorkClient />
 				<ContactUs />
 			</Container>
 		</main>

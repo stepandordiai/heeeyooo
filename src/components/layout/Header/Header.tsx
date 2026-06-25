@@ -9,13 +9,10 @@ import classNames from "classnames";
 import Image from "next/image";
 import Lng from "@/components/common/Lng/Lng";
 import GlobeIcon from "@/components/icons/GlobeIcon";
+import work from "@/data/work.json";
 import styles from "./Header.module.scss";
 
-type HeaderProps = {
-	workLength: number;
-};
-
-const Header = ({ workLength }: HeaderProps) => {
+const Header = () => {
 	const t = useTranslations();
 	const pathname = usePathname();
 
@@ -90,7 +87,7 @@ const Header = ({ workLength }: HeaderProps) => {
 								<span>{t(link.name)}</span>
 								{link.workQty && (
 									<span className={styles["header__work-qty"]}>
-										{workLength}
+										{work.length}
 									</span>
 								)}
 							</Link>
@@ -155,7 +152,7 @@ const Header = ({ workLength }: HeaderProps) => {
 								>
 									<span>{t(link.name)}</span>
 									{link.workQty && (
-										<span className={styles["work-qty"]}>{workLength}</span>
+										<span className={styles["work-qty"]}>{work.length}</span>
 									)}
 								</Link>
 							</div>
