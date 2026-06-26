@@ -1,27 +1,27 @@
 .breadcrumbs {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.breadcrumbs-list {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 4px;
-	margin-bottom: 20px;
+
+	li {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
 }
 
 .breadcrumbs__link {
 	position: relative;
-	color: #ffffff;
+	color: #fff;
 
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		height: 2px;
-		width: 100%;
-		background: #ffffff;
-		transform-origin: right;
-		transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
-	}
-
+	&::before,
 	&::after {
 		content: "";
 		position: absolute;
@@ -29,7 +29,15 @@
 		left: 0;
 		height: 2px;
 		width: 100%;
-		background: #ffffff;
+		background: #fff;
+	}
+
+	&::before {
+		transform-origin: right;
+		transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) 0.4s;
+	}
+
+	&::after {
 		transform-origin: left;
 		transform: scaleX(0);
 		transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
