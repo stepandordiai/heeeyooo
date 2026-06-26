@@ -1,5 +1,5 @@
 .services__title {
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .services__desc {
@@ -25,7 +25,7 @@
 }
 
 .service__title {
-	font-size: 2rem;
+	font-size: clamp(1.5rem, 4vw, 2rem);
 	font-weight: 500;
 }
 
