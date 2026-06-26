@@ -10,10 +10,11 @@ import work from "@/data/work.json";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import styles from "./ProjectPage.module.scss";
 
+// must match actual folder name [locale]
 export async function generateStaticParams(): Promise<{ id: string }[]> {
-	return routing.locales.flatMap((l) =>
+	return routing.locales.flatMap((locale) =>
 		work.map((p) => ({
-			l,
+			locale,
 			id: p.id,
 		})),
 	);
