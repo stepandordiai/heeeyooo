@@ -1,0 +1,37 @@
+[
+	{
+		"title": "uiUxDesign.title",
+		"desc": "uiUxDesign.desc"
+	},
+	{
+		"title": "webDevelopment.title",
+		"desc": "webDevelopment.desc"
+	},
+	{
+		"title": "websiteRedesign.title",
+		"desc": "websiteRedesign.desc",
+		"beforeAfter": true
+	},
+	{
+		"title": "aiIntegration.title",
+		"desc": "aiIntegration.desc"
+	},
+	{
+		"title": "seo.title",
+		"desc": "seo.desc"
+	},
+	{
+		"title": "websiteOptimization.title",
+		"desc": "websiteOptimization.desc",
+		"performanceOverview": true
+	},
+	{
+		"title": "websiteMaintenance.title",
+		"desc": "websiteMaintenance.desc",
+		"freeSupport": true
+	},
+	{
+		"title": "hosting.title",
+		"desc": "hosting.desc"
+	}
+]

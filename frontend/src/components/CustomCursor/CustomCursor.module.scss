@@ -1,0 +1,29 @@
+.custom-cursor {
+	position: fixed;
+	transform: translate(-50%, -50%);
+	width: 0;
+	overflow: hidden;
+	color: #000;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background: var(--accent-clr);
+	pointer-events: none;
+	z-index: 9999;
+	transition: width 0.3s;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: max-content;
+	}
+}
+
+.custom-cursor--active {
+	width: 100px !important;
+}
+
+.custom-cursor--show {
+	width: 10px;
+}

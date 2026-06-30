@@ -1,0 +1,29 @@
+.project-card {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	cursor: none;
+}
+
+.project-card__img-wrapper {
+	overflow: hidden;
+	border-radius: 10px;
+	border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-card__img {
+	transition: transform 0.5s ease;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.project-card__details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10px;
+	flex-wrap: wrap;
+}

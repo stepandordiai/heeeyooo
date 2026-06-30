@@ -1,0 +1,136 @@
+@use "@/scss/mixins" as *;
+
+.work {
+	padding: 20px;
+}
+
+.work__title {
+	margin-bottom: 20px;
+}
+
+.portfolio__btn-container {
+	@include flex-start-center;
+	gap: 5px;
+	background: rgba(255, 255, 255, 0.15);
+	width: max-content;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 20px 0;
+}
+
+.portfolio__btn {
+	padding: 5px;
+	min-width: 40px;
+	border-radius: 10px;
+	@include flex-center;
+
+	&--active {
+		background: var(--accent-clr);
+		color: black;
+	}
+}
+
+.float-image-container {
+	position: fixed;
+	z-index: 1000;
+	border-radius: 10px;
+	width: 400px;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+	pointer-events: none;
+
+	div {
+		height: 100%;
+	}
+}
+
+.portfolio__btn .work__sec-title {
+	position: relative;
+	display: inline-block;
+	font-size: clamp(2rem, 4vw, 3rem) !important;
+
+	span {
+		font-size: 1rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: rgba(255, 255, 255, 0.5);
+		transform: translate(150%, 0%);
+	}
+}
+
+.work-list {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.work-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.project {
+	position: relative;
+	@include flex-between-center;
+	padding: 20px 0;
+	cursor: none;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+	transition: border-bottom 0.3s;
+
+	&:hover {
+		border-bottom: 2px solid rgba(255, 255, 255, 1);
+	}
+}
+
+@keyframes animateWork {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.work__desc {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 50px;
+	position: relative;
+}
+
+.work__date {
+	justify-self: flex-end;
+}
+
+.img-element {
+	position: absolute; /* or fixed/relative depending on context */
+	z-index: 999;
+	width: 400px;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border-radius: 10px;
+}
+
+@media screen and (width <= 1000px) {
+	.work-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.work__desc {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 0;
+	}
+}
+
+@media screen and (width < 808px) {
+	.work {
+		padding: 10px;
+	}
+}
+
+@media screen and (width <= 600px) {
+	.work-grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

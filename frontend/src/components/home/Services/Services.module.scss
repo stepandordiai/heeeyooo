@@ -1,0 +1,214 @@
+.services__title {
+	font-weight: 600;
+}
+
+.services__desc {
+	margin-bottom: 20px;
+}
+
+.service {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 90px 0;
+}
+
+.service__divider {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 1s;
+}
+
+.service__divider--active {
+	transform: scaleX(1);
+}
+
+.service__title {
+	font-size: clamp(1.5rem, 4vw, 2rem);
+	font-weight: 500;
+}
+
+.service__desc {
+	max-width: 50%;
+}
+
+.portfolio__btn-container {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+	background: rgba(255, 255, 255, 0.15);
+	width: max-content;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 20px 0;
+}
+
+.btn {
+	min-width: 50px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	padding: 5px;
+
+	span {
+		transition: color 0.3s;
+	}
+}
+
+.btn-indicator {
+	position: absolute;
+	height: calc(100% - 10px);
+	pointer-events: none;
+	background: var(--accent-clr);
+	border-radius: 10px;
+	z-index: -1;
+	transition:
+		width 0.3s,
+		left 0.3s;
+}
+
+// TODO: learn this
+@property --percentage {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
+}
+
+.circles-container {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.circle-container {
+	width: min(100%, 100px);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	row-gap: 5px;
+
+	span {
+		font-size: 0.8rem;
+		text-align: center;
+	}
+}
+
+.circle {
+	--percentage: 0%;
+	position: relative;
+	width: 100%;
+	max-width: 100px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: conic-gradient(
+		var(--accent-clr) var(--percentage),
+		var(--accent-clr-semi-tp) 0
+	);
+	transition: --percentage 2s ease;
+
+	&::before {
+		content: attr(data-value);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		font-weight: 500;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #000;
+		width: calc(100% - 10px);
+		aspect-ratio: 1/1;
+		border-radius: inherit;
+	}
+}
+
+.circle--active {
+	--percentage: var(--value);
+}
+
+@keyframes animateCircle {
+	0% {
+		--percentage: 0%;
+	}
+
+	100% {
+		--percentage: var(--value);
+	}
+}
+
+.img-container {
+	position: relative;
+	overflow: hidden;
+
+	input[type="range"] {
+		appearance: none;
+		position: absolute;
+		left: 0;
+		// TODO:
+		width: calc(100% + 40px);
+		height: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+		// TODO:
+		margin-left: -20px;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 40px;
+			height: 40px;
+			background: transparent;
+			box-shadow: none;
+			border-radius: 50%;
+			background-image: url(/left-right.png);
+			background-repeat: no-repeat;
+			background-size: 40px;
+			background-position: center;
+		}
+	}
+}
+
+.img-line {
+	position: absolute;
+	height: 100%;
+	width: 2px;
+	background: rgba(255, 255, 255, 0.15);
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+
+.img-range {
+	position: absolute;
+	left: 0;
+	clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+@media screen and (width < 808px) {
+	.service {
+		flex-direction: column;
+	}
+
+	.service__desc {
+		max-width: 100%;
+	}
+}

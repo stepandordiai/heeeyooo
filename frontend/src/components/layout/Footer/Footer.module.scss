@@ -1,0 +1,71 @@
+@use "@/scss/mixins" as *;
+
+.footer {
+	position: relative;
+	margin: 90px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px 20px 20px 20px;
+	background: var(--grey-tp-clr);
+	border-radius: 15px;
+}
+
+.footer__nav {
+	@include flex-start;
+	flex-direction: column;
+}
+
+.footer__nav-link {
+	color: hsl(0, 0%, 50%);
+
+	&:hover {
+		color: var(--accent-clr);
+	}
+}
+
+.footer__nav-link--active {
+	color: var(--accent-clr) !important;
+}
+
+.footer__scroll-to-top-btn {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50px;
+	aspect-ratio: 1/1;
+	background: #000;
+	border-radius: 15px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: transparent;
+		width: 30px;
+		aspect-ratio: 1/1;
+		transform: translateY(-100%);
+		border-radius: 0 0 15px 0;
+		box-shadow: 15px 15px #000;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: transparent;
+		width: 30px;
+		aspect-ratio: 1/1;
+		transform: translateX(-100%);
+		border-radius: 0 0 15px 0;
+		box-shadow: 15px 15px #000;
+	}
+}
+
+@media screen and (width < 808px) {
+	.footer {
+		margin: 90px 10px 10px;
+	}
+}
