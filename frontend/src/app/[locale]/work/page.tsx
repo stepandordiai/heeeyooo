@@ -5,6 +5,7 @@ import Container from "@/components/Container/Container";
 import Breadcrumbs from "@/components/common/Breadcrumbs/Breadcrumbs";
 import WorkClient from "./WorkClient";
 import ContactUs from "@/components/ContactUs/ContactUs";
+import work from "@/data/work.json";
 import styles from "./Work.module.scss";
 
 export async function generateMetadata({
@@ -39,6 +40,9 @@ export default async function Work() {
 		<main className={styles.work}>
 			<Container>
 				<Breadcrumbs links={[{ label: t("workTitle") }]} />
+				<h1 className={styles["work__heading"]}>
+					{t("work.title")} <span>{work.length}</span>
+				</h1>
 				<WorkClient />
 				<ContactUs />
 			</Container>

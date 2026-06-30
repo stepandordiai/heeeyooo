@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "@/i18n/navigation";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
@@ -10,19 +9,17 @@ import ListIcon from "@/components/icons/ListIcon";
 import styles from "./Work.module.scss";
 
 export default function WorkClient() {
-	const t = useTranslations();
-
 	const [layout, setLayout] = useState("grid");
 	const [image, setImage] = useState(0);
 	const [active, setActive] = useState(false);
 	const [touchDevice, setTouchDevice] = useState(false);
 
+	const floatImages = useRef<HTMLDivElement[]>([]);
+	const floatImageContainer = useRef<HTMLDivElement>(null);
+
 	useEffect(() => {
 		setTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
 	}, []);
-
-	const floatImages = useRef<HTMLDivElement[]>([]);
-	const floatImageContainer = useRef<HTMLDivElement>(null);
 
 	const handleFloatImage = (
 		e: React.MouseEvent<HTMLAnchorElement>,
@@ -79,11 +76,6 @@ export default function WorkClient() {
 					})}
 				</div>
 			)}
-			<div>
-				<p className={styles["work__sec-title"]}>
-					{t("work.title")} <span>{work.length}</span>
-				</p>
-			</div>
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
 				<button
 					className={

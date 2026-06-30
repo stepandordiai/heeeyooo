@@ -4,8 +4,19 @@
 	padding: 20px;
 }
 
-.work__title {
-	margin-bottom: 20px;
+.work__heading {
+	font-size: clamp(2rem, 4vw, 3rem) !important;
+	position: relative;
+	display: inline-block;
+
+	span {
+		font-size: 1rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: rgba(255, 255, 255, 0.5);
+		transform: translate(150%, 0%);
+	}
 }
 
 .portfolio__btn-container {
@@ -41,21 +52,6 @@
 
 	div {
 		height: 100%;
-	}
-}
-
-.portfolio__btn .work__sec-title {
-	position: relative;
-	display: inline-block;
-	font-size: clamp(2rem, 4vw, 3rem) !important;
-
-	span {
-		font-size: 1rem;
-		position: absolute;
-		top: 0;
-		right: 0;
-		color: rgba(255, 255, 255, 0.5);
-		transform: translate(150%, 0%);
 	}
 }
 
