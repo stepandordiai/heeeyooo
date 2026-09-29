@@ -18,9 +18,14 @@
 		"meta": {
 			"title": "Creative web design and development studio",
 			"desc": "heeeyooo studio is a creative studio crafting bold branding, design, and web experiences that make brands shine."
-		},
-		"heroTitle": "Creative web design & development studio",
-		"heroSecTitle": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business."
+		}
+	},
+
+	"hero": {
+		"heading": "Creative web design & development studio",
+		"description": "We create modern websites, landing pages, and online stores that work fast, look great, and grow your business.",
+		"exploreWork": "Explore Work",
+		"contactUs": "Contact Us"
 	},
 
 	"featuredWork": {

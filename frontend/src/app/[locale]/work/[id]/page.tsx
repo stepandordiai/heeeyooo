@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 					<WordLine text={project.name} />
 				</h1>
 				<div className={styles["project-page__img-grid"]}>
-					{project.img.map((img, index) => {
+					{project.images.map((img, index) => {
 						return (
 							<div key={index} className={styles["project-page__img-wrapper"]}>
 								<ProjectPageClient

@@ -18,10 +18,14 @@
 		"meta": {
 			"title": "Kreativní studio pro webdesign a vývoj",
 			"desc": "heeeyooo studio je kreativní studio, které tvoří výrazný branding, design a webové zážitky, díky nimž značky vyniknou."
-		},
-		"heroTitle": "Kreativní studio pro webdesign a vývoj",
-		"heroSecTitle": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
-		"technologies": "Technologie"
+		}
+	},
+
+	"hero": {
+		"heading": "Kreativní studio pro webdesign a vývoj",
+		"description": "Vytváříme moderní weby, landing pages a e-shopy, které jsou rychlé, skvěle vypadají a pomáhají růst vašemu podnikání.",
+		"exploreWork": "Prohlédnout si projekty",
+		"contactUs": "Kontaktujte nás"
 	},
 
 	"featuredWork": {

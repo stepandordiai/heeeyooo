@@ -6,6 +6,8 @@ import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import work from "@/data/work.json";
 import GridIcon from "@/components/icons/GridIcon";
 import ListIcon from "@/components/icons/ListIcon";
+import { getMonthYear } from "@/utils/helpers";
+import { useLocale } from "next-intl";
 import styles from "./Work.module.scss";
 
 export default function WorkClient() {
@@ -16,6 +18,8 @@ export default function WorkClient() {
 
 	const floatImages = useRef<HTMLDivElement[]>([]);
 	const floatImageContainer = useRef<HTMLDivElement>(null);
+
+	const locale = useLocale();
 
 	useEffect(() => {
 		setTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
@@ -62,18 +66,26 @@ export default function WorkClient() {
 						transition: "all 0.2s ease-out",
 					}}
 				>
-					{work.map((project, index) => {
-						return (
-							<img
-								ref={(el) => {
-									if (el) floatImages.current[index] = el;
-								}}
-								className={styles["float-image"]}
-								key={project.id}
-								src={project.img[0]}
-							></img>
-						);
-					})}
+					{work
+						.toSorted(
+							(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+						)
+						.map((project, index) => {
+							return (
+								<div
+									key={project.id}
+									className={styles["work__float-img-wrapper"]}
+								>
+									<img
+										ref={(el) => {
+											if (el) floatImages.current[index] = el;
+										}}
+										className={styles["float-image"]}
+										src={project.coverImage}
+									></img>
+								</div>
+							);
+						})}
 				</div>
 			)}
 			<div className={styles["portfolio__btn-container"]} data-cursor-inactive>
@@ -100,40 +112,48 @@ export default function WorkClient() {
 			</div>
 			{layout === "grid" && (
 				<div className={styles["work-grid"]}>
-					{work.map((project) => (
-						<ProjectCard key={project.id} project={project} />
-					))}
+					{work
+						.toSorted(
+							(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+						)
+						.map((project) => (
+							<ProjectCard key={project.id} project={project} />
+						))}
 				</div>
 			)}
 			{layout === "list" && (
 				<div className={styles["work-list"]}>
-					{work.map((project, index) => {
-						return (
-							<Link
-								onMouseEnter={(e) => handleFloatImage(e, true, index)}
-								onMouseMove={(e) => handleFloatImage(e, true, index)}
-								onMouseLeave={(e) => handleFloatImage(e, false, index)}
-								key={project.id}
-								data-cursor-inactive
-								className={styles.project}
-								href={`/work/${project.id}`}
-							>
-								<p className={styles["work__name"]}>{project.name}</p>
-								<div className={styles["work__desc"]}>
-									<p
-										className={styles["work__date"]}
-										style={{
-											fontWeight: 300,
-											color: "rgba(255,255,255,0.5)",
-										}}
-									>
-										{project.date}
-									</p>
-									<p>Design & Development</p>
-								</div>
-							</Link>
-						);
-					})}
+					{work
+						.toSorted(
+							(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+						)
+						.map((project, index) => {
+							return (
+								<Link
+									onMouseEnter={(e) => handleFloatImage(e, true, index)}
+									onMouseMove={(e) => handleFloatImage(e, true, index)}
+									onMouseLeave={(e) => handleFloatImage(e, false, index)}
+									key={project.id}
+									data-cursor-inactive
+									className={styles.project}
+									href={`/work/${project.id}`}
+								>
+									<p className={styles["work__name"]}>{project.name}</p>
+									<div className={styles["work__desc"]}>
+										<p
+											className={styles["work__date"]}
+											style={{
+												fontWeight: 300,
+												color: "rgba(255,255,255,0.5)",
+											}}
+										>
+											{getMonthYear(project.date, locale)}
+										</p>
+										<p>Design & Development</p>
+									</div>
+								</Link>
+							);
+						})}
 				</div>
 			)}
 		</>

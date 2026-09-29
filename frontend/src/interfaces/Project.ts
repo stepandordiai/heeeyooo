@@ -3,7 +3,8 @@ export interface Project {
 	name: string;
 	desc?: string;
 	date: string;
-	img: string[];
+	coverImage: string;
+	images: string[];
 	siteUrl: string;
 	isFeatured?: boolean;
 	palette?: string[];

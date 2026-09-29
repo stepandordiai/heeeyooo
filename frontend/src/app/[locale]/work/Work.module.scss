@@ -49,10 +49,18 @@
 	aspect-ratio: 1/1;
 	overflow: hidden;
 	pointer-events: none;
+	border: 2px solid rgba(255, 255, 255, 0.15);
+	background: rgba(0, 0, 0, 0.75);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+}
 
-	div {
-		height: 100%;
-	}
+.work__float-img-wrapper {
+	width: 100%;
+	aspect-ratio: 1/1;
+	padding: 20px;
+	display: grid;
+	place-items: center;
 }
 
 .work-list {

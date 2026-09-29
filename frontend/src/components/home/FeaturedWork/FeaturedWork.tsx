@@ -18,6 +18,10 @@ const FeaturedWork = async () => {
 			<div className={styles["featured-work__grid"]}>
 				{work
 					.filter((project) => project.isFeatured)
+					// TODO: learn this
+					.toSorted(
+						(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+					)
 					.map((project, index) => (
 						<ProjectCard
 							key={project.id}
