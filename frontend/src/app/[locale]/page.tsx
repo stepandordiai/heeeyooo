@@ -8,6 +8,7 @@ import FeaturedWork from "@/components/home/FeaturedWork/FeaturedWork";
 import ContactUs from "@/components/ContactUs/ContactUs";
 import styles from "./Home.module.scss";
 import Hero from "@/components/home/Hero/Hero";
+import { BASE_URL } from "@/lib/constants";
 
 export async function generateMetadata({
 	params,
@@ -34,17 +35,51 @@ export async function generateMetadata({
 }
 
 export default function Home() {
+	const jsonLd = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": `${BASE_URL}/#organization`,
+				name: "heeeyooo studio",
+				url: BASE_URL,
+				logo: {
+					"@type": "ImageObject",
+					url: `${BASE_URL}/heeeyooo-studio-logo-white-v1.svg`,
+					contentUrl: `${BASE_URL}/heeeyooo-studio-logo-white-v1.svg`,
+				},
+				description: "Creative web design and development studio.",
+				email: "hello@heeeyooo.com",
+				sameAs: ["https://www.instagram.com/heeeyooo.studio/"],
+			},
+			{
+				"@type": "WebSite",
+				"@id": `${BASE_URL}/#website`,
+				url: BASE_URL,
+				name: "heeeyooo studio",
+				publisher: { "@id": `${BASE_URL}/#organization` },
+				inLanguage: ["en", "uk", "cs"],
+			},
+		],
+	};
+
 	return (
-		<main className={styles.home}>
-			<Container>
-				<div className={styles["home-inner"]}>
-					<Hero />
-					<FeaturedWork />
-					<Services />
-					<Technologies />
-					<ContactUs />
-				</div>
-			</Container>
-		</main>
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
+			<main className={styles.home}>
+				<Container>
+					<div className={styles["home-inner"]}>
+						<Hero />
+						<FeaturedWork />
+						<Services />
+						<Technologies />
+						<ContactUs />
+					</div>
+				</Container>
+			</main>
+		</>
 	);
 }
